@@ -8,9 +8,22 @@ Déposer ici les visuels dont l'agent doit **extraire un style** : structure, am
 <usage>-<ambiance>-<numero>.jpg     ex. youtube-priere-01.jpg
                                     ex. flyer-convention-02.jpg
                                     ex. story-jeunesse-01.jpg
+
+modele-fusion-<slug>.jpg  +  modele-fusion-<slug>.md     (modèle fusionné : image + fiche)
 ```
 
 Usages : `youtube`, `flyer`, `affiche`, `story`, `carre`.
+
+## Modèles fusionnés
+
+Un modèle créé par **fusion de deux modèles** (sur demande) est enregistré ici, avec sa fiche de
+description obligatoire — voir `specs/modeles-fusion.md` et `templates/fiche-modele.md`.
+
+- Image **propre** : aucun nom, date ni contact d'un événement précis (un modèle doit se réutiliser).
+- Fiche au même nom : sources, traits retenus, ce qui est nouveau, polices, palette, effets,
+  formats compatibles, à éviter.
+- Un modèle fusionné devient une référence à part entière : il peut être cité comme « modèle le plus
+  proche » lors d'une demande de visuel.
 
 ## Ce que l'agent en retient
 
