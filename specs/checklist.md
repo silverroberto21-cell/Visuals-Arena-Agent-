@@ -63,7 +63,29 @@ On ne livre pas avec une case non cochée, et on ne raconte pas la check-list da
 - [ ] Les améliorations ajoutées (profondeur, lumière, texture) servent la hiérarchie.
 - [ ] Aucun élément du modèle protégé recopié tel quel.
 
-## Bloc G — Charte de sortie
+## Bloc G — Fonds (orientation) et fusion
+
+**Fond portrait**
+- [ ] Le cas appliqué est le bon : abstrait → pivot 90° · sens naturel → recadrage ou prolongement ·
+      gabarit vertical → fond tel quel.
+- [ ] Aucune déformation : le fond n'a pas été étiré pour remplir le cadre.
+- [ ] Aucun pivot sur un fond à sens naturel (ciel, architecture, texte, personne).
+- [ ] Après pivot : source lumineuse toujours cohérente, zone de texte toujours dense.
+- [ ] Après prolongement : aucune couture visible à 100 % et à 25 %, aucun motif dupliqué.
+- [ ] Après traitement : bleu toujours ≥ 60 %.
+- [ ] Le traitement est mentionné dans la note, ligne 1 (« fond pivoté / recadré / prolongé »).
+- [ ] La photo de l'orateur n'a subi ni pivot, ni étirement, ni prolongement.
+
+**Fusion de modèles**
+- [ ] La demande était **explicite** (aucune fusion spontanée).
+- [ ] Tableau des traits rempli : deux sources, traits retenus identifiés.
+- [ ] Le modèle est **original** : pas un collage, pas de composition identifiable reprise.
+- [ ] 2 variantes proposées (V1 structure / V2 effets), avec une différence majeure chacune.
+- [ ] Enregistrement après choix : `modeles/modele-fusion-<slug>.jpg` + fiche `.md` du même nom.
+- [ ] Le JPG est propre : aucun nom, date, contact d'un événement précis.
+- [ ] La fiche est rédigée (« traits retenus », « ce qui est nouveau », « à éviter »).
+
+## Bloc H — Charte de sortie
 
 - [ ] Note **exactement 2 lignes** : (1) modèle + fond + palette ; (2) polices + justification.
 - [ ] « À vérifier » sur **une seule ligne** : noms, dates, heures.

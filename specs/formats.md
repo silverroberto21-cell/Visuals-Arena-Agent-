@@ -50,6 +50,18 @@ On ne recopie **jamais** son interface :
 Si un modèle est une capture d'écran, on reconstruit l'ambiance (dégradé, texture, lumière) sans
 le chrome de l'application.
 
+## 3bis. Orientation du fond
+
+Les fonds sont souvent livrés en portrait alors que la miniature est en paysage. Le traitement
+suit trois cas (détail : `specs/fonds.md`) :
+
+| Gabarit | Traitement du fond |
+|---|---|
+| Story 1080×1920 · A5/A4 portrait · 1080×1350 | fond **tel quel** (aucun pivot) |
+| Miniature 1280×720 · carré 1080×1080 · A5/A4 paysage | fond abstrait → **pivot 90°** · fond à sens naturel → **recadrage** ou **prolongement en dégradé bleu** |
+
+Jamais d'étirement. Le traitement retenu est mentionné dans la note, ligne 1.
+
 ## 4. Grille de composition
 
 - 12 colonnes sur la largeur utile, gouttière = 1 colonne.

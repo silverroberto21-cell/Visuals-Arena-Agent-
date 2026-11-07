@@ -52,8 +52,15 @@ Test de contrôle : à 20 % de zoom, l'image doit encore se lire « bleue », pa
 
 1. Recalage de teinte (virage vers le bleu) si le fond est une texture neutre.
 2. Superposition d'un dégradé bleu (20 à 60 % d'opacité) ou d'un voile de la dominante.
-3. Remplacement par un fond bleu construit dans le même esprit.
-4. **Signalement obligatoire dans la note**, ligne 1 : « fond ramené au bleu ».
+3. **Prolongement du fond** dans son axe par un dégradé bleu, quand le gabarit est plus large que
+   le fond (`specs/fonds.md`, cas 2b) : on prolonge avec les nuances du fond, jamais avec un bleu
+   standard.
+4. Remplacement par un fond bleu construit dans le même esprit.
+5. **Signalement obligatoire dans la note**, ligne 1 : « fond ramené au bleu » / « fond prolongé ».
+
+Après tout traitement de fond (pivot, recadrage, prolongement, voile) : **recompter la part de
+bleu**. Un prolongement ou un recadrage peut faire glisser la dominante sous les 60 % sans qu'on
+le voie à l'œil.
 
 ## 5. La tenue « jure » avec le bleu — procédure
 

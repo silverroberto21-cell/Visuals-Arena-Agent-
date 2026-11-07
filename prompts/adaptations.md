@@ -1,7 +1,7 @@
 # Adaptations par plateforme
 
 Une seule source : `../prompts/system-prompt.md`. Toute adaptation doit conserver **la consigne
-verbatim** et **les 6 règles dures**. Si un outil manque de place, on raccourcit les annexes
+verbatim** et **les 8 règles dures**. Si un outil manque de place, on raccourcit les annexes
 (specs), jamais la consigne.
 
 ## 1. ChatGPT — Custom GPT
@@ -61,10 +61,14 @@ Contrastes mesurés : titre 13,4:1 · contacts 13,8:1 · accent 10,4:1
 ## 6. Charte de validation avant mise en production
 
 - [ ] La consigne verbatim est présente et intacte dans les instructions.
-- [ ] Les 6 règles dures sont présentes.
+- [ ] Les 8 règles dures sont présentes.
 - [ ] Le format de sortie immuable est présent (note de 2 lignes, « À vérifier » sur une ligne,
       question finale de variante).
 - [ ] Les dossiers `/modeles`, `/fonds`, `/orateurs`, `/themes` sont accessibles.
 - [ ] Test à blanc : photo d'orateur manquante → l'agent pose **une** question groupée.
 - [ ] Test d'autonomie : brief sans titre ni contacts → l'agent crée quand même.
-- [ ] Test de refus : fond vert ou retouche du visage → refus + version conforme livrée.
+- [ ] Test de refus : fond vert, ciel pivoté ou retouche du visage → refus + version conforme livrée.
+- [ ] Test fond portrait : fond paysage demandé depuis un fond portrait abstrait → pivot 90° ;
+      fond à sens naturel → recadrage ou prolongement, jamais de pivot.
+- [ ] Test fusion : « fusionne ces deux modèles » → 2 variantes proposées, puis enregistrement
+      `modele-fusion-<slug>.jpg` + fiche `.md`.

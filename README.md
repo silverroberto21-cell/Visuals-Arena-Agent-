@@ -13,7 +13,7 @@ autre instruction.
 
 ---
 
-## Les 6 règles dures
+## Les 8 règles dures
 
 | # | Règle | Application |
 |---|---|---|
@@ -23,9 +23,11 @@ autre instruction.
 | 4 | **Textes exacts** | Noms, dates, heures, lieux, contacts, mentions recopiés caractère par caractère. Rien d'inventé. |
 | 5 | **Question si bloquant** | Seulement si date, lieu, orateur ou photo manque : **un** message groupé, puis attente. |
 | 6 | **Format et lisibilité** | Dimensions exactes, marges de sécurité, titre lisible en petit, aucun élément d'interface de modèle reproduit. |
+| 7 | **Fond portrait, jamais d'étirement** | Abstrait → pivot 90° exact · sens naturel (ciel, architecture, motif, texte) → recadrage ou prolongement en dégradé bleu · story/A5 portrait/1080×1350 → fond tel quel. Jamais sur la photo de l'orateur. |
+| 8 | **Fusion de modèles** | Sur demande explicite : extraire les traits de deux modèles, composer un modèle original, proposer 2 variantes, puis enregistrer dans `/modeles` **avec** sa fiche de description. |
 
-Et un refus assumé : fond vert imposé, visage « rajeuni », texte inventé → refus en une phrase,
-**version conforme livrée dans le même tour**.
+Et un refus assumé : fond vert imposé, visage « rajeuni », ciel pivoté, texte inventé → refus en
+une phrase, **version conforme livrée dans le même tour**.
 
 ## Process en 9 étapes
 
@@ -60,8 +62,8 @@ La variante se **propose** ; elle est produite au tour suivant, sur accord.
 
 ## Démarrage rapide
 
-1. **Renseigner la structure** : `[NOM DE LA STRUCTURE]` dans `AGENT.md` § 1 et
-   `prompts/system-prompt.md`. À défaut, l'agent ne nomme jamais la structure et ne l'invente pas.
+1. **Structure** : renseignée — `Impact Centre Chrétien Pahou (ICC Pahou)`. Signature : nom complet
+   sur les flyers A5/A4, forme courte **`ICC Pahou`** sur miniature, story, carré et badge.
 2. **Peupler les dossiers** : quelques modèles, un ou deux fonds bleus, les photos des orateurs,
    les fiches de thème utiles.
 3. **Coller le prompt** sur votre outil :
@@ -95,25 +97,31 @@ prompts/
 specs/
   formats.md                    Dimensions, marges, zones d'interface, refus des UI de modèle
   palette.md                    Extraction du bleu, 60/30/10, tenue, contraste, CMJN
+  fonds.md                      Fonds portrait : pivot 90°, recadrage, prolongement bleu
+  modeles-fusion.md             Fusion de modèles : traits, 2 variantes, enregistrement
   typographie.md                Duos par occasion, script en accent, réglages
   checklist.md                  Auto-contrôle de l'étape 8
 templates/
   brief.md                      Formulaire de brief + tableau des infos bloquantes
+  fiche-modele.md               Fiche de description d'un modèle (dont fusionné)
   question-groupee.md           Question unique (infos bloquantes)
 examples/
-  session-exemple.md            Session complète : miniature, variante, déclinaison, fond non bleu, refus
+  session-exemple.md            Session complète : miniature, variante, déclinaison, fond non bleu, refus, fusion
 modeles/  fonds/  orateurs/  themes/    Ressources du dépôt (voir README de chaque dossier)
 ```
 
 ## Exemple de comportement
 
-[`examples/session-exemple.md`](examples/session-exemple.md) déroule cinq tours (données fictives) :
+[`examples/session-exemple.md`](examples/session-exemple.md) déroule six tours (données fictives) :
 demande complète livrée directement → variante sur accord → déclinaison story/carré → fond non bleu
-ramené au bleu → refus argumenté d'un fond vert et d'une retouche du visage.
+ramené au bleu → refus argumenté d'un fond vert et d'une retouche du visage → fusion de deux modèles
+en un modèle enregistré avec sa fiche.
 
 ## Version
 
-`2.0.0` — consigne remplacée le 2026-11-07 (palette déduite du fond, autonomie, sortie qui propose
-la variante). Toute modification doit conserver la consigne verbatim et les 6 règles dures.
+`2.1.0` — ajout des règles **fonds portrait** (pivot / recadrage / prolongement) et **fusion de
+modèles** (2 variantes puis enregistrement avec fiche). `2.0.0` — consigne remplacée
+(palette déduite du fond, autonomie, sortie qui propose la variante). Toute modification doit
+conserver la consigne verbatim et les 8 règles dures.
 Une évolution de consigne se fait dans `AGENT.md`, `prompts/system-prompt.md` **et** le `version`
 de `agent.yaml`, dans le même commit.

@@ -153,3 +153,58 @@ Souhaites-tu une variante (disposition, nuances, texte) ?
 
 > Refuser sans alternative est un échec de production : l'agent refuse en une phrase **et livre la
 > version conforme dans le même tour**.
+
+## Tour 6 — Fusion de modèles (voie dédiée)
+
+**Commanditaire**
+> Fusionne `modeles/youtube-priere-01.jpg` et `modeles/flyer-convention-02.jpg` pour te faire un
+> nouveau modèle réutilisable.
+
+**Agent — extraction (non livrée)**
+
+```text
+Traits extraits
+                 A (youtube-priere-01)                 B (flyer-convention-02)
+Structure        bandeau titre en haut, portrait        diagonale, portrait détouré en bas
+                 pleine hauteur à droite
+Titre            capitales condensées                   lettrine scripte + filet sous le titre
+Portrait         45 % largeur, pied coupé              détouré sur halo
+Effets           grain + vignettage                    lueur radiale
+Lumière          contre-jour                           frontale douce
+Rythme           dense                                 aéré
+
+Retenu : structure A · lettrine de B · portrait détouré B · grain A + lueur B dosée · lumière B
+Ce qui est nouveau : bandeau haut + portrait détouré à droite sur halo latéral — ni A ni B.
+```
+
+**Agent**
+
+```text
+V1 — structure : bandeau titre haut, portrait détouré à droite, halo latéral, grain léger.
+V2 — effets : structure plus sobre (titre à gauche, portrait bas droite), lueur radiale marquée,
+     profondeur de champ et vignettage renforcés.
+
+Laquelle j'enregistre comme modèle ? (ou : je peux croiser les deux, dis-moi ce que tu gardes)
+```
+
+**Commanditaire**
+> La V1.
+
+**Agent**
+
+```text
+Enregistré :
+  modeles/modele-fusion-priere-profonde.jpg
+  modeles/modele-fusion-priere-profonde.md
+
+Fiche : sources (youtube-priere-01, flyer-convention-02) · traits retenus · ce qui est nouveau ·
+duo Anton + Rubik (modifiable par la fiche de thème) · palette bleu 60 % + tenue 30 % + accent ·
+effets (halo, grain 8 %, vignettage) · formats compatibles 1280×720, 1080×1350, 1080×1080 ·
+à éviter : plus de 2 effets empilés.
+
+Souhaites-tu une variante (disposition, nuances, texte) ?
+```
+
+> Le modèle enregistré ne contient **aucun** nom, date ni contact : il est réutilisable. La règle
+> « 2 variantes » de la fusion ne contredit pas la règle « 1 variante proposée » du visuel livré :
+> l'une sert à **choisir un modèle**, l'autre à **retoucher un visuel**.
