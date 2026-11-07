@@ -56,7 +56,7 @@ La variante se **propose** ; elle est produite au tour suivant, sur accord.
 | Dossier | Contenu | Convention |
 |---|---|---|
 | [`/modeles`](modeles/README.md) | visuels de référence (style, structure, ambiance) | `youtube-priere-01.jpg` |
-| [`/fonds`](fonds/README.md) | fonds **toujours bleus** ou en dégradés de bleu | `bleu-nuit-degrade.jpg` |
+| [`/fonds`](fonds/README.md) | 18 fonds **bleus** indexés et mesurés — voir [`INDEX.md`](fonds/INDEX.md) | `bleu-nuit-bokeh.jpg` |
 | [`/orateurs`](orateurs/README.md) | une photo par orateur | `nom-prenom.jpg` |
 | [`/themes`](themes/README.md) | fiches de thème (ambiance, polices, accents) — **elles priment** | `atmosphere-de-priere.md` |
 
