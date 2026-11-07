@@ -1,88 +1,100 @@
-# Charte couleurs — règles d'application
+# Palette — le bleu comme référence, la tenue comme secondaire
 
-La charte est fournie par la structure sous la forme `[HEX + règles]`. Tant qu'elle n'est pas
-fournie, **aucune création**. Ce document fixe comment on l'applique : il ne remplace jamais les
-hex du commanditaire.
+La palette n'est pas une liste de hex figée : elle se **déduit du fond fourni**. Ce document décrit
+la méthode et les garde-fous.
 
-## 1. Structure de palette à exiger
+## 1. Règle absolue
 
-Un jeu exploitable décrit, pour chaque couleur :
+Le bleu et ses dégradés occupent **~60 %** de la surface et restent visibles **au premier regard**.
+Test de contrôle : à 20 % de zoom, l'image doit encore se lire « bleue », pas « multicolore ».
 
-| Rôle | Ce qu'on attend | Exemple de format |
-|---|---|---|
-| Dominante (fond) | 1 couleur principale, 60 % de la surface | `#0B2545` |
-| Secondaire | soutien, aplats, blocs | `#13315C` |
-| Accent | titres, filets, CTA — 5 à 10 % max | `#E9B949` |
-| Neutre texte clair | texte sur dominante | `#FFFFFF` (si autorisé) |
-| Neutre texte sombre | texte sur fond clair | `#111111` (si autorisé) |
-| Interdits | ex. « pas de rouge vif », « pas de dégradé » | texte |
+## 2. Extraction des nuances du fond (étape 3 du process)
 
-Si la charte ne donne que 2 hex, la production se limite à ces 2 hex + leurs nuances internes, et
-le manque part en question groupée avant de créer.
+1. Prélever **3 à 5 nuances** dans le fond fourni : ombre profonde, bleu médian, lumière/haute
+   valeur, éventuelle teinte d'accent déjà présente.
+2. Noter les hex (ou leur approximation) — ils servent de base à tous les aplats, dégradés et
+   voiles du visuel.
+3. Vérifier la température : bleu froid (tendance cyan) ou bleu chaud (tendance indigo/violet).
+   Les secondaires devront rester du même côté de la roue.
+4. Si le fond est un dégradé : respecter son axe (haut sombre → bas clair, ou rayonnement central)
+   pour que la lumière du visuel reste cohérente.
 
-## 2. Ce qui compte comme « couleur hors charte »
+## 3. Construction de la palette (étape 4 du process)
 
-Sont interdits tant qu'ils ne sont pas explicitement dans la charte :
+| Part | Rôle | Source | Vérification |
+|---|---|---|---|
+| ~60 % | Dominante bleue | nuances du fond | recouvrement mesuré, pas estimé |
+| ~30 % | **Secondaire 1 : couleur de la tenue** | échantillonnage du vêtement de l'orateur | identifiable, jamais plaquée sur un visage |
+| 0–20 % | Secondaire 2 (+ éventuelle 3) | choix libre, harmonie avec le fond | maximum **3** secondaires, tenue incluse |
+| ~10 % | Accent | date, lettre décorative, lumière, filets | jamais un aplat de fond, jamais un texte long |
 
-- un aplat, un dégradé, une texture colorée, un motif ;
-- une ombre portée colorée, un halo, un glow ;
-- un contour, une puce, une icône, un badge, un cadre, une étiquette de prix ;
-- un fond de photo qui amène une teinte étrangère (vert d'une pelouse, bleu d'un ciel) ;
-- le blanc ou le noir purs si la charte ne les mentionne pas (ou précise « pas de blanc pur ») ;
-- une couleur « presque » pareille choisie à l'œil.
+### Échantillonner la tenue sans la trahir
 
-## 3. Nuances autorisées (dérivées, jamais inventées)
+- Prélever la teinte du vêtement **dans une zone éclairée** (éviter les plis sombres et les
+  hautes lumières brûlées).
+- En dériver 2 à 3 valeurs (claire / moyenne / sombre) pour les blocs graphiques, filets,
+  libellés.
+- La couleur de la tenue **n'est pas** une autorisation à repeindre la tenue : le vêtement de la
+  photo reste tel qu'il est.
+- Si la tenue est un neutre (noir, blanc, gris, beige), on prend sa **valeur** et on la teinte
+  légèrement vers la famille du fond : la règle « tenue = secondaire » reste honorée, sans
+  introduire de famille étrangère.
 
-Une seule méthode : la couleur charte + opacité, sur un fond charte.
+### Harmonie avec le fond
 
-- Teinte claire : hex charte à 10 / 20 / 30 / 40 % d'opacité sur la dominante.
-- Teinte sombre : hex charte superposé à un aplat noir *si le noir est autorisé*, sinon
-  2 couches de la dominante.
-- On ne fait pas varier la teinte (pas de rotation de roue chromatique) : uniquement
-  luminosité et opacité.
-- Documenter les nuances utilisées dans la note technique interne (pas dans la sortie).
+- Privilégier les combinaisons **analogues** (bleu + indigo + cyan) ou **complémentaires
+  maîtrisées** (bleu + ocre/or/ambre en accent).
+- Interdits : vert franc, magenta saturé, rouge vif en grande surface — ils cassent la dominante.
+- La profondeur se construit par la **valeur** (clair/sombre) et la saturation, pas en empilant
+  des teintes.
 
-## 4. Contraste : mesurer, pas estimer
+## 4. Si le fond n'est pas franchement bleu
 
-| Élément | Ratio mini |
+1. Recalage de teinte (virage vers le bleu) si le fond est une texture neutre.
+2. Superposition d'un dégradé bleu (20 à 60 % d'opacité) ou d'un voile de la dominante.
+3. Remplacement par un fond bleu construit dans le même esprit.
+4. **Signalement obligatoire dans la note**, ligne 1 : « fond ramené au bleu ».
+
+## 5. La tenue « jure » avec le bleu — procédure
+
+On ne repeint pas. Dans l'ordre :
+
+1. Reculer la **saturation des seuls éléments graphiques** dérivés de la tenue (filets, blocs,
+   libellés) — la photo, elle, ne bouge pas.
+2. Séparer le sujet du fond par la **lumière** : liseré clair, halo sombre, dégradé bleu derrière
+   la silhouette, légère vignette bleue.
+3. Réduire la **surface** occupée par la tenue dans la composition (cadrage plus serré sur le
+   buste, bloc bleu qui reprend le bas du visuel).
+4. En dernier recours, désaturer **légèrement** la photo entière (≤ 15 %) : cela reste un
+   ajustement global de lumière/couleur, jamais une recoloration localisée du vêtement, et cela se
+   signale.
+
+## 6. Contraste : mesurer, pas estimer
+
+| Élément | Ratio minimum |
 |---|---|
-| Texte courant, date, lieu, contacts | 4,5:1 |
+| Texte courant, date-lieu, contacts | 4,5:1 |
 | Titre ≥ 24 px gras / ≥ 32 px | 3:1 |
-| Filet ou icône porteuse d'information | 3:1 |
-| Texte sur photo | 4,5:1 après scrim (mesure sur la zone la plus claire) |
+| Filet, lettre décorative porteuse d'information | 3:1 |
+| Texte sur photo ou dégradé | 4,5:1 après voile, mesuré sur la zone la plus claire |
 
-Procédure :
-1. Identifier le hex réel du fond **derrière le texte** (photo comprise).
-2. Calculer le ratio avec la formule WCAG (luminance relative).
-3. Si échec : changer la couleur *dans la charte* → sinon ajouter un scrim charte 40–75 % →
-   sinon déplacer le texte sur une zone plus calme.
-4. Un titre peut être en accent sur dominante même si le ratio est bas **seulement** s'il
-   atteint 3:1 et mesure ≥ 48 px ; sinon il passe en neutre clair.
-
-## 5. Traitement des photos sans les altérer
-
-- Le sujet (peau, cheveux, vêtement) n'est **jamais** recoloré, filtré, lissé.
-- Le fond d'une photo peut être neutralisé : voile d'une couleur charte, dégradé en pied,
-  vignettage charte, masque progressif. Cela ne touche pas le sujet.
-- Photos de groupes fournies en couleurs vives : on ne désature pas la photo entière (le sujet
-  serait altéré) ; on compense par la composition (bloc charte plein, scrim localisé).
-- Détourage : uniquement si la charte autorise le détourage, et sans manger cheveux, épaules,
-  mains. En cas de doute : pas de détourage.
-
-## 6. Fonds fournis
-
-Un fond n'entre dans la composition que s'il respecte la palette. Sinon :
-
-1. Recalage de teinte du fond **si** le fond est une texture neutre (bois, béton, papier).
-2. Voile de la dominante à 50–70 % pour le ramener dans la charte.
-3. Remplacement par un aplat / dégradé 100 % charte construit dans le même esprit (à signaler en
-   « À vérifier »).
+Procédure : identifier le hex réel derrière le texte → calculer (formule WCAG) → si échec :
+changer la valeur **dans la famille bleue** (blanc cassé, bleu nuit) ou poser un voile bleu
+40–75 %, ou déplacer le texte sur une zone plus dense. Jamais de contour blanc « pour dépanner ».
 
 ## 7. Impression
 
-- Convertir en CMJN pour l'impression, garder le RVB pour le web.
-- Signaler tout hex impossible à reproduire en CMJN (accents très saturés, verts fluo, certains
-  bleus profonds) et donner l'approximation CMJN retenue en « À vérifier ».
-- Noir de texte sur fond clair : privilégier un noir riche si la charte le permet ; sinon le hex
-  sombre de la charte.
-- Taux d'encre total ≤ 300 % pour les grands aplats sombres.
+- Convertir en CMJN pour les flyers, garder le RVB pour le web.
+- Les bleus profonds et les accents très saturés ne se reproduisent pas exactement : donner
+  l'approximation CMJN retenue (en « À vérifier » si l'écart est visible).
+- Taux d'encre total ≤ 300 % pour les grands aplats bleu nuit.
+
+## 8. Exemple de traçabilité (note interne, non livrée)
+
+```text
+Fond F2 (dégradé bleu nuit → bleu acier) : #071A33 · #0E2C52 · #1B4A7A
+Tenue (veste bordeaux) : #6E2233 → valeurs #8A3145 / #4E1524
+Autres secondaires : #C9A227 (laiton, harmonie chaude) · #DCE6F2 (blanc bleuté, texte)
+Accent : #F2C14E (date + lettre décorative)
+Contraste titre #F7FAFF sur #0E2C52 = 12,1:1 · contacts #DCE6F2 sur #071A33 = 13,4:1
+```

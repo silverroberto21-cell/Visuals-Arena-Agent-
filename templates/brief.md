@@ -1,77 +1,72 @@
-# Formulaire de brief (les 5 pièces jointes)
+# Formulaire de brief
 
 À envoyer au commanditaire, ou à utiliser comme grille de lecture quand tout arrive en vrac.
-Le formulaire est **facultatif** : si le brief arrive incomplet, l'agent pose une seule question
-groupée (voir `question-groupee.md`).
+Seules les informations **obligatoires** peuvent déclencher une question : date, lieu, orateur,
+photo. Le reste se déduit des ressources du dépôt.
 
 ---
 
-## 1. Modèles de base à imiter (références de style)
+## 1. Demande
 
-- Fichiers / liens : …
-- Ce qui plaît précisément : (grille ? traitement du titre ? énergie ? sobriété ?)
-- Ce qu'on ne veut PAS reproduire : …
+```text
+Format : ☐ Miniature YouTube 1280×720   ☐ Flyer A5   ☐ Flyer A4
+         ☐ Post 1080×1350   ☐ Story 1080×1920   ☐ Carré 1080×1080
+Usage : ☐ écran   ☐ impression   ☐ les deux
+Autres formats du même thème à décliner ensuite : …
+```
 
-## 2. Fonds
+## 2. Thème
 
-- Fichiers disponibles : …
-- Fonds imposé pour ce visuel ou libre choix : …
-- Contrainte technique (résolution, zone réservée) : …
+- Nom du thème : …
+- Fiche `/themes` existante : ☐ oui (fichier : …) ☐ non → nouveau duo de polices à définir
+- Police imposée : …
+- Ambiance souhaitée (2 mots) : …
 
-## 3. Charte couleurs
+## 3. Ressources du dépôt
 
-| Rôle | Hex | Règles d'usage |
+| Ressource | Fichier retenu | Remarque |
 |---|---|---|
-| Dominante | `#` | … |
-| Secondaire | `#` | … |
-| Accent | `#` | … |
-| Texte clair | `#` | … |
-| Texte sombre | `#` | … |
-| Interdits | — | ex. « pas de dégradé », « blanc pur interdit » |
+| Modèle de référence (`/modeles`) | … | ce qui plaît : structure / ambiance / effets |
+| Fond (`/fonds`) | … | nuances de bleu, format |
+| Photo de l'orateur (`/orateurs`) | `nom-prenom.jpg` | autorisation de diffusion : ☐ oui ☐ non |
 
-## 4. Photos des orateurs
-
-| Orateur (nom exact) | Fichier photo | Remarque |
-|---|---|---|
-| … | `…jpg` | … |
-
-- Autorisation de diffusion de l'image : ☐ oui ☐ non ☐ à vérifier
-- Détourage autorisé : ☐ oui ☐ non
-
-## 5. Informations de l'événement (à recopier à la lettre)
+## 4. Informations de l'événement (à recopier à la lettre)
 
 ```text
 Structure (nom exact) :
 Logo (fichier) :
 
 TITRE :
-THÈME / ACCROCHE :
+THÈME :
 ORATEUR(S) :
   - nom exact :
   - qualité / fonction :
 DATE (jour + date + mois + année) :
-HEURE (début, fin si annoncée) :
-LIEU (nom de salle) :
-ADRESSE / VILLE :
+HEURE :
+LIEU (nom + adresse + ville) :
 CONTACTS :
-  - téléphone :
-  - WhatsApp :
-  - e-mail :
-  - réseaux / billetterie :
-MENTIONS : (prix, entrée libre, sponsors, partenaires)
+  - téléphone / WhatsApp :
+  - e-mail / réseaux / billetterie :
+MENTIONS OBLIGATOIRES (prix, sponsors, partenaires, mentions légales) :
 ```
 
-## 6. Format demandé
+## 5. Contraintes annexes
 
-☐ Miniature YouTube 1280×720 ☐ Flyer A5 ☐ Flyer A4 ☐ Post 1080×1350
-☐ Story 1080×1920 ☐ Carré 1080×1080
-
-- Usage : ☐ écran ☐ impression ☐ les deux
-- Autres formats du même thème à décliner ensuite : …
-
-## 7. Contraintes annexes
-
-- Logo obligatoire et sa position : …
-- Mentions légales / sponsors à faire figurer : …
+- Logo obligatoire et position : …
+- Mentions à faire figurer impérativement : …
 - Date limite de livraison : …
 - Fichiers attendus : ☐ PNG ☐ JPG ☐ PDF print ☐ sources éditables
+
+---
+
+## Ce qui est bloquant (et donc questionnable)
+
+| Information | Bloquante ? | Si absente |
+|---|---|---|
+| Date | **oui** | question groupée |
+| Lieu | **oui** | question groupée |
+| Orateur | **oui** | question groupée |
+| Photo de l'orateur | **oui** | question groupée |
+| Format | oui si non déductible de la demande | question groupée (même message) |
+| Titre, heure, contacts, mentions | non | on compose et on signale en « À vérifier » |
+| Fond, modèle, palette, polices | non | décidés par l'agent |

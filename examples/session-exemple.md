@@ -5,122 +5,151 @@
 
 ---
 
-## Tour 1 — Brief incomplet (le commanditaire envoie des fichiers et trois lignes)
+## Tour 1 — Demande complète : l'agent crée directement
 
 **Commanditaire**
-> Voilà les modèles, deux fonds et la photo du pasteur. Fais-moi l'affiche pour la conférence de
-> mars. Tu as la charte dans le drive.
+> Miniature YouTube, thème « Atmosphère de prière », orateur Pasteur Élie Ahouandjinou,
+> dimanche 15 mars 2026, 6 h 00, Temple Bethel, Rue 12.045 Cotonou. Contacts : +229 97 00 00 00.
+> Tout est dans le dépôt : fond `fonds/bleu-nuit-degrade.jpg`, photo
+> `orateurs/ahouandjinou-elie.jpg`. Tiens compte de ma remarque : c'est une veillée de jeûne.
 
-**Agent (Visual Arena Agent)**
-
-```text
-Avant de créer, il me manque 4 éléments (une seule fois, promis) :
-
-1. Format : flyer A5, A4, ou post 1080×1350 ? (à défaut, je livre en A5 print + 1080×1350)
-2. Charte couleurs : je n'ai pas accès au Drive, envoie les hex + règles (à défaut, je propose
-   4 couleurs à valider avant de créer).
-3. L'événement, recopié tel quel : titre, thème, nom exact de l'orateur + sa qualité, date
-   complète, heure, lieu, adresse, contacts.
-4. Le texte exact des contacts à afficher (téléphone / WhatsApp / e-mail).
-
-Réponds en vrac, je fais le tri.
-```
-
-## Tour 2 — Réponse complète
-
-**Commanditaire**
-> A5 pour l'impression, et 1080×1350 pour le feed.
-> Palette : bleu nuit #0B2545, bleu profond #13315C, or #E9B949, blanc cassé #F7F4EC. Pas de
-> dégradé coloré, pas de rouge.
-> Conférence Alliance, thème « Une génération debout », orateur Pasteur Élie Ahouandjinou.
-> Samedi 14 mars 2026, 17 h 00, Temple Bethel, Rue 12.045 Cotonou.
-> Contacts : +229 97 00 00 00 · alliance@exemple.org
-
-**Agent — note interne (non livrée)**
+**Agent — analyse interne (non livrée)**
 
 ```text
-1) Format : A5 1748×2480 @300 dpi + 1080×1350. Marges 8 mm / 72 px.
-2) Infos : complètes. Jour/date à vérifier en sortie (14 mars 2026 = samedi, OK).
-3) Modèle : M2 (titre en capitales condensées sur bandeau, orateur détaché à droite).
-   Fond : F1 (texture papier sombre) recalé à 60 % de bleu nuit #0B2545.
-4) Duo : Anton (titre) + Rubik (texte) — impact d'affiche, chiffres d'heure très lisibles.
-5) Hiérarchie : titre → orateur → date-lieu → contacts.
-6) Composition : bandeau or en haut 12 %, titre sur 3 lignes, orateur à droite sur masque
-   progressif, bloc date-lieu en bas gauche, contacts sur filet or.
-7) Contrôle : contraste titre blanc cassé #F7F4EC sur bleu nuit #0B2545 = 14,0:1 (OK, > 3:1).
-   Contacts #F7F4EC sur #13315C = 11,8:1 (OK, > 4,5:1). Or #E9B949 réservé aux filets et à
-   l'étiquette. Photo non retouchée (recadrage buste uniquement).
-8) Variante : même duo, même photo, fond remplacé par aplat bleu nuit pur (plus sobre, plus
-   lisible en petit).
+1) Format : 1280×720, marge 60 px, coin inférieur droit libre (badge de durée).
+2) Infos : complètes (date, lieu, orateur, photo, contacts). Mentions : aucune fournie.
+3) Fond F-bleu-nuit-degrade : #071A33 → #0E2C52 → #1B4A7A (axe haut sombre → bas clair).
+   Modèle le plus proche : M3 (portrait détouré à droite, titre capitales condensées,
+   lettre décorative scripte dans le titre, sous-titre fin en bas).
+4) Tenue : veste bordeaux — échantillon #8A3145 (zone éclairée) → valeurs #8A3145 / #6E2233.
+   Contraste du bordeaux sur le fond = 2,2:1 → masse décorative uniquement, jamais du texte.
+   Autres secondaires : #C9A227 (laiton, harmonie chaude) · #DCE6F2 (blanc bleuté).
+   Accent : #F2C14E (date + lettre décorative).
+5) Duo : Anton (titre, capitales condensées) + Rubik (texte) — impact en vignette et chiffres
+   d'heure très lisibles. Pas de fiche /themes pour ce thème.
+6) Hiérarchie : titre 3 mots → orateur → date-heure-lieu → contacts.
+7) Composition : dégradé bleu plein cadre, portrait détouré à droite (hauteur 78 %), halo bleu
+   derrière la silhouette, titre 3 lignes à gauche, lettre « P » en script laiton, date en bas
+   gauche sur filet laiton.
+8) Contrôle : bleu ≈ 62 % de la surface · 3 secondaires (bordeaux, laiton, blanc bleuté) ·
+   titre #F7FAFF sur #0E2C52 = 13,4:1 · contacts #DCE6F2 sur #071A33 = 13,8:1 · accent
+   #F2C14E sur #071A33 = 10,4:1 · visage non retouché, détourage propre · titre 3 mots lisible
+   à 160 px · aucune interface de modèle reprise.
 ```
-
-**Agent — livraison**
-
-```text
-[VISUEL FINAL — A5 1748×2480 @300 dpi, CMJN, fond perdu 3 mm]
-[VISUEL FINAL — 1080×1350 RVB, mêmes textes, mêmes polices]
-
---- NOTE (2 lignes) ---
-Modèle : M2 (bandeau titre + orateur détaché) · Fond : F1 recalé en bleu nuit #0B2545.
-Polices : Titre « Anton » / Texte « Rubik » — capitales condensées pour l'impact d'affiche, Rubik pour des heures et un numéro de téléphone lisibles à distance.
-
---- À VÉRIFIER ---
-• Date : le brief dit « samedi 14 mars 2026 » — c'est bien un samedi, je confirme à l'identique.
-• Orthographe du nom : « Élie Ahouandjinou » avec accent sur le É, comme dans ta source.
-• Adresse : « Rue 12.045 Cotonou » recopiée telle quelle, sans ville complétée.
-• Autorisation de diffusion de la photo du pasteur (je n'ai rien retouché : recadrage seul).
-• Logo de la structure absent du brief : je l'ai laissé de côté, dis-moi s'il doit figurer.
-
---- VARIANTE PROPOSÉE ---
-Variante A — même duo, même photo, fond remplacé par un aplat bleu nuit pur. Un seul paramètre
-changé : plus sobre, meilleure lisibilité en vignette de téléphone et impression plus économique
-en encre.
-```
-
-## Tour 3 — Déclinaison sur les autres formats
-
-**Commanditaire**
-> Parfait. Fais la story et le carré avec la même identité.
 
 **Agent**
 
 ```text
-Story 1080×1920 et carré 1080×1080, même duo (Anton + Rubik), même palette, même hiérarchie.
-Différences imposées par le format : photo recadrée plus serré (buste), titre sur 4 lignes en
-story, bloc contacts remonté à 340 px du bas pour rester au-dessus de l'interface.
+[VISUEL FINAL — miniature 1280×720, JPG]
 
 --- NOTE (2 lignes) ---
-Modèle : M2 décliné · Fond : F1 (story) et aplat #0B2545 (carré).
-Polices : Titre « Anton » / Texte « Rubik » — duo identique au flyer, donc thème cohérent d'un format à l'autre.
+Modèle : M3 (portrait détouré à droite, titre condensé) · Fond : bleu-nuit-degrade (#071A33 → #0E2C52 → #1B4A7A) · Palette : bleu dominant 60 % + bordeaux de la veste 30 % (#8A3145) + laiton #C9A227 + accent #F2C14E.
+Polices : Titre « Anton » / Texte « Rubik » — capitales condensées pour tenir un titre de 3 mots en vignette, Rubik pour des horaires lisibles en petit.
 
 --- À VÉRIFIER ---
-• Titre sur 4 lignes en story : vérifier qu'aucun mot seul ne tombe en dernière ligne.
-• Contacts : mêmes valeurs exactes que le flyer, corps maintenu à 28 px minimum.
-• Zone basse < 320 px laissée libre (interface de la plateforme).
+Noms, dates, heures : « Pasteur Élie Ahouandjinou » · « dimanche 15 mars 2026 » (le 15 mars 2026 est bien un dimanche) · « 6 h 00 » · « +229 97 00 00 00 ».
 
---- VARIANTE PROPOSÉE ---
-Variante B — story avec la date en très gros corps sur la photo (au lieu du bloc bas gauche) :
-renforce l'urgence en consultation rapide.
+Souhaites-tu une variante (disposition, nuances, texte) ?
 ```
 
-## Tour 4 — Demande non conforme (refus + alternative)
+## Tour 2 — Le commanditaire demande la variante « nuances »
 
 **Commanditaire**
-> Mets le titre en rouge vif, ça ressortira mieux. Et lisse un peu le visage, il a l'air fatigué.
+> Oui, variante nuances, et rends le bordeaux plus discret.
 
 **Agent**
 
 ```text
-Deux écarts par rapport à la charte, je ne les applique pas :
+Variante produite : même structure, même duo de polices, même cadrage.
+Ce qui change — le bordeaux passe de 30 % à 18 % (bloc resserré derrière le portrait), le laiton
+remonte à 22 % en filets et en valeur de titre secondaire, le bleu reste ≥ 65 %. Le contraste du
+titre monte à 13,4:1 → inchangé ; les contacts restent à 13,8:1.
 
-1. Rouge vif — hors palette (charte : #0B2545, #13315C, #E9B949, #F7F4EC) et le rouge est
-   explicitement interdit. Pour faire ressortir le titre, je propose l'or #E9B949 sur bleu nuit
-   (contraste 8,4:1) ou une taille de corps supérieure.
-2. Lissage du visage — la photo de l'orateur n'est jamais retouchée. Je peux en revanche
-   recadrer, éclaircir légèrement le fond derrière lui, ou choisir un cadrage plus flatteur.
+[VISUEL FINAL — miniature 1280×720, JPG, variante]
 
-Je pars sur la version or + fond éclairci, sauf si tu préfères l'augmentation de corps.
+--- NOTE (2 lignes) ---
+Modèle : M3 · Fond : bleu-nuit-degrade (#071A33 → #0E2C52 → #1B4A7A) · Palette : bleu dominant 65 % + bordeaux adouci 18 % (#6E2233) + laiton #C9A227 22 % + accent #F2C14E.
+Polices : Titre « Anton » / Texte « Rubik » — duo identique à la version validée, pour que le thème reste cohérent d'un visuel à l'autre.
+
+--- À VÉRIFIER ---
+Noms, dates, heures : identiques à la version validée (« Pasteur Élie Ahouandjinou » · « dimanche 15 mars 2026 » · « 6 h 00 »).
+
+Souhaites-tu une variante (disposition, nuances, texte) ?
 ```
 
-> Note : l'agent ne cède pas, mais il livre toujours une solution conforme dans le même tour —
-> refuser sans alternative est un échec de production.
+## Tour 3 — Déclinaison en story et carré
+
+**Commanditaire**
+> Maintenant la story 1080×1920 et le carré 1080×1080, même thème.
+
+**Agent**
+
+```text
+Story : photo recadrée buste, titre sur 4 lignes, contacts remontés à 340 px du bas.
+Carré : portrait en bas à droite, titre sur 3 lignes, mêmes valeurs de palette.
+
+--- NOTE (2 lignes) ---
+Modèle : M3 décliné · Fond : bleu-nuit-degrade (même axe de dégradé) · Palette : bleu dominant 60–65 % + bordeaux 20 % (#8A3145) + laiton #C9A227 + accent #F2C14E.
+Polices : Titre « Anton » / Texte « Rubik » — duo verrouillé sur le thème, donc identité continue entre miniature, story et carré.
+
+--- À VÉRIFIER ---
+Noms, dates, heures : « Pasteur Élie Ahouandjinou » · « dimanche 15 mars 2026 » · « 6 h 00 » · contacts identiques aux autres formats.
+
+Souhaites-tu une variante (disposition, nuances, texte) ?
+```
+
+## Tour 4 — Fond non bleu (règle 3 de la palette)
+
+**Commanditaire**
+> Pour le flyer A5, utilise `fonds/beton-gris.jpg`, il est plus propre.
+
+**Agent**
+
+```text
+Ce fond n'est pas bleu : je l'ai ramené au bleu (voile dégradé #071A33 → #1B4A7A à 65 %, texture
+béton conservée). La dominante bleue est à 61 %. C'est signalé dans la note.
+
+[VISUEL FINAL — flyer A5 1748×2480 @ 300 dpi, CMJN, fond perdu 3 mm]
+
+--- NOTE (2 lignes) ---
+Modèle : M3 décliné print · Fond : beton-gris ramené au bleu (voile #071A33 → #1B4A7A 65 %, nuances #071A33 · #0E2C52 · #1B4A7A) · Palette : bleu dominant 61 % + bordeaux 22 % (#8A3145) + laiton #C9A227 + accent #F2C14E.
+Polices : Titre « Anton » / Texte « Rubik » — même duo que les formats écran du thème, pour une affiche cohérente avec la miniature.
+
+--- À VÉRIFIER ---
+Noms, dates, heures : « Pasteur Élie Ahouandjinou » · « dimanche 15 mars 2026 » · « 6 h 00 » · « Temple Bethel, Rue 12.045 Cotonou » · « +229 97 00 00 00 ». Le bleu profond et le laiton peuvent dériver à l'impression : vérifier sur épreuve.
+
+Souhaites-tu une variante (disposition, nuances, texte) ?
+```
+
+## Tour 5 — Demande non conforme (refus + alternative)
+
+**Commanditaire**
+> Mets un fond vert et rajeunis un peu le pasteur sur la photo, il fait fatigué.
+
+**Agent**
+
+```text
+Deux écarts que je n'applique pas :
+
+1. Fond vert : il casse la règle de la dominante bleue. Je peux en revanche jouer sur les nuances
+   du bleu (nuit plus profond, acier plus clair, ou lueur laiton dans le dégradé).
+2. Retouche du visage : le visage n'est jamais altéré. Je peux éclairer légèrement le portrait
+   (lumière seulement, sans toucher aux traits), choisir un cadrage plus flatteur, ou ajouter un
+   halo bleu qui détache mieux la silhouette du fond.
+
+Je pars sur « bleu nuit plus profond + portrait éclairci », sauf si tu préfères le cadrage.
+
+[VISUEL FINAL — miniature 1280×720, JPG, version conforme]
+
+--- NOTE (2 lignes) ---
+Modèle : M3 · Fond : bleu-nuit-degrade poussé (#050F1F → #0E2C52 → #1B4A7A) · Palette : bleu dominant 64 % + bordeaux 24 % (#8A3145) + laiton #C9A227 + accent #F2C14E.
+Polices : Titre « Anton » / Texte « Rubik » — inchangé, seul le traitement de lumière et la valeur du fond ont bougé.
+
+--- À VÉRIFIER ---
+Noms, dates, heures : identiques à la version validée ; le portrait a reçu uniquement un ajustement de lumière (aucune retouche des traits).
+
+Souhaites-tu une variante (disposition, nuances, texte) ?
+```
+
+> Refuser sans alternative est un échec de production : l'agent refuse en une phrase **et livre la
+> version conforme dans le même tour**.

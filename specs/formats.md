@@ -14,60 +14,75 @@ Les dimensions sont des **contraintes**, pas des suggestions. On ne livre jamais
 | Story / Reel | 9:16 | **1080×1920** | 120 px côtés · 250 px haut · 320 px bas | 4 à 8 mots | — |
 | Carré réseaux | 1:1 | **1080×1080** | 72 px | 4 à 7 mots | — |
 
-Règle de fond perdu (impression) : tout élément qui touche le bord doit être prolongé de 3 mm
-au-delà. Aucun texte ni visage dans cette bande.
+Fond perdu (impression) : tout élément qui touche le bord est prolongé de 3 mm au-delà. Aucun
+texte, aucun visage dans cette bande.
 
 ## 2. Zones à ne jamais occuper
 
 ### Miniature 1280×720
-- **Coin inférieur droit** : badge de durée YouTube → garder ~200×70 px libres.
+- **Coin inférieur droit** : badge de durée YouTube → ~200×70 px libres.
 - **Bord bas** : barre de progression → 24 px.
-- Vérification obligatoire : réduire à **160 px de large** ; si le titre n'est plus lisible,
-  le visuel est refusé.
+- Test obligatoire : réduire à **160 px de large** ; si le titre n'est plus lisible, ou si la
+  dominante bleue se perd, le visuel est refusé.
 
 ### Story 1080×1920
 - **Haut 250 px** : nom du compte, barre de statut.
-- **Bas 320 px** : bouton « Envoyer un message », légende, CTA de la plateforme.
+- **Bas 320 px** : bouton « Envoyer un message », légende, CTA.
 - **Côtés 120 px** : flèche de navigation.
 - Le bloc contacts vit **au-dessus** de 320 px, jamais dessous.
 
 ### Feed 1080×1350 et 1080×1080
-- Bas de l'image partiellement masqué par la légende sur certains affichages : les contacts
-  restent à au moins 72 px du bord bas.
+- Le bas de l'image peut être partiellement masqué par la légende : contacts à ≥ 72 px du bord.
 
-### Affiches A5/A4
-- Zone de fixation / agrafage en haut : ne pas mettre le titre à moins de 10 mm du bord haut.
-- Lisibilité à 2 mètres minimum pour A4 en extérieur : corps de texte ≥ 24 pt pour les infos clés.
+### Affiches A5 / A4
+- Zone de fixation en haut : titre à ≥ 10 mm du bord haut.
+- Lisibilité à 2 m pour un A4 en extérieur : infos clés à ≥ 24 pt.
 
-## 3. Grille de composition
+## 3. Aucun élément d'interface du modèle
 
-- Grille de 12 colonnes sur la largeur utile (largeur − marges), gouttière = 1 colonne.
-- Le titre occupe au minimum 6 colonnes ; il peut déborder de la grille **une fois**, jamais deux.
-- Alignement : un seul bord de référence pour les blocs texte (gauche ou centre), pas les deux.
-- Le bloc date-lieu est **un** bloc : date et heure sur une ligne, lieu en dessous, ou trois
-  lignes dans le même bloc. Jamais dispersé dans deux coins.
-- Zone de respiration : au moins 1 hauteur de ligne entre deux niveaux différents.
+Un modèle sert de référence de **style** : structure, ambiance, effets, traitement du titre.
+On ne recopie **jamais** son interface :
 
-## 4. Pièges fréquents
+- badge de durée (`12:45`), barre de progression, boutons de plateforme, curseur ;
+- faux play, vignettes de vidéo, logos YouTube / Facebook / Instagram / TikTok ;
+- numéros d'épisode ou compteurs qui n'appartiennent pas à l'événement.
+
+Si un modèle est une capture d'écran, on reconstruit l'ambiance (dégradé, texture, lumière) sans
+le chrome de l'application.
+
+## 4. Grille de composition
+
+- 12 colonnes sur la largeur utile, gouttière = 1 colonne.
+- Le titre occupe au moins 6 colonnes ; il peut déborder de la grille **une fois**, jamais deux.
+- Un seul bord de référence pour les blocs texte (gauche ou centre), pas les deux.
+- Le bloc **date-heure-lieu** est **un** bloc : jamais dispersé dans deux coins.
+- Zone de respiration : au moins une hauteur de ligne entre deux niveaux.
+- La dominante bleue se lit dans la **structure** (fond, masses, dégradés), pas seulement dans un
+  bandeau : si le bleu n'apparaît que sur 20 % posés en aplat, c'est un échec.
+
+## 5. Pièges fréquents
 
 | Piège | Conséquence | Parade |
 |---|---|---|
-| Texte collé au bord | Coupé à l'impression / masqué | Marge de sécurité de la table § 1 |
-| Titre à 7 mots en miniature | Illisible en vignette | Retirer des mots, jamais rétrécir sous 54 px de corps |
+| Texte collé au bord | Coupé à l'impression / masqué | Marges du § 1 |
+| Titre à 7 mots en miniature | Illisible en vignette | Retirer des mots, jamais descendre sous 54 px |
 | Contacts sous l'interface de story | Invisibles | Remonter à 320 px du bas |
-| Photo plein cadre sans scrim | Contraste < 3:1 | Scrim charte 40–75 % derrière le texte |
+| Photo plein cadre sans voile | Contraste < 3:1 | Voile bleu 40–75 % derrière le texte |
 | A5 exporté en 72 dpi | Flou à l'impression | 300 dpi, 1748×2480 px |
-| Couleurs RVB pour l'impression | Dérive à l'impression | Convertir en CMJN pour les flyers, signaler l'écart |
-| Visage sur la grille de pli A4 | Visage déformé | Garder les visages hors axe de pli |
+| RVB imprimé | Dérive de bleu | CMJN + signalement de l'écart |
+| Visage sur l'axe de pli A4 | Visage déformé | Visages hors pli |
+| Effets empilés « pour le style » | Visuel sale, modèle trahi | Un effet = une fonction (profondeur, lumière, texture) |
 
-## 5. Déclinaison d'un même thème
+## 6. Déclinaison d'un même thème
 
-Un thème = un duo de polices + une palette + une hiérarchie. En passant d'un format à l'autre :
+Un thème = un duo de polices + une méthode de palette + une hiérarchie. En changeant de format :
 
-| Élément | Règle de déclinaison |
+| Élément | Règle |
 |---|---|
-| Titre | Même casse, même duo, corps adapté ; en story on peut monter à 3 lignes |
-| Photo | Même cadrage, recadrage plus serré autorisé (buste) en story et carré |
-| Date-lieu | Bloc identique, repositionné selon les zones d'interface |
-| Contacts | Même contenu exact, corps jamais inférieur à 24 px |
-| Fond | Même famille de fond ; le fond peut changer si le recadrage l'impose (le signaler) |
+| Dominante bleue | même famille de fond, même axe de dégradé ; le bleu reste ≥ 60 % |
+| Tenue (secondaire) | même teinte échantillonnée, mêmes valeurs dérivées |
+| Titre | même casse, même duo ; en story on peut monter à 4 lignes |
+| Photo | même cadrage, recadrage plus serré (buste) autorisé |
+| Date-heure-lieu | bloc identique, repositionné selon les zones d'interface |
+| Contacts | contenu exact identique, ≥ 24 px |
+| Accent | même couleur, même rôle (date, lettre, lumière) |

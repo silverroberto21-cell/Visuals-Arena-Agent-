@@ -1,69 +1,70 @@
 # Typographie — un duo par thème
 
-Règle : **titre + texte**, deux familles maximum, licences libres pour usage commercial, accents
-français complets (`É È À Ç Ô Î Û`, `œ`), un seul duo par thème (tous formats confondus),
-3 graisses maximum. La justification tient en **une ligne**.
+Règle : **titre + texte**, 2 familles maximum (3 exceptionnellement), polices libres d'usage
+(type Google Fonts), accents français complets (`É È À Ç Ô Î Û`, `œ`). Un seul duo par thème,
+identique sur tous les formats. Justification : **une ligne**.
 
-## 1. Méthode de choix (30 secondes)
+## 1. Ordre de décision
 
-1. Repérer l'**occasion** : institutionnel, foi/évangélisation, conférence pro, jeunesse/concert,
-   mariage/cérémonie, formation, communauté.
-2. Choisir le **caractère du titre** : serif éditorial (gravité, élégance), sans-serif géométrique
-   (modernité, clarté), condensé (impact, affiche), script (uniquement cérémonie, jamais pour les
-   infos pratiques).
-3. Choisir un **texte neutre et très lisible** : sans-serif à grande hauteur d'x, chiffres clairs
-   (indispensable pour dates, heures, numéros).
-4. Vérifier le **contraste de personnalité** : titre expressif + texte discret. Jamais deux
-   familles également expressives.
-5. Verrouiller et le noter dans la note de livraison.
+1. **Fiche de thème existante** dans `/themes` → on l'applique, sans re-discuter.
+2. **Police imposée** par le commanditaire → on l'applique, et on choisit seulement la
+   complémentaire.
+3. Sinon → **nouvelle réflexion** typographique selon l'occasion (ci-dessous).
 
-## 2. Duos validés
+## 2. Repères d'occasion
 
-| Occasion | Titre | Texte | Justification en une ligne |
-|---|---|---|---|
-| Institutionnel / conférence pro | **Montserrat** (700/800) | **Inter** (400/600) | Géométrie institutionnelle + chiffres très lisibles pour dates et horaires. |
-| Église / évangélisation / convention | **Playfair Display** (700) | **Source Sans 3** (400/600) | Serif solennel pour le titre, sans-serif sobre pour que l'heure et le lieu restent factuels. |
-| Séminaire / enseignement | **Sora** (600/700) | **Inter** (400) | Titre contemporain et structuré, texte neutre pour un contenu dense. |
-| Jeunesse / concert / soirée | **Anton** (400) | **Rubik** (400/500) | Condensé à fort impact pour l'affiche, Rubik arrondi et lisible pour les infos. |
-| Louange / veillée / retraite | **Cormorant Garamond** (600) | **Lato** (400/700) | Serif chaleureux et respirant, Lato stable pour les coordonnées. |
-| Mariage / cérémonie élégante | **Cinzel** (500/600) | **Jost** (400) | Capitales gravées pour la solennité, Jost épuré pour les informations pratiques. |
-| Formation / atelier / éducation | **Fraunces** (600) | **Work Sans** (400/500) | Serif contemporain accueillant, Work Sans net en petit corps. |
-| Communauté / associatif / Africa-focused | **Archivo** (700) | **Karla** (400/700) | Titre large et affirmé, Karla compact et lisible sur mobile. |
-| Webinaire / tech / produit | **Space Grotesk** (600) | **Inter** (400) | Ton technique assumé, Inter assure la neutralité des données. |
-| Urgence / campagne d'information | **Bebas Neue** (400) | **Barlow** (400/600) | Condensé qui tient un titre entier en gros corps, Barlow très lisible en petit. |
-| Événement premium / gala | **Bodoni Moda** (600) | **Manrope** (400/600) | Contraste éditorial haut de gamme, Manrope moderne pour la partie pratique. |
+| Occasion | Caractère du titre | Piste de duo |
+|---|---|---|
+| Solennel, institutionnel, convention | serif classique | Playfair Display / Cormorant Garamond + Source Sans 3 |
+| Conférence, enseignement, séminaire | sans-serif géométrique | Montserrat / Sora + Inter |
+| Jeunesse, énergie, concert, veillée jeune | sans-serif gras, condensé | Anton / Bebas Neue + Rubik |
+| Célébration, mariage, gala | serif de contraste ou script en accent | Bodoni Moda + Manrope, script lisible en lettrine |
+| Prière, recueillement, retraite | serif respirant, corps généreux | Cormorant Garamond + Lato |
+| Communauté, associatif, Afrique francophone | sans-serif affirmé | Archivo + Karla |
+| Formation, atelier | serif contemporain | Fraunces + Work Sans |
+| Urgence, campagne d'information | condensé à fort impact | Bebas Neue + Barlow |
+| Webinaire, tech, produit | grotesque contemporain | Space Grotesk + Inter |
 
-**Valeur de repli** si aucune occasion ne se dégage nettement : Montserrat 700/800 + Inter 400/600
-(institutionnel sûr, lisible, sans risque).
+**Repli** si l'occasion n'est pas identifiable : Montserrat (700/800) + Inter (400/600).
 
-## 3. Réglages typographiques
+## 3. Le script : accent uniquement
 
-| Élément | Corps indicatif (1280×720) | Corps indicatif (1080×1350) | Interligne | Interlettrage |
+- **Usage autorisé** : une lettre décorative dans le titre, une lettrine, un mot isolé de
+  célébration — toujours en petit volume.
+- **Usage interdit** : date, heure, lieu, adresse, contacts, mentions obligatoires, textes longs,
+  sous-titres. Un script illisible en vignette fait échouer l'auto-contrôle.
+- Un script doit rester **lisible à 160 px de large** : si on ne déchiffre pas la lettre, on
+  change de script ou de traitement.
+
+Exemples de scripts lisibles : Great Vibes (lettrine), Parisienne, Dancing Script (à éviter en
+petit corps), Playfair Display Italic (faux script, très lisible).
+
+## 4. Réglages
+
+| Élément | Corps (1280×720) | Corps (1080×1350) | Interligne | Interlettrage |
 |---|---|---|---|---|
 | Titre | 96–140 px | 90–130 px | 0,92–1,0 | −2 à 0 % (serif) / +2 % (capitales) |
 | Sur-titre / étiquette | 30–36 px | 28–34 px | 1,1 | +8 à +12 % |
 | Nom d'orateur | 48–64 px | 46–60 px | 1,05 | 0 |
 | Qualité / fonction | 26–32 px | 24–30 px | 1,2 | +2 % |
-| Date-lieu | 34–44 px | 32–42 px | 1,25 | +2 % |
+| Date-heure-lieu | 34–44 px | 32–42 px | 1,25 | +2 % |
 | Contacts | 24–28 px | 24–28 px | 1,35 | +2 % |
 
-Minimum absolu de lisibilité : **24 px** pour tout texte informatif, **54 px** pour le titre d'une
-miniature (en dessous, on retire des mots).
+Minimum absolu : **24 px** pour toute information, **54 px** pour le titre d'une miniature
+(en dessous, on retire des mots : 3 à 6 mots maximum).
 
-## 4. Interdits typographiques
+## 5. Interdits
 
-- Script, manuscrit, blackletter pour la date, l'heure, le lieu ou les contacts.
-- Trois familles ou plus ; plus de 3 graisses.
-- Étirement horizontal/vertical, faux italique, faux gras.
-- Contour blanc ou ombre portée colorée pour « sauver » un contraste (utiliser un scrim).
-- Texte courbé, en arc, en perspective.
-- Titre en capitales sur plus de 3 lignes (illisible en vignette).
-- Justification complète avec césure dans un petit bloc : préférer fer à gauche.
-- Mot seul en fin de ligne dans un titre (`orphan`) : rééquilibrer les retours manuellement.
+- Trois familles ou plus sans justification ; plus de 3 graisses.
+- Script pour une information pratique.
+- Étirement, faux italique, faux gras, texte courbé ou en perspective.
+- Contour blanc ou ombre colorée pour sauver un contraste (utiliser la valeur ou un voile bleu).
+- Titre en capitales sur plus de 3 lignes.
+- Justification complète dans un petit bloc : préférer le fer à gauche.
 
-## 5. Détails français (à contrôler en auto-contrôle)
+## 6. Détails français
 
 - Accents sur les capitales : `ÉVÉNEMENT`, pas `EVENEMENT`.
-- Espace insécable avant `:` `;` `!` `?` et à l'intérieur des guillemets « ».
-- `18 h 30` (espace insécable), pas `18h30` si la source écrit autrement → **recopier la source**.
-- Pas de veuve/orpheline ; pas de ligne de titre terminée par une préposition seule.
+- Espaces insécables avant `:` `;` `!` `?` et dans les guillemets « ».
+- Recopier le format d'heure de la source (`17 h 00`, `17h00`, `17:00`) : on ne normalise pas.
+- Pas de veuve/orpheline, pas de ligne terminée par une préposition seule.

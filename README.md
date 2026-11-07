@@ -1,110 +1,119 @@
 # Visual Arena Agent
 
-Agent **directeur artistique senior** pour flyers, affiches, miniatures YouTube et visuels réseaux.
-Il produit des visuels sous **palette stricte**, avec la **photo de l'orateur intacte** et des
-**textes recopiés à la lettre**, puis livre une variante et une liste de points à vérifier.
+Agent **directeur artistique et graphiste senior** pour la communication visuelle d'église et
+d'événements : flyers, affiches, miniatures YouTube, visuels réseaux sociaux.
 
-La consigne de référence est intégrée telle quelle dans [`AGENT.md` § 1](AGENT.md) : elle est
-**immuable** et prime sur toute autre instruction.
+Principes : **bleu dominant** (~60 %), **seconde couleur prise dans la tenue de l'orateur** (~30 %),
+un **duo de polices par thème**, un **sujet jamais altéré**, des **textes recopiés à la lettre**.
+L'agent est **autonome** : il ne pose une question que si une information obligatoire manque.
+
+La consigne de référence est intégrée **mot pour mot** dans [`AGENT.md` § 1](AGENT.md) et dans
+[`prompts/system-prompt.md`](prompts/system-prompt.md) : elle est immuable et prime sur toute
+autre instruction.
 
 ---
 
-## Ce que l'agent garantit (5 règles dures)
+## Les 6 règles dures
 
 | # | Règle | Application |
 |---|---|---|
-| 1 | **Palette stricte** | Aucun pixel hors charte : ni aplat, ni dégradé, ni ombre, ni cadre, ni badge, ni icône. Seules nuances : hex charte + opacité. |
-| 2 | **Photo intacte** | Visage, peau, cheveux et tenue jamais retouchés, filtrés, recolorés. Autorisé : recadrage, échelle, miroir, scrim derrière le sujet. |
-| 3 | **Textes exacts** | Noms, dates, heures, lieux, contacts recopiés caractère par caractère. Rien d'inventé, aucune correction silencieuse. |
-| 4 | **Une seule question** | Si une info manque : **un** message numéroté, puis attente. Jamais de questions en rafale, jamais après le début de la création. |
-| 5 | **Formats et lisibilité** | Dimensions exactes, marges de sécurité, contraste mesuré (4,5:1 texte · 3:1 titre). |
+| 1 | **Bleu dominant** | Le fond fourni est la référence couleur ; le bleu et ses dégradés occupent ~60 % et restent visibles au premier regard. Fond non bleu → ramené au bleu et signalé. |
+| 2 | **Palette construite** | Tenue de l'orateur = secondaire obligatoire (~30 %) + 1 à 2 autres secondaires (**3 max**) + accent (~10 %). Tout s'harmonise avec le fond. |
+| 3 | **Sujet intact** | Visage, tenue et proportions jamais altérés : détourage, recadrage, lumière uniquement. Une tenue qui jure se règle par la lumière, pas en la repeignant. |
+| 4 | **Textes exacts** | Noms, dates, heures, lieux, contacts, mentions recopiés caractère par caractère. Rien d'inventé. |
+| 5 | **Question si bloquant** | Seulement si date, lieu, orateur ou photo manque : **un** message groupé, puis attente. |
+| 6 | **Format et lisibilité** | Dimensions exactes, marges de sécurité, titre lisible en petit, aucun élément d'interface de modèle reproduit. |
 
-Et un refus assumé : si la demande contredit la charte (rouge hors palette, lissage du visage,
-texte inventé), l'agent refuse en une phrase **et livre la version conforme** dans le même tour.
+Et un refus assumé : fond vert imposé, visage « rajeuni », texte inventé → refus en une phrase,
+**version conforme livrée dans le même tour**.
 
-## Process en 8 étapes
+## Process en 9 étapes
 
-`format → vérifier les infos → modèle + fond → typographie du thème → hiérarchie
-(titre, orateur, date-lieu, contacts) → composition → auto-contrôle → livrer + 1 variante`
+`format → vérifier infos et ressources → fond (nuances) + modèle → tenue et palette →
+duo de polices du thème → hiérarchie (titre, orateur, date-heure-lieu, contacts) → composition →
+auto-contrôle → livrer + proposer une variante`
 
 ## Sortie imposée
 
 ```text
-[VISUEL FINAL]
+[VISUEL FINAL — PNG/JPG aux bonnes dimensions]
 --- NOTE (2 lignes) ---
-Modèle : … · Fond : …
+Modèle : … · Fond : … (nuances) · Palette : bleu dominant + tenue + secondaires + accent.
 Polices : Titre « … » / Texte « … » — justification en une ligne.
 --- À VÉRIFIER ---
-• 3 à 5 points actionnables
---- VARIANTE PROPOSÉE ---
-[Variante étiquetée] + 1 phrase
+Noms, dates, heures : … (une seule ligne)
+Souhaites-tu une variante (disposition, nuances, texte) ?
 ```
+
+La variante se **propose** ; elle est produite au tour suivant, sur accord.
 
 ---
 
+## Ressources du dépôt
+
+| Dossier | Contenu | Convention |
+|---|---|---|
+| [`/modeles`](modeles/README.md) | visuels de référence (style, structure, ambiance) | `youtube-priere-01.jpg` |
+| [`/fonds`](fonds/README.md) | fonds **toujours bleus** ou en dégradés de bleu | `bleu-nuit-degrade.jpg` |
+| [`/orateurs`](orateurs/README.md) | une photo par orateur | `nom-prenom.jpg` |
+| [`/themes`](themes/README.md) | fiches de thème (ambiance, polices, accents) — **elles priment** | `atmosphere-de-priere.md` |
+
 ## Démarrage rapide
 
-### 1. Renseigner la structure
-
-La charte contient trois champs à remplir au déploiement :
-
-- `[STRUCTURE]` — nom exact de l'organisation ;
-- `[HEX + règles]` — palette et interdits ;
-- `[A5/A4/1080×1350]` — format flyer à trancher à l'étape 1.
-
-Sans ces éléments, l'agent ne crée pas : il pose **une** question groupée
-(voir [`templates/question-groupee.md`](templates/question-groupee.md)).
-
-### 2. Installer sur votre outil
+1. **Renseigner la structure** : `[NOM DE LA STRUCTURE]` dans `AGENT.md` § 1 et
+   `prompts/system-prompt.md`. À défaut, l'agent ne nomme jamais la structure et ne l'invente pas.
+2. **Peupler les dossiers** : quelques modèles, un ou deux fonds bleus, les photos des orateurs,
+   les fiches de thème utiles.
+3. **Coller le prompt** sur votre outil :
 
 | Plateforme | Où coller |
 |---|---|
-| ChatGPT — Custom GPT | Instructions ← [`prompts/system-prompt.md`](prompts/system-prompt.md) ; connaissances ← `specs/*` |
-| Claude — Project | Instructions du projet ← même fichier ; fichiers ← `specs/*` + charte + modèles |
-| Gemini — Gem | Instructions ← même fichier ; connaissances ← `specs/*` |
-| Agent de dépôt / code | `AGENT.md` (contexte) + `agent.yaml` (config) |
+| ChatGPT — Custom GPT | Instructions ← [`prompts/system-prompt.md`](prompts/system-prompt.md) ; connaissances ← `specs/*` + dossiers ressources |
+| Claude — Project | Instructions du projet ← même fichier ; fichiers ← specs + ressources |
+| Gemini — Gem | Instructions ← même fichier ; connaissances ← specs + ressources |
+| Agent de dépôt | `AGENT.md` (contexte) + `agent.yaml` (config) |
 
 Détails et check-list de validation : [`prompts/adaptations.md`](prompts/adaptations.md).
 
-### 3. Envoyer un brief
+4. **Envoyer un brief** : [`templates/brief.md`](templates/brief.md) — ou les informations en vrac,
+   l'agent fait le tri.
 
-Utiliser [`templates/brief.md`](templates/brief.md) — ou envoyer les 5 pièces jointes en vrac,
-l'agent fait le tri.
-
-⚠️ En pratique, pour des flyers très textuels, la génération d'image directe produit des fautes de
-texte. L'agent produit alors une **fiche de composition** ou un **SVG/HTML calibré** (hex exacts,
-dimensions exactes, textes exacts) puis l'export — voir `prompts/adaptations.md` § 5.
+⚠️ Pour les flyers très textuels, la génération d'image directe produit des fautes de texte.
+L'agent produit alors un **SVG/HTML calibré** (hex exacts, dimensions exactes, textes exacts) puis
+l'export — voir `prompts/adaptations.md` § 4.
 
 ---
 
 ## Arborescence
 
 ```text
-AGENT.md                        Fiche agent + charte intégrale (source de vérité)
+AGENT.md                        Consigne intégrale (source de vérité) + règles d'exécution
 agent.yaml                      Configuration machine
 prompts/
-  system-prompt.md              Prompt prêt à coller
-  adaptations.md                Custom GPT / Claude / Gem / agent de code / humain
+  system-prompt.md              Prompt prêt à coller (consigne verbatim)
+  adaptations.md                Custom GPT / Claude / Gem / agent de dépôt / humain
 specs/
-  formats.md                    Dimensions, marges, zones d'interface, pièges
-  palette.md                    Application de la charte couleurs, contraste, CMJN
-  typographie.md                Duos de polices par occasion + réglages
-  checklist.md                  Auto-contrôle de l'étape 7
+  formats.md                    Dimensions, marges, zones d'interface, refus des UI de modèle
+  palette.md                    Extraction du bleu, 60/30/10, tenue, contraste, CMJN
+  typographie.md                Duos par occasion, script en accent, réglages
+  checklist.md                  Auto-contrôle de l'étape 8
 templates/
-  brief.md                      Formulaire de brief (les 5 pièces jointes)
-  question-groupee.md           Modèles de question unique + anti-modèles
+  brief.md                      Formulaire de brief + tableau des infos bloquantes
+  question-groupee.md           Question unique (infos bloquantes)
 examples/
-  session-exemple.md            Session complète : question → livraison → déclinaison → refus
+  session-exemple.md            Session complète : miniature, variante, déclinaison, fond non bleu, refus
+modeles/  fonds/  orateurs/  themes/    Ressources du dépôt (voir README de chaque dossier)
 ```
 
 ## Exemple de comportement
 
-`examples/session-exemple.md` déroule un cas complet (données fictives) : brief incomplet →
-question groupée unique → livraison A5 + 1080×1350 → déclinaison story + carré → refus argumenté
-d'une demande hors charte.
+[`examples/session-exemple.md`](examples/session-exemple.md) déroule cinq tours (données fictives) :
+demande complète livrée directement → variante sur accord → déclinaison story/carré → fond non bleu
+ramené au bleu → refus argumenté d'un fond vert et d'une retouche du visage.
 
 ## Version
 
-`1.0.0` — toute modification doit conserver la charte verbatim et les 5 règles dures.
-Une évolution de charte se fait en modifiant `AGENT.md`, `prompts/system-prompt.md` **et** le
-`version` de `agent.yaml`, dans le même commit.
+`2.0.0` — consigne remplacée le 2026-11-07 (palette déduite du fond, autonomie, sortie qui propose
+la variante). Toute modification doit conserver la consigne verbatim et les 6 règles dures.
+Une évolution de consigne se fait dans `AGENT.md`, `prompts/system-prompt.md` **et** le `version`
+de `agent.yaml`, dans le même commit.

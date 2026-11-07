@@ -1,75 +1,64 @@
-# Modèles de question groupée
+# Question groupée (infos bloquantes uniquement)
 
-Une seule question, une seule fois, avant de créer. 6 lignes maximum, numérotées, avec une valeur
-de repli par point. Pas de préambule, pas d'excuses, pas de deuxième série.
+Règle : on ne pose une question que si elle est **vraiment bloquante** — c'est-à-dire si l'une des
+quatre informations obligatoires manque (**date, lieu, orateur, photo**), ou si le format n'est pas
+déductible. Un seul message, groupé, puis attente.
 
-## Règle de déclenchement
+Six lignes maximum, numérotées, sans préambule. Tout le reste se décide et se livre.
 
-On ne pose la question que si **au moins un élément bloquant** manque :
-
-- pas de charte couleurs (hex) ;
-- pas de format demandé ;
-- pas de titre ou pas de date ;
-- pas de photo d'orateur alors qu'un orateur est annoncé ;
-- pas de contacts alors qu'ils doivent figurer.
-
-Tout le reste (fond, modèle, numéro secondaire, ordre des mentions) se décide et part en
-« À vérifier ». On ne bloque jamais pour du confort.
-
-## Modèle 1 — Brief partiel (cas courant)
+## Modèle 1 — Cas courant (deux manques)
 
 ```text
-Avant de créer, il me manque 3 éléments (une seule fois, promis) :
+Deux infos bloquantes avant de créer (une seule fois) :
 
-1. Format exact : miniature 1280×720, flyer A5/A4, post 1080×1350, story 1080×1920 ou carré
-   1080×1080 ? (à défaut, je livre en 1080×1350)
-2. Charte couleurs : les hex + règles. Sans eux, je ne peux pas garantir la palette.
-3. Contact à afficher : téléphone, WhatsApp ou e-mail ? (à défaut, je retire la ligne contact)
+1. Orateur : nom exact + qualité, et la photo correspondante dans /orateurs (nom-prenom.jpg) ?
+2. Date : jour, date, mois et année — recopiés tels quels.
 
-Réponds en vrac, je fais le tri.
+Je pars sur une miniature 1280×720 si tu ne précises pas le format.
 ```
 
-## Modèle 2 — Premier contact, aucun élément fourni
+## Modèle 2 — Premier contact, aucune ressource
 
 ```text
-Pour lancer le visuel, il me faut 4 choses :
+Pour lancer, il me faut 4 choses :
 
-1. Structure (nom exact) + logo si tu en as un.
-2. Charte couleurs : hex + règles (dominante, accent, interdits).
-3. L'événement : titre, thème, orateur(s) + photo, date, heure, lieu, contacts — recopiés
-   tels quels, je ne corrige rien sans te le signaler.
-4. Format : miniature 1280×720, flyer A5/A4, post 1080×1350, story 1080×1920, carré 1080×1080.
+1. Format : miniature 1280×720, flyer A5/A4, post 1080×1350, story 1080×1920, carré 1080×1080 ?
+2. Date complète (jour, date, mois, année) et heure.
+3. Lieu : nom + adresse + ville.
+4. Orateur : nom exact, qualité, et sa photo (nom-prenom.jpg dans /orateurs).
 
-Ajoute 1 à 3 modèles dont tu aimes le style, et les fonds disponibles si tu en as.
-Sans modèle, je pars sur une composition institutionnelle sobre.
+Le fond, le modèle et la palette, je m'en occupe ; titre, contacts et mentions, envoie-les si tu
+les as, sinon je compose sans.
 ```
 
-## Modèle 3 — Manque bloquant ponctuel
+## Modèle 3 — Photo manquante dans /orateurs
 
 ```text
-Il me manque la charte couleurs (hex + règles) : sans elle, toute création sortirait de ta
-palette. Envoie-la et je lance immédiatement — tout le reste du brief est complet.
+Bloquant : je ne trouve pas la photo de [NOM] dans /orateurs.
 
-Si tu n'as pas de charte formalisée, dis-le : je te proposerai une palette de 4 couleurs à
-valider avant de créer.
+1. Le fichier attendu est `nom-prenom.jpg`. Tu peux le déposer, ou m'envoyer la photo ici ?
+2. Si elle n'existe pas, je peux composer sans portrait (titre + typographie seuls) — dis-moi.
+
+Tout le reste est prêt : je démarre dès ta réponse.
 ```
 
-## Modèle 4 — Donnée contradictoire (pas une question de confort)
+## Modèle 4 — Donnée incohérente ou ambiguë (pas une question de confort)
 
 ```text
-Une seule vérification avant de créer :
+Une vérification avant de créer, puis je livre :
 
-1. Ta source indique « samedi 14 mars 2026 » ; le 14 mars 2026 tombe un samedi. Je confirme
-   tel quel ?
-2. Deux numéros différents apparaissent (… et …) : lequel afficher, ou les deux ?
+1. Ta source indique « dimanche 14 mars 2026 » ; le 14 mars 2026 est un samedi. Je recopie
+   « dimanche 14 mars » tel quel, ou tu corriges la date ?
+2. Deux numéros différents apparaissent (… et …) : lesquels afficher ?
 
-Je crée dès ta réponse ; les deux versions restent possibles en une minute.
+La composition est prête : je l'adapte en une minute.
 ```
 
 ## Anti-modèles (à ne jamais faire)
 
-- Trois messages successifs avec une question chacun.
-- Une question après avoir commencé à composer.
-- « Peux-tu préciser le style souhaité ? » sans proposition par défaut.
-- Demander une info déjà présente dans le brief.
-- Demander une autorisation de création au lieu de créer.
+- Demander « quel style veux-tu ? » alors que les modèles du dépôt répondent.
+- Demander la palette : elle se déduit du fond.
+- Demander une validation avant de composer.
+- Poser une deuxième question après avoir commencé.
+- Bloquer sur le titre, l'heure, les contacts ou les mentions : ils ne sont pas bloquants.
+- Réclamer une info déjà présente dans le brief ou dans `/themes`.
