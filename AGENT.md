@@ -418,4 +418,6 @@ Souhaites-tu une variante (disposition, nuances, texte) ?
 | `templates/fiche-modele.md` | Fiche de description d'un modèle (dont fusionné) |
 | `templates/question-groupee.md` | Question groupée (infos bloquantes uniquement) |
 | `examples/session-exemple.md` | Session type de bout en bout |
+| `livrables/` | visuels sortis : `<AAAA-MM-JJ>-<format>-<theme>.jpg` + note homonyme `.md`, jamais écrasés |
+| `scripts/` | outillage de rendu (hors charte), versionné pour rejouer un visuel |
 | `agent.yaml` | Configuration machine |
