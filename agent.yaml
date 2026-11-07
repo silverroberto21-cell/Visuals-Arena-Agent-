@@ -4,7 +4,7 @@
 
 name: Visual Arena Agent
 slug: visual-arena-agent
-version: 2.1.0
+version: 2.2.0
 language: fr
 description: >
   Directeur artistique et graphiste senior spécialisé dans la communication visuelle d'église et
@@ -35,8 +35,10 @@ resources:
   - path: /fonds
     content: images de fond, toujours bleues ou en dégradés de bleu
   - path: /orateurs
-    content: une photo par orateur
-    naming: "nom-prenom.jpg"
+    content: archive facultative — la photo arrive avec chaque demande
+    naming: "nom-prenom.jpg"          # uniquement si archivage
+    provided_per_request: true
+    precedence: photo_jointe_a_la_demande
   - path: /themes
     content: fiches de thème (ambiance, polices, accents)
     precedence: la fiche prime sur le choix libre de polices
@@ -140,6 +142,17 @@ hard_rules:
   - id: fusion_de_modeles
     label: Fusion sur demande seulement, 2 variantes, enregistrement avec fiche
     enforcement: block_delivery
+
+orator_photo:
+  source: jointe_a_la_demande
+  archive: /orateurs/nom-prenom.jpg   # facultatif, proposé après livraison
+  precedence: photo_jointe_a_la_demande
+  if_multiple_without_identity: une_seule_question_groupee
+  if_missing_with_orator: bloquant -> question_groupee
+  if_missing_without_orator: composer_sans_portrait
+  allowed: [recadrage, ajustement_de_lumiere]
+  forbid: [retouche_visage, retouche_tenue, filtre]
+  never: demander_toutes_les_photos_a_l_avance
 
 process:
   - format

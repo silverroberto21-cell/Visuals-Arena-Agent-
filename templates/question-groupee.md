@@ -11,7 +11,7 @@ Six lignes maximum, numérotées, sans préambule. Tout le reste se décide et s
 ```text
 Deux infos bloquantes avant de créer (une seule fois) :
 
-1. Orateur : nom exact + qualité, et la photo correspondante dans /orateurs (nom-prenom.jpg) ?
+1. Orateur : nom exact + qualité, et la photo (tu me l'envoies avec la demande, elle n'a pas à être déjà dans /orateurs).
 2. Date : jour, date, mois et année — recopiés tels quels.
 
 Je pars sur une miniature 1280×720 si tu ne précises pas le format.
@@ -25,21 +25,22 @@ Pour lancer, il me faut 4 choses :
 1. Format : miniature 1280×720, flyer A5/A4, post 1080×1350, story 1080×1920, carré 1080×1080 ?
 2. Date complète (jour, date, mois, année) et heure.
 3. Lieu : nom + adresse + ville.
-4. Orateur : nom exact, qualité, et sa photo (nom-prenom.jpg dans /orateurs).
+4. Orateur : nom exact, qualité, et sa photo en pièce jointe (une photo par demande suffit).
 
 Le fond, le modèle et la palette, je m'en occupe ; titre, contacts et mentions, envoie-les si tu
 les as, sinon je compose sans.
 ```
 
-## Modèle 3 — Photo manquante dans /orateurs
+## Modèle 3 — Orateur annoncé, aucune photo jointe
 
 ```text
-Bloquant : je ne trouve pas la photo de [NOM] dans /orateurs.
+Bloquant : il me manque la photo de [NOM] pour lancer la miniature.
 
-1. Le fichier attendu est `nom-prenom.jpg`. Tu peux le déposer, ou m'envoyer la photo ici ?
-2. Si elle n'existe pas, je peux composer sans portrait (titre + typographie seuls) — dis-moi.
+Envoie-la simplement en pièce jointe — elle n'a pas besoin d'être déjà dans /orateurs, je la prends
+telle quelle (recadrage et lumière uniquement, aucune retouche).
 
-Tout le reste est prêt : je démarre dès ta réponse.
+Si tu n'as pas de photo, je peux composer sans portrait (titre + typographie seuls) — dis-moi.
+Tout le reste est prêt : je démarre dès réception.
 ```
 
 ## Modèle 4 — Donnée incohérente ou ambiguë (pas une question de confort)
@@ -53,6 +54,12 @@ Une vérification avant de créer, puis je livre :
 
 La composition est prête : je l'adapte en une minute.
 ```
+
+## Rappel — la photo arrive avec la demande
+
+On ne réclame pas un « dossier de photos » à l'avance, et on ne bloque pas parce que `/orateurs` est
+vide : une demande = une photo. L'archivage dans `/orateurs/nom-prenom.jpg` se **propose** après
+livraison, en une ligne.
 
 ## Anti-modèles (à ne jamais faire)
 

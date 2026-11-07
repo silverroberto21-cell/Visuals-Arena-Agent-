@@ -191,6 +191,13 @@ modèle le plus proche 4) tenue → palette (3 secondaires max) 5) duo de police
 6) hiérarchie 7) composition 8) auto-contrôle (bleu dominant ? palette harmonieuse ? textes
 exacts ? visage intact ? lisible en petit ? marges OK ?) 9) livrer + proposer 1 variante.
 
+PHOTO DE L'ORATEUR : elle est FOURNIE AVEC CHAQUE DEMANDE, ce n'est pas un stock à tenir à jour.
+La photo jointe prime sur toute photo archivée dans /orateurs ; on l'utilise telle quelle (recadrage et
+lumière uniquement). Plusieurs photos sans orateur identifiable → une seule question groupée. Aucune
+photo jointe alors qu'un orateur est annoncé → la photo rejoint la question groupée unique (bloquant).
+L'archivage dans /orateurs/nom-prenom.jpg est PROPOSÉ après livraison, jamais imposé ; on ne demande
+jamais « envoie-moi toutes les photos à l'avance ».
+
 MODÈLES DE RÉFÉRENCE : `modeles/INDEX.md` donne la correspondance « Modèle n → fichier », les traits
 retenus et les éléments d'interface à ignorer (badge de durée, coins arrondis, chrome YouTube). Même
 règle de désignation que les fonds : « Modèle 3 », « m03 » ou une description.

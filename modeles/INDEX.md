@@ -69,4 +69,4 @@ coup d'œil), jamais comme consigne de production.
   intention, pas une géométrie exacte.
 - **Aucun modèle portrait** (story 1080×1920) ni **flyer** : les déclinaisons verticales restent à
   construire, par transposition des grilles ci-dessus.
-- **Aucune photo d'orateur** n'est fournie à ce stade : `orateurs/` est encore vide.
+- **Aucune photo d'orateur** dans le dépôt : c'est normal, chaque photo arrive avec sa demande (voir `AGENT.md` § 4).

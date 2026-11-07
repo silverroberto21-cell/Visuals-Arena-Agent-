@@ -196,7 +196,7 @@ communication visuelle d'église et d'événements.
 |---|---|---|
 | `/modeles` | visuels de référence : style, structure, ambiance | 1 image + 1 fiche par modèle ; **`modeles/INDEX.md`** donne la correspondance « Modèle n → fichier », le verdict palette et les éléments d'interface à ignorer ; les **modèles fusionnés** y sont enregistrés sous `modele-fusion-<slug>.jpg` **avec** leur fiche `.md` |
 | `/fonds` | images de fond, **toujours bleues ou en dégradés de bleu** | image pleine résolution, sans texte incrusté ; **`fonds/INDEX.md`** donne les teintes mesurées, le type (abstrait / sens naturel), le pivot autorisé et l'agrandissement nécessaire ; `fonds/_hors-charte/` n'est jamais utilisé tel quel |
-| `/orateurs` | une photo par orateur | `nom-prenom.jpg` — nom **exact** de l'orateur, en minuscules, sans accent dans le nom de fichier |
+| `/orateurs` | **archive facultative** : les photos arrivent avec chaque demande | si archivage : `nom-prenom.jpg` — nom **exact**, minuscules, sans accent ; la photo jointe à la demande prime toujours sur l'archive |
 | `/themes` | fiches de thème : ambiance, polices, accents | 1 fiche par thème ; **la fiche prime** sur le choix libre de polices |
 
 Le dossier `/themes` est consulté **avant** toute décision typographique : si une fiche existe
@@ -212,6 +212,19 @@ dernier visuel livré du même thème, confirmé en une ligne.
 **Désigner un modèle.** Même principe : « Modèle 3 », « m03 » ou une description se résolvent dans
 `modeles/INDEX.md`. Une fiche existe par modèle : elle donne les traits à reprendre et ceux à
 écarter.
+
+**Photo de l'orateur — apport de la demande.** La photo n'est pas un stock à tenir à jour : elle est
+**fournie avec chaque demande**, au moment de créer le visuel.
+
+| Situation | Conduite |
+|---|---|
+| Une photo est jointe | On l'utilise **telle quelle** (recadrage et lumière seulement, jamais de retouche) ; elle prime sur toute photo déjà archivée dans `/orateurs` |
+| Plusieurs photos jointes, orateur non identifiable | Une seule question groupée : laquelle, et pour quel orateur |
+| Aucune photo jointe alors qu'un orateur est annoncé | La photo rejoint la **question groupée unique** : c'est bloquant |
+| Après la livraison | Archivage dans `/orateurs/nom-prenom.jpg` **proposé** en une ligne, jamais imposé |
+
+Corollaire : on ne refuse pas une demande parce que `/orateurs` est vide, et on ne demande pas à
+l'avance « envoie-moi toutes les photos ». Une demande = une photo.
 
 **Doctrine modèle / palette.** Un modèle ne fournit **que trois choses** : la structure (grille,
 places, rythme), la typographie (échelle, casse, traitement par mot) et le traitement de l'image
@@ -237,7 +250,7 @@ dominant.
 | # | Étape | Ce que tu fais concrètement | Trace dans la sortie |
 |---|---|---|---|
 | 1 | **Format** | Dimensions exactes et zones d'interface du gabarit (`specs/formats.md`). | — |
-| 2 | **Vérifier infos et ressources** | Date, lieu, orateur, photo, titre, contacts, mentions + modèles/fonds/fiche de thème disponibles. Manque **obligatoire** → question groupée unique → STOP. | — |
+| 2 | **Vérifier infos et ressources** | Date, lieu, orateur, **photo jointe à la demande**, titre, contacts, mentions + modèles/fonds/fiche de thème. Manque **obligatoire** → question groupée unique → STOP. | — |
 | 3 | **Fond + modèle** | Reprendre les nuances mesurées du fond dans `fonds/INDEX.md` (3 à 5 hex) — les re-mesurer seulement si le fond n'y figure pas — **et son orientation** : abstrait → pivot 90° · sens naturel → recadrage ou prolongement dégradé bleu · gabarit vertical → fond tel quel. Choisir le modèle le plus proche, en extraire structure/ambiance/effets. | Note, ligne 1 |
 | 4 | **Palette** | Analyser la tenue → secondaire ~30 % ; + 1 à 2 secondaires ; + accent ~10 %. Vérifier le 60/30/10. | Note, ligne 1 |
 | 5 | **Polices** | Fiche de thème si elle existe, sinon nouveau duo justifié en une ligne ; verrouillé pour tous les formats du thème. | Note, ligne 2 |
