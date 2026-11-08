@@ -194,13 +194,54 @@ communication visuelle d'église et d'événements.
 
 | Dossier | Contenu attendu | Convention |
 |---|---|---|
-| `/modeles` | visuels de référence : style, structure, ambiance | fichiers image ; décrire en une ligne ce qu'on retient de chacun ; les **modèles fusionnés** y sont enregistrés sous `modele-fusion-<slug>.jpg` **avec** leur fiche `.md` |
-| `/fonds` | images de fond, **toujours bleues ou en dégradés de bleu** | image pleine résolution, sans texte incrusté |
-| `/orateurs` | une photo par orateur | `nom-prenom.jpg` — nom **exact** de l'orateur, en minuscules, sans accent dans le nom de fichier |
+| `/modeles` | visuels de référence : style, structure, ambiance | 1 image + 1 fiche par modèle ; **`modeles/INDEX.md`** donne la correspondance « Modèle n → fichier », le verdict palette et les éléments d'interface à ignorer ; les **modèles fusionnés** y sont enregistrés sous `modele-fusion-<slug>.jpg` **avec** leur fiche `.md` |
+| `/fonds` | images de fond, **toujours bleues ou en dégradés de bleu** | image pleine résolution, sans texte incrusté ; **`fonds/INDEX.md`** donne les teintes mesurées, le type (abstrait / sens naturel), le pivot autorisé et l'agrandissement nécessaire ; `fonds/_hors-charte/` n'est jamais utilisé tel quel |
+| `/orateurs` | **archive facultative** : les photos arrivent avec chaque demande | si archivage : `nom-prenom.jpg` — nom **exact**, minuscules, sans accent ; la photo jointe à la demande prime toujours sur l'archive |
 | `/themes` | fiches de thème : ambiance, polices, accents | 1 fiche par thème ; **la fiche prime** sur le choix libre de polices |
 
 Le dossier `/themes` est consulté **avant** toute décision typographique : si une fiche existe
 pour le thème demandé, on reprend son duo et ses accents, sans re-discuter.
+
+**Désigner un fond.** L'utilisateur garde ses propres repères : il peut dire « FOND 3 », « f03 »,
+ou décrire l'image (« le fond cyan en diagonale »). Les trois se résolvent dans `fonds/INDEX.md`
+§ 1 (correspondance des 20 numéros). Un numéro de doublon renvoie au fichier conservé, et on le
+signale. Si deux fonds correspondent à la description : **une seule question groupée**, en citant
+les numéros — jamais une supposition silencieuse. « Le fond que tu as déjà utilisé » = le fond du
+dernier visuel livré du même thème, confirmé en une ligne.
+
+**Désigner un modèle.** Même principe : « Modèle 3 », « m03 » ou une description se résolvent dans
+`modeles/INDEX.md`. Une fiche existe par modèle : elle donne les traits à reprendre et ceux à
+écarter.
+
+**Photo de l'orateur — apport de la demande.** La photo n'est pas un stock à tenir à jour : elle est
+**fournie avec chaque demande**, au moment de créer le visuel.
+
+| Situation | Conduite |
+|---|---|
+| Une photo est jointe | On l'utilise **telle quelle** (recadrage et lumière seulement, jamais de retouche) ; elle prime sur toute photo déjà archivée dans `/orateurs` |
+| Plusieurs photos jointes, orateur non identifiable | Une seule question groupée : laquelle, et pour quel orateur |
+| Aucune photo jointe alors qu'un orateur est annoncé | La photo rejoint la **question groupée unique** : c'est bloquant |
+| Après la livraison | Archivage dans `/orateurs/nom-prenom.jpg` **proposé** en une ligne, jamais imposé |
+
+Corollaire : on ne refuse pas une demande parce que `/orateurs` est vide, et on ne demande pas à
+l'avance « envoie-moi toutes les photos ». Une demande = une photo.
+
+**Doctrine modèle / palette.** Un modèle ne fournit **que trois choses** : la structure (grille,
+places, rythme), la typographie (échelle, casse, traitement par mot) et le traitement de l'image
+(détourage, halo, fondu, profondeur). **Ses couleurs sont ignorées à 100 %** — y compris quand le
+modèle est bleu : le bleu d'un modèle n'est jamais celui du visuel.
+
+Pour chaque visuel, la palette est **reconstruite** :
+
+| Part | Source | Exemple |
+|---|---|---|
+| ~60 % | nuances du **fond choisi** (`fonds/INDEX.md`) | `#031022` → `#0C374C` → `#1B4A7A` |
+| ~30 % | couleur de la **tenue de l'orateur** (chemise, veste) | échantillonnée sur la photo |
+| ~10 % | **un** accent | `#68D8C0` (menthe) ou dérivé du fond |
+
+Conséquence : un modèle violet, arc-en-ciel ou orange **n'est pas un problème** — il est recoloré.
+Aucune couleur de modèle ne remonte dans un visuel, et aucun modèle n'autorise une entorse au bleu
+dominant.
 
 ---
 
@@ -209,8 +250,8 @@ pour le thème demandé, on reprend son duo et ses accents, sans re-discuter.
 | # | Étape | Ce que tu fais concrètement | Trace dans la sortie |
 |---|---|---|---|
 | 1 | **Format** | Dimensions exactes et zones d'interface du gabarit (`specs/formats.md`). | — |
-| 2 | **Vérifier infos et ressources** | Date, lieu, orateur, photo, titre, contacts, mentions + modèles/fonds/fiche de thème disponibles. Manque **obligatoire** → question groupée unique → STOP. | — |
-| 3 | **Fond + modèle** | Analyser les nuances de bleu du fond (3 à 5 hex) **et son orientation** : abstrait → pivot 90° · sens naturel → recadrage ou prolongement dégradé bleu · gabarit vertical → fond tel quel. Choisir le modèle le plus proche, en extraire structure/ambiance/effets. | Note, ligne 1 |
+| 2 | **Vérifier infos et ressources** | Date, lieu, orateur, **photo jointe à la demande**, titre, contacts, mentions + modèles/fonds/fiche de thème. Manque **obligatoire** → question groupée unique → STOP. | — |
+| 3 | **Fond + modèle** | Reprendre les nuances mesurées du fond dans `fonds/INDEX.md` (3 à 5 hex) — les re-mesurer seulement si le fond n'y figure pas — **et son orientation** : abstrait → pivot 90° · sens naturel → recadrage ou prolongement dégradé bleu · gabarit vertical → fond tel quel. Choisir le modèle le plus proche, en extraire structure/ambiance/effets. | Note, ligne 1 |
 | 4 | **Palette** | Analyser la tenue → secondaire ~30 % ; + 1 à 2 secondaires ; + accent ~10 %. Vérifier le 60/30/10. | Note, ligne 1 |
 | 5 | **Polices** | Fiche de thème si elle existe, sinon nouveau duo justifié en une ligne ; verrouillé pour tous les formats du thème. | Note, ligne 2 |
 | 6 | **Hiérarchie** | titre → orateur → date-heure-lieu → contacts. Un niveau = une taille = un rôle. | — |
@@ -278,6 +319,14 @@ repeignant le vêtement. Une tenue qui « jure » se règle par la composition e
 - Un duo par thème, identique sur tous les formats de ce thème ; nouveau thème = nouvelle
   réflexion, sauf fiche de thème ou police imposée.
 - Justification : **une ligne**, dans la note.
+- **Polices embarquées** (`/polices`) : Playfair Display *Black Italic* pour les titres —
+  c'est la face de la vignette de référence ICC Pahou : Didone italique, contraste marqué,
+  empattements fins — et Montserrat *SemiBold* pour la signalétique espacée. Les deux sont sous
+  licence OFL, accents français complets. À défaut, tout serif italique gras convient ;
+  on n'imite pas une police en la déformant (pas de faux italique sur une romaine).
+- **Anton** (`polices/anton-regular.ttf`, OFL) est la face des **thèmes d'exhortation** : capitales
+  condensées très grasses, un titre de 3 mots tient en largeur et reste lisible en vignette.
+  Elle ne remplace Playfair que sur les thèmes où l'énergie prime sur le recueillement.
 
 Paires validées et réglages : `specs/typographie.md`.
 
@@ -357,6 +406,7 @@ Souhaites-tu une variante (disposition, nuances, texte) ?
 | Fiche de thème existante vs nouveau duo à chaque thème | La fiche prime ; sinon nouveau duo justifié. |
 | « Proposer 1 variante » (§ 5, étape 9) vs « proposer 2 variantes » pour une fusion | Deux objets différents : la variante d'un **visuel livré** (1 seule) ≠ les variantes d'un **modèle à choisir** (2, pour trancher un parti pris). |
 | Fond portrait « à utiliser » vs gabarit paysage | Trois cas explicites (§ 3, règle 7) : abstrait → pivot 90° · sens naturel → recadrage ou prolongement bleu · gabarit vertical → tel quel. |
+| Couleurs des modèles vs bleu dominant | Unicité de traitement : **aucune couleur de modèle n'est reprise**, même un bleu. Palette reconstruite à chaque visuel (bleu du fond + tenue de l'orateur + accent), sans exception (§ 4). |
 
 ---
 
@@ -376,4 +426,7 @@ Souhaites-tu une variante (disposition, nuances, texte) ?
 | `templates/fiche-modele.md` | Fiche de description d'un modèle (dont fusionné) |
 | `templates/question-groupee.md` | Question groupée (infos bloquantes uniquement) |
 | `examples/session-exemple.md` | Session type de bout en bout |
+| `polices/` | polices embarquées (Playfair Display, Montserrat, Anton) + licence OFL de chacune |
+| `livrables/` | visuels sortis : `<AAAA-MM-JJ>-<format>-<theme>.jpg` + note homonyme `.md`, jamais écrasés |
+| `scripts/` | outillage de rendu (hors charte), versionné pour rejouer un visuel |
 | `agent.yaml` | Configuration machine |

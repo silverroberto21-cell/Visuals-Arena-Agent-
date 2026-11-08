@@ -56,16 +56,18 @@ La variante se **propose** ; elle est produite au tour suivant, sur accord.
 | Dossier | Contenu | Convention |
 |---|---|---|
 | [`/modeles`](modeles/README.md) | visuels de référence (style, structure, ambiance) | `youtube-priere-01.jpg` |
-| [`/fonds`](fonds/README.md) | fonds **toujours bleus** ou en dégradés de bleu | `bleu-nuit-degrade.jpg` |
-| [`/orateurs`](orateurs/README.md) | une photo par orateur | `nom-prenom.jpg` |
+| [`/fonds`](fonds/README.md) | 24 fonds **bleus** indexés et mesurés — voir [`INDEX.md`](fonds/INDEX.md) | `bleu-nuit-bokeh.jpg` |
+| [`/orateurs`](orateurs/README.md) | **archive facultative** — la photo arrive avec chaque demande | `nom-prenom.jpg` si archivage |
 | [`/themes`](themes/README.md) | fiches de thème (ambiance, polices, accents) — **elles priment** | `atmosphere-de-priere.md` |
+| [`/polices`](polices/README.md) | polices embarquées sous licence OFL — la face de la vignette de référence | `playfair-display-italic-var.ttf` |
+| [`/livrables`](livrables/README.md) | visuels livrés, jamais écrasés | `2026-11-07-miniature-atmosphere-de-priere-1280x720.jpg` |
 
 ## Démarrage rapide
 
 1. **Structure** : renseignée — `Impact Centre Chrétien Pahou (ICC Pahou)`. Signature : nom complet
    sur les flyers A5/A4, forme courte **`ICC Pahou`** sur miniature, story, carré et badge.
-2. **Peupler les dossiers** : quelques modèles, un ou deux fonds bleus, les photos des orateurs,
-   les fiches de thème utiles.
+2. **Peupler les dossiers** : quelques modèles, un ou deux fonds bleus, les fiches de thème utiles.
+   Les **photos d'orateurs**, elles, arrivent avec chaque demande — rien à préparer.
 3. **Coller le prompt** sur votre outil :
 
 | Plateforme | Où coller |
@@ -108,6 +110,9 @@ templates/
 examples/
   session-exemple.md            Session complète : miniature, variante, déclinaison, fond non bleu, refus, fusion
 modeles/  fonds/  orateurs/  themes/    Ressources du dépôt (voir README de chaque dossier)
+polices/                                 Polices embarquées + licences OFL
+livrables/                               Sorties livrées, une par fichier daté
+scripts/                                 Scripts de rendu (hors charte, outillage)
 ```
 
 ## Exemple de comportement
@@ -119,6 +124,8 @@ en un modèle enregistré avec sa fiche.
 
 ## Version
 
+`2.2.0` — ressources réelles intégrées (24 fonds, 5 modèles fichés), doctrine « **aucune couleur de
+modèle n'est reprise** », et **photo d'orateur fournie avec chaque demande** (archive facultative).
 `2.1.0` — ajout des règles **fonds portrait** (pivot / recadrage / prolongement) et **fusion de
 modèles** (2 variantes puis enregistrement avec fiche). `2.0.0` — consigne remplacée
 (palette déduite du fond, autonomie, sortie qui propose la variante). Toute modification doit

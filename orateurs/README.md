@@ -1,4 +1,18 @@
-# /orateurs — photos des orateurs
+# /orateurs — photos des orateurs *(archive facultative)*
+
+⚠️ **La photo de l'orateur est fournie avec chaque demande.** Ce dossier n'est pas un prérequis : une
+demande de miniature arrive normalement avec sa photo jointe, utilisée telle quelle. On y archive
+ensuite, si le commanditaire le souhaite, pour éviter de redemander la même photo la fois suivante.
+
+Règles :
+
+- la **photo jointe à la demande prime** sur toute photo déjà archivée ici ;
+- une photo collée dans la conversation est utilisée **telle quelle** — recadrage et lumière
+  uniquement, jamais de retouche du visage ni de la tenue ;
+- l'archivage est **proposé** après livraison, jamais imposé ;
+- on ne demande jamais « envoie-moi toutes les photos à l'avance ».
+
+## Convention d'archivage
 
 Une photo par orateur, nommée **exactement** d'après l'orateur.
 

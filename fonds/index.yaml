@@ -1,0 +1,397 @@
+# Index machine des fonds — généré à partir des mesures sur les fichiers.
+# Source humaine : fonds/INDEX.md (ne pas éditer les deux en désaccord).
+# Le numéro d'origine (FOND n) est conservé dans le nom de fichier ET dans `alias`.
+
+provenance:
+  structure: "Impact Centre Chrétien Pahou (ICC Pahou)"
+  date: 2026-11-07
+  lots: 2
+  droits: a_confirmer
+
+designation:
+  accepte: ["FOND <n>", "f<n>", "IMAGE DE FOND", "description de l'ambiance"]
+  doublon: utiliser_le_fichier_conserve_et_le_signaler
+  ambiguite: une_seule_question_groupee
+
+total_unique: 24
+total_recu: 26
+
+fonds:
+  - numero: f01
+    fichier: f01-bleu-nuit-halo-cyan.jpg
+    alias: ["Fond 1.jpg", "Fond1"]
+    dimensions: "1453×736"
+    poids_ko: 36
+    type: abstrait
+    pivot_90: true
+    palette: conforme
+    ambiance: "halo cyan radial sur bleu nuit, très sombre"
+    nuances:
+      - { hex: "#1559CC", part: 28 }
+      - { hex: "#1585DE", part: 24 }
+      - { hex: "#0C2A95", part: 21 }
+      - { hex: "#1EAAEA", part: 14 }
+    agrandissement: { miniature: 0.98, story: 2.61, a5: 3.37, a4: 4.77 }
+  - numero: f02
+    fichier: f02-indigo-nuit-faisceau.jpg
+    alias: ["Fond 2.jpg", "Fond2"]
+    dimensions: "1591×736"
+    poids_ko: 26
+    type: abstrait
+    pivot_90: true
+    palette: conforme
+    ambiance: "indigo presque noir, faisceau lavande en diagonale"
+    nuances:
+      - { hex: "#010028", part: 32 }
+      - { hex: "#100D86", part: 23 }
+      - { hex: "#010148", part: 18 }
+      - { hex: "#3127B0", part: 17 }
+    agrandissement: { miniature: 0.98, story: 2.61, a5: 3.37, a4: 4.77 }
+  - numero: f03
+    fichier: f03-bleu-cyan-diagonal.jpg
+    alias: ["FOND 3.jpg", "FOND3"]
+    dimensions: "832×469"
+    poids_ko: 18
+    type: abstrait
+    pivot_90: true
+    palette: conforme
+    ambiance: "dégradé bleu → cyan en diagonale, énergique"
+    nuances:
+      - { hex: "#04EBFE", part: 26 }
+      - { hex: "#0213FF", part: 22 }
+      - { hex: "#07A6FF", part: 22 }
+      - { hex: "#0545FF", part: 16 }
+    agrandissement: { miniature: 1.54, story: 4.09, a5: 5.29, a4: 7.48 }
+    note: "cyan appuyé (~31 %)"
+  - numero: f05
+    fichier: f05-bleu-bokeh-rose.jpg
+    alias: ["FOND5.jpg", "FOND5"]
+    dimensions: "1121×564"
+    poids_ko: 40
+    type: abstrait
+    pivot_90: true
+    palette: à_recaler
+    ambiance: "bokeh bleu avec taches rose/parme"
+    nuances:
+      - { hex: "#2A87EA", part: 32 }
+      - { hex: "#18469A", part: 25 }
+      - { hex: "#3C56B9", part: 21 }
+      - { hex: "#76ABF4", part: 12 }
+    agrandissement: { miniature: 1.28, story: 3.4, a5: 4.4, a4: 6.22 }
+    note: "6 % de rose/parme : adoucir ou masquer avant usage"
+  - numero: f06
+    fichier: f06-bleu-acier-texture.jpg
+    alias: ["FOND 6.jpg", "FOND6"]
+    dimensions: "1308×736"
+    poids_ko: 68
+    type: abstrait
+    pivot_90: true
+    palette: conforme
+    ambiance: "texture toile bleu acier, lumière rasante"
+    nuances:
+      - { hex: "#046398", part: 29 }
+      - { hex: "#02446A", part: 22 }
+      - { hex: "#058BBE", part: 20 }
+      - { hex: "#0AB0D9", part: 17 }
+    agrandissement: { miniature: 0.98, story: 2.61, a5: 3.37, a4: 4.77 }
+    note: "cyan marqué (~45 %)"
+  - numero: f07
+    fichier: f07-bleu-nuit-bokeh.jpg
+    alias: ["FOND 7.jpg", "FOND7"]
+    dimensions: "1377×736"
+    poids_ko: 46
+    type: abstrait
+    pivot_90: true
+    palette: conforme
+    ambiance: "bokeh bleu nuit, nuages diffus"
+    nuances:
+      - { hex: "#0D7CCB", part: 25 }
+      - { hex: "#0D56B1", part: 23 }
+      - { hex: "#0A398F", part: 23 }
+      - { hex: "#0B3AC8", part: 17 }
+    agrandissement: { miniature: 0.98, story: 2.61, a5: 3.37, a4: 4.77 }
+  - numero: f08
+    fichier: f08-cyan-turquoise-degrade.jpg
+    alias: ["FOND 8.jpg", "FOND8"]
+    dimensions: "735×374"
+    poids_ko: 14
+    type: abstrait
+    pivot_90: true
+    palette: limite
+    ambiance: "turquoise lumineux, coins vert sombre"
+    nuances:
+      - { hex: "#02C6EE", part: 30 }
+      - { hex: "#03B6DF", part: 23 }
+      - { hex: "#0481AB", part: 18 }
+      - { hex: "#03CFF0", part: 17 }
+    agrandissement: { miniature: 1.93, story: 5.13, a5: 6.63, a4: 9.38 }
+    note: "cyan/vert dominant (66 % cyan, 13 % vert) : à recaler vers le bleu"
+  - numero: f09
+    fichier: f09-bleu-electrique-bokeh.jpg
+    alias: ["FOND 9.jpg", "FOND9"]
+    dimensions: "736×368"
+    poids_ko: 19
+    type: abstrait
+    pivot_90: true
+    palette: conforme
+    ambiance: "bokeh bleu électrique, taches claires"
+    nuances:
+      - { hex: "#2A79FD", part: 28 }
+      - { hex: "#37AEFE", part: 20 }
+      - { hex: "#122DD8", part: 19 }
+      - { hex: "#1D4DF3", part: 18 }
+    agrandissement: { miniature: 1.96, story: 5.22, a5: 6.74, a4: 9.53 }
+  - numero: f10
+    fichier: f10-bleu-bokeh-clair.jpg
+    alias: ["FOND 10.jpg", "FOND10"]
+    dimensions: "620×388"
+    poids_ko: 12
+    type: abstrait
+    pivot_90: true
+    palette: conforme
+    ambiance: "bokeh bleu clair, taches douces"
+    nuances:
+      - { hex: "#0D5CE6", part: 28 }
+      - { hex: "#0A4CBA", part: 27 }
+      - { hex: "#2486FB", part: 21 }
+      - { hex: "#0C4FC9", part: 16 }
+    agrandissement: { miniature: 2.06, story: 4.95, a5: 6.39, a4: 9.04 }
+    note: "identique pixel à pixel à FOND 12 (doublon écarté)"
+  - numero: f11
+    fichier: f11-bleu-nuit-horizon-vegetal.jpg
+    alias: ["FOND 11.jpg", "FOND11"]
+    dimensions: "620×388"
+    poids_ko: 14
+    type: sens naturel
+    pivot_90: false
+    palette: à_ramener_au_bleu
+    ambiance: "horizon flou avec bande végétale vert/olive en bas"
+    nuances:
+      - { hex: "#030A56", part: 29 }
+      - { hex: "#0E31CB", part: 23 }
+      - { hex: "#4165C7", part: 19 }
+      - { hex: "#799AAA", part: 15 }
+    agrandissement: { miniature: 2.06, story: 4.95, a5: 6.39, a4: 9.04 }
+    note: "bande verte (~10 %) : recadrer ou virer au bleu avant usage"
+  - numero: f13
+    fichier: f13-bleu-nuit-vagues.jpg
+    alias: ["FOND 13.jpg", "FOND13"]
+    dimensions: "734×402"
+    poids_ko: 13
+    type: abstrait
+    pivot_90: true
+    palette: conforme
+    ambiance: "vagues lumineuses bleu nuit"
+    nuances:
+      - { hex: "#0182FE", part: 26 }
+      - { hex: "#0155FB", part: 22 }
+      - { hex: "#012AE0", part: 21 }
+      - { hex: "#011BD0", part: 16 }
+    agrandissement: { miniature: 1.79, story: 4.78, a5: 6.17, a4: 8.73 }
+  - numero: f14
+    fichier: f14-cyan-turquoise-flou.jpg
+    alias: ["FOND 14.jpg", "FOND14"]
+    dimensions: "643×360"
+    poids_ko: 9
+    type: abstrait
+    pivot_90: true
+    palette: conforme
+    ambiance: "turquoise flou, coins sombres"
+    nuances:
+      - { hex: "#0F9BDC", part: 26 }
+      - { hex: "#013186", part: 25 }
+      - { hex: "#046ABA", part: 22 }
+      - { hex: "#1FB7E6", part: 16 }
+    agrandissement: { miniature: 2.0, story: 5.33, a5: 6.89, a4: 9.74 }
+    note: "cyan marqué (~28 %)"
+  - numero: f15
+    fichier: f15-bleu-clair-stries.jpg
+    alias: ["FOND 15.jpg", "FOND15"]
+    dimensions: "626×391"
+    poids_ko: 15
+    type: abstrait
+    pivot_90: true
+    palette: conforme
+    ambiance: "bleu clair très lumineux, fines stries diagonales"
+    nuances:
+      - { hex: "#4FB8FD", part: 26 }
+      - { hex: "#3BA6FD", part: 22 }
+      - { hex: "#59C0FE", part: 20 }
+      - { hex: "#6AC1FE", part: 19 }
+    agrandissement: { miniature: 2.04, story: 4.91, a5: 6.34, a4: 8.97 }
+    note: "fond clair : prévoir un voile dense pour le texte"
+  - numero: f16
+    fichier: f16-cyan-aurore-sombre.jpg
+    alias: ["FOND 16.jpg", "FOND16"]
+    dimensions: "736×414"
+    poids_ko: 15
+    type: abstrait
+    pivot_90: true
+    palette: limite
+    ambiance: "aurore cyan sur fond sombre"
+    nuances:
+      - { hex: "#295782", part: 27 }
+      - { hex: "#283D65", part: 25 }
+      - { hex: "#248AA7", part: 20 }
+      - { hex: "#19BCCA", part: 15 }
+    agrandissement: { miniature: 1.74, story: 4.64, a5: 5.99, a4: 8.47 }
+    note: "cyan dominant (~46 %) : recaler si la dominante bleue doit être franche"
+  - numero: f17
+    fichier: f17-bleu-scene-louange.jpg
+    alias: ["FOND 17.jpg", "FOND17"]
+    dimensions: "736×414"
+    poids_ko: 22
+    type: sens naturel
+    pivot_90: false
+    palette: conforme
+    ambiance: "scène de louange monochrome bleue : foule, mains levées, projecteurs"
+    nuances:
+      - { hex: "#153663", part: 30 }
+      - { hex: "#214674", part: 22 }
+      - { hex: "#0F2459", part: 21 }
+      - { hex: "#2C5A8E", part: 16 }
+    agrandissement: { miniature: 1.74, story: 4.64, a5: 5.99, a4: 8.47 }
+    note: "personnes identifiables : aucun pivot, recadrage large uniquement"
+  - numero: f18
+    fichier: _hors-charte/f18-violet-magenta-stries.jpg
+    alias: ["FOND 18.jpg", "FOND18"]
+    dimensions: "735×490"
+    poids_ko: 23
+    type: abstrait
+    pivot_90: false
+    palette: hors_charte
+    ambiance: "stries verticales violet/magenta/orange"
+    nuances:
+      - { hex: "#230D2E", part: 26 }
+      - { hex: "#4C2150", part: 23 }
+      - { hex: "#773E66", part: 21 }
+      - { hex: "#985870", part: 19 }
+    agrandissement: { miniature: 1.74, story: 3.92, a5: 5.06, a4: 7.16 }
+    note: "aucun bleu (76 % violet, 24 % chaud)"
+  - numero: f19
+    fichier: f19-bleu-carreaux-translucides.jpg
+    alias: ["FOND 19.jpg", "FOND19"]
+    dimensions: "736×414"
+    poids_ko: 11
+    type: abstrait
+    pivot_90: true
+    palette: conforme
+    ambiance: "carreaux translucides en dégradé bleu"
+    nuances:
+      - { hex: "#4ABDFB", part: 24 }
+      - { hex: "#4292F6", part: 23 }
+      - { hex: "#3D66F1", part: 21 }
+      - { hex: "#4C7DF3", part: 17 }
+    agrandissement: { miniature: 1.74, story: 4.64, a5: 5.99, a4: 8.47 }
+    note: "motif géométrique"
+  - numero: f20
+    fichier: f20-bleu-faisceaux-diagonaux.jpg
+    alias: ["FOND 20.jpg", "FOND20"]
+    dimensions: "600×400"
+    poids_ko: 20
+    type: abstrait
+    pivot_90: true
+    palette: conforme
+    ambiance: "faisceaux lumineux diagonaux sur bleu"
+    nuances:
+      - { hex: "#1471FE", part: 26 }
+      - { hex: "#1680FE", part: 23 }
+      - { hex: "#188CFE", part: 22 }
+      - { hex: "#0F5EFD", part: 20 }
+    agrandissement: { miniature: 2.13, story: 4.8, a5: 6.2, a4: 8.77 }
+  - numero: f21
+    fichier: f21-bleu-halftone-cornes.jpg
+    alias: ["FOND 21.jpg", "FOND21"]
+    dimensions: "626×352"
+    poids_ko: 13
+    type: abstrait
+    pivot_90: true
+    palette: conforme
+    ambiance: "bleu vif avec trame de points en éventail dans les angles"
+    nuances:
+      - { hex: "#1A56FC", part: 26 }
+      - { hex: "#123DFC", part: 22 }
+      - { hex: "#2269FB", part: 19 }
+      - { hex: "#2673FB", part: 19 }
+    agrandissement: { miniature: 2.05, story: 5.45, a5: 7.05, a4: 9.97 }
+  - numero: f22
+    fichier: f22-cyan-bleu-degrade.jpg
+    alias: ["FOND 22.jpg", "FOND22"]
+    dimensions: "736×414"
+    poids_ko: 6
+    type: abstrait
+    pivot_90: true
+    palette: conforme
+    ambiance: "dégradé cyan → bleu lisse, très propre"
+    nuances:
+      - { hex: "#14AAFD", part: 25 }
+      - { hex: "#0F1AF1", part: 22 }
+      - { hex: "#1373FA", part: 21 }
+      - { hex: "#124BF6", part: 16 }
+    agrandissement: { miniature: 1.74, story: 4.64, a5: 5.99, a4: 8.47 }
+  - numero: f23
+    fichier: f23-rayures-cyan-vert.jpg
+    alias: ["FOND 23.jpg", "FOND23"]
+    dimensions: "639×360"
+    poids_ko: 31
+    type: abstrait
+    pivot_90: true
+    palette: à_ramener_au_bleu
+    ambiance: "rayures verticales, lumière cyan/verte au centre"
+    nuances:
+      - { hex: "#021129", part: 26 }
+      - { hex: "#04788E", part: 26 }
+      - { hex: "#033D60", part: 23 }
+      - { hex: "#05A397", part: 14 }
+    agrandissement: { miniature: 2.0, story: 5.33, a5: 6.89, a4: 9.74 }
+    note: "14 % de vert : virer la zone claire vers le bleu avant usage"
+  - numero: f24
+    fichier: f24-rayures-bleu-nuit.jpg
+    alias: ["FOND 24.jpg", "FOND24"]
+    dimensions: "550×309"
+    poids_ko: 13
+    type: abstrait
+    pivot_90: true
+    palette: conforme
+    ambiance: "rayures verticales bleu nuit, bande de lumière à gauche"
+    nuances:
+      - { hex: "#0F2348", part: 28 }
+      - { hex: "#184384", part: 25 }
+      - { hex: "#427ED1", part: 22 }
+      - { hex: "#173161", part: 19 }
+    agrandissement: { miniature: 2.33, story: 6.21, a5: 8.03, a4: 11.35 }
+  - numero: f25
+    fichier: f25-rayures-indigo.jpg
+    alias: ["FOND 25.jpg", "FOND25"]
+    dimensions: "735×420"
+    poids_ko: 26
+    type: abstrait
+    pivot_90: true
+    palette: conforme
+    ambiance: "rayures verticales indigo/bleu acier, lumière douce"
+    nuances:
+      - { hex: "#0F4585", part: 27 }
+      - { hex: "#072A5C", part: 23 }
+      - { hex: "#15619F", part: 23 }
+      - { hex: "#1D82B4", part: 14 }
+    agrandissement: { miniature: 1.74, story: 4.57, a5: 5.9, a4: 8.35 }
+  - numero: f26
+    fichier: f26-typographie-incrustee.jpg
+    alias: ["IMAGE DE FOND.jpg", "IMAGEDEFOND"]
+    dimensions: "1365×768"
+    poids_ko: 458
+    type: abstrait typographique
+    pivot_90: false
+    palette: à_recaler
+    ambiance: "compositions de lettres géantes incrustées sur dégradé bleu"
+    nuances:
+      - { hex: "#103D61", part: 30 }
+      - { hex: "#0F284E", part: 21 }
+      - { hex: "#254A66", part: 16 }
+      - { hex: "#2D5B6D", part: 16 }
+    agrandissement: { miniature: 0.94, story: 2.5, a5: 3.23, a4: 4.57 }
+    note: "typographie incrustée + cyan (~26 %) : masquer ou aplatir les lettres avant usage, jamais de pivot"
+
+doublons_ecartes:
+  - { source: "FOND 4.jpg", doublon_de: f01-bleu-nuit-halo-cyan.jpg }
+  - { source: "FOND 12.jpg", doublon_de: f10-bleu-bokeh-clair.jpg }

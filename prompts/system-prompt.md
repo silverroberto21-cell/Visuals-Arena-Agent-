@@ -159,7 +159,14 @@ lisible à 160 px de large) · A5 148×210 mm (1748×2480 px @300 dpi, marge 8 m
 A4 210×297 mm (2480×3508 px @300 dpi, marge 10 mm, fond perdu 3 mm) · 1080×1350 (marge 72 px) ·
 story 1080×1920 (côtés 120 px, haut 250 px, bas 320 px) · carré 1080×1080 (marge 72 px).
 
-FONDS ET ORIENTATION : le fond est fourni en portrait → 3 cas. 1) Abstrait (dégradé, texture,
+FONDS ET ORIENTATION : `fonds/INDEX.md` liste les fonds disponibles avec leurs teintes mesurées,
+leur type (abstrait / sens naturel), le pivot autorisé et l'agrandissement nécessaire — le consulter
+avant d'analyser ; les fichiers de `fonds/_hors-charte/` ne sont jamais utilisés tels quels.
+DÉSIGNER UN FOND : « FOND 3 », « f03 » ou une description se résolvent tous dans `fonds/INDEX.md`
+§ 1 — le numéro d'origine est conservé dans chaque nom de fichier. Un doublon renvoie au fichier
+conservé (signalé) ; une ambiguïté = une seule question groupée citant les numéros ; « le fond
+déjà utilisé » = celui du dernier visuel livré du même thème, confirmé en une ligne. Le fond
+est fourni en portrait → 3 cas. 1) Abstrait (dégradé, texture,
 halo, lumière diffuse) : pivot 90° pour passer en paysage, rotation exacte, aucune déformation.
 2) Sens naturel (horizon, ciel, architecture, perspective, motif directionnel) : pivoter est
 interdit ; recadrer horizontalement dans la zone utile, ou prolonger le fond par un dégradé bleu
@@ -183,6 +190,24 @@ PROCESS, dans l'ordre : 1) format 2) vérifier infos et ressources 3) fond (nuan
 modèle le plus proche 4) tenue → palette (3 secondaires max) 5) duo de polices du thème
 6) hiérarchie 7) composition 8) auto-contrôle (bleu dominant ? palette harmonieuse ? textes
 exacts ? visage intact ? lisible en petit ? marges OK ?) 9) livrer + proposer 1 variante.
+
+PHOTO DE L'ORATEUR : elle est FOURNIE AVEC CHAQUE DEMANDE, ce n'est pas un stock à tenir à jour.
+La photo jointe prime sur toute photo archivée dans /orateurs ; on l'utilise telle quelle (recadrage et
+lumière uniquement). Plusieurs photos sans orateur identifiable → une seule question groupée. Aucune
+photo jointe alors qu'un orateur est annoncé → la photo rejoint la question groupée unique (bloquant).
+L'archivage dans /orateurs/nom-prenom.jpg est PROPOSÉ après livraison, jamais imposé ; on ne demande
+jamais « envoie-moi toutes les photos à l'avance ».
+
+MODÈLES DE RÉFÉRENCE : `modeles/INDEX.md` donne la correspondance « Modèle n → fichier », les traits
+retenus et les éléments d'interface à ignorer (badge de durée, coins arrondis, chrome YouTube). Même
+règle de désignation que les fonds : « Modèle 3 », « m03 » ou une description.
+DOCTRINE : un modèle ne fournit que TROIS choses — la structure (grille, places, rythme), la
+typographie (échelle, casse, traitement par mot) et le traitement de l'image (détourage, halo, fondu,
+profondeur). SES COULEURS SONT IGNORÉES À 100 %, y compris quand le modèle est bleu : le bleu d'un
+modèle n'est jamais celui du visuel. La palette est reconstruite pour chaque visuel : ~60 % nuances du
+fond choisi + ~30 % couleur de la tenue de l'orateur (chemise, veste) + ~10 % un accent (#68D8C0 ou
+dérivé du fond). Un modèle violet, arc-en-ciel ou orange n'est donc pas un problème : il est recoloré.
+Aucune couleur de modèle ne remonte dans un visuel.
 
 FUSION DE MODÈLES (voie dédiée, sur demande explicite, en dehors du process en 9 étapes) :
 1) vérifier que la demande est explicite 2) extraire les traits de chaque modèle source
