@@ -17,7 +17,7 @@
 | Palette | 60 % bleus mesurés sur f13 (`#0155FB` 22 %, `#012AE0` 21 %, `#011BD0` 16 %, `#0136E9` 15 %, `#0182FE` 25 %) · 30 % blanc bleuté `#F7FAFE` · 10 % or pâle `#F0CD82` |
 | Typographie | **changement demandé** : **Cormorant Garamond** (titre) + **Jost** (marque) — nouveau duo, ni Anton (Maintiens le CAP) ni Playfair (Atmosphère de prière) — fiche : `themes/les-bonnes-nouvelles-du-royaume.md` |
 | Texte | « **Les Bonnes nouvelles du royaume** » seul, deux corps. Portrait : trois lignes (Les Bonnes / nouvelles / du royaume). **Paysage : deux lignes** (Les Bonnes nouvelles / du royaume) pour garder la même masse optique sans écraser la hauteur |
-| Marque | « ICC PAHOU » en haut, sous l'équerre gauche |
+| Marque | **retirée** sur demande du 2026-11-07 : plus de « ICC PAHOU » ni d'équerre en haut à gauche ; l'équerre droite est conservée (structure du cadre) |
 | Pied | filet or seul — **aucune date, aucune heure, aucun lieu inventés** |
 
 ## Version paysage (2026-11-07, demande « je le veux en mode paysage »)
@@ -32,6 +32,10 @@
   1920 × 1080 ; le grain redonne une matière de photo sans salir l'image.
 - Aucune date, aucun texte ajouté : le pied reste un filet.
 - **Ordre de livraison** : 1920 × 1080 d'abord (demandé), A5 paysage ensuite.
+- **Nom de la structure retiré** (demande du 2026-11-07) : « ICC PAHOU » et son équerre ont
+  disparu du coin haut-gauche. Le visuel ne porte plus aucun nom de structure : il ne reste que
+  le titre, le filet or et l'équerre haute droite. Le script accepte les deux états
+  (`… paysage` avec marque, `… paysage sans-marque` sans).
 
 ## Écarts assumés
 

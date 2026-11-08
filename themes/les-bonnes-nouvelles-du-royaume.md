@@ -29,5 +29,6 @@
 | titre portrait | Cormorant Garamond Bold 172 px / Medium 120 px, 3 lignes centrées (« Les Bonnes » / « nouvelles » / « du royaume »), interligne serré |
 | titre paysage | Cormorant Garamond Bold 188 px / Medium 113 px en 1920×1080, **2 lignes** (« Les Bonnes nouvelles » / « du royaume ») |
 | filet | or, largeur 300 px, point central de 10 px, sous le titre |
-| marque | « ICC PAHOU » Jost Medium 23 px tracking 9, sous l'équerre haute gauche |
+| marque | **retirée** : plus de nom de structure dans le coin haut-gauche (demande du 2026-11-07) |
+| équerre | conservée en haut à droite uniquement |
 | pied | filet or seul — aucun texte inventé |

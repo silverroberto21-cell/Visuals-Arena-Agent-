@@ -151,7 +151,7 @@ def wrap(fnt, text, target_w, tracking=0):
     return lines
 
 
-def main(out, fond=FOND, size="digital"):
+def main(out, fond=FOND, size="digital", marque=True):
     w, h = SIZES[size]
     portrait = h > w
     L = LAYOUT["portrait" if portrait else "paysage"]
@@ -185,17 +185,18 @@ def main(out, fond=FOND, size="digital"):
 
     # ---------- filet de cadre intérieur (structure, pas un ornement)
     c = round(70 * k)
-    d.line([(M, MT), (M + c, MT)], fill=OR + (225,), width=max(2, round(3 * k)))
-    d.line([(M, MT), (M, MT + c)], fill=OR + (225,), width=max(2, round(3 * k)))
-    d.line([(W - M - c, MT), (W - M, MT)], fill=OR + (225,), width=max(2, round(3 * k)))
-    d.line([(W - M, MT), (W - M, MT + c)], fill=OR + (225,), width=max(2, round(3 * k)))
-
-    # ---------- accroche
-    fk = font(SANS, round(23 * k), "Medium")
-    mk = text_mask("ICC PAHOU", fk, 9)
-    col = Image.new("RGBA", mk.size, (238, 244, 255, 240))
-    col.putalpha(mk)
-    paste(base, col, M + round(30 * k), MT + round(36 * k))
+    w3 = max(2, round(3 * k))
+    d.line([(W - M - c, MT), (W - M, MT)], fill=OR + (225,), width=w3)
+    d.line([(W - M, MT), (W - M, MT + c)], fill=OR + (225,), width=w3)
+    if marque:
+        # équerre gauche + nom de la structure, seulement si la structure est nommée
+        d.line([(M, MT), (M + c, MT)], fill=OR + (225,), width=w3)
+        d.line([(M, MT), (M, MT + c)], fill=OR + (225,), width=w3)
+        fk = font(SANS, round(23 * k), "Medium")
+        mk = text_mask("ICC PAHOU", fk, 9)
+        col = Image.new("RGBA", mk.size, (238, 244, 255, 240))
+        col.putalpha(mk)
+        paste(base, col, M + round(30 * k), MT + round(36 * k))
 
     # ---------- titre
     if portrait:
@@ -253,5 +254,7 @@ def main(out, fond=FOND, size="digital"):
 
 
 if __name__ == "__main__":
+    # python3 scripts/render_bonnes_nouvelles_f13.py <out> <fond> <digital|a5|paysage|a5-paysage> [sans-marque]
     main(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else FOND,
-         sys.argv[3] if len(sys.argv) > 3 else "digital")
+         sys.argv[3] if len(sys.argv) > 3 else "digital",
+         marque=(len(sys.argv) <= 4 or sys.argv[4] != "sans-marque"))
