@@ -18,15 +18,16 @@
   remplir la zone basse avec des informations non fournies.
 - **Dates** : la date n'est pas un élément de ce thème (jugée négligeable par le commanditaire) —
   aucune date, aucune heure inventées ; le pied ne porte qu'un filet.
-- **Formats déjà servis** : flyer 1080×1350 (2026-11-07) et A5 1748×2480 (même jour, même rendu
-  mis à l'échelle).
+- **Formats déjà servis** : flyer 1080×1350 et A5 1748×2480 (portrait), puis **1920×1080 et A5
+  paysage 2480×1748** — même maquette, titre sur deux lignes en paysage.
 
 ## Réglages de référence (1080×1350, facteur `k = largeur / 1080`)
 
 | Élément | Réglage |
 |---|---|
 | marge | 96 px |
-| titre | Cormorant Garamond Bold 172 px / Medium 120 px, 3 lignes centrées (« Les Bonnes » / « nouvelles » / « du royaume »), interligne serré |
+| titre portrait | Cormorant Garamond Bold 172 px / Medium 120 px, 3 lignes centrées (« Les Bonnes » / « nouvelles » / « du royaume »), interligne serré |
+| titre paysage | Cormorant Garamond Bold 188 px / Medium 113 px en 1920×1080, **2 lignes** (« Les Bonnes nouvelles » / « du royaume ») |
 | filet | or, largeur 300 px, point central de 10 px, sous le titre |
 | marque | « ICC PAHOU » Jost Medium 23 px tracking 9, sous l'équerre haute gauche |
 | pied | filet or seul — aucun texte inventé |

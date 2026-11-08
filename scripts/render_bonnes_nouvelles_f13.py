@@ -20,7 +20,18 @@ import textwrap
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 W, H = 1080, 1350
-SIZES = {"digital": (1080, 1350), "a5": (1748, 2480)}   # 4:5 numérique / A5 300 dpi
+SIZES = {
+    "digital": (1080, 1350),      # 4:5 portrait (feed)
+    "a5": (1748, 2480),           # A5 portrait 300 dpi
+    "paysage": (1920, 1080),      # 16:9 paysage (screen, projection, bannière)
+    "a5-paysage": (2480, 1748),   # A5 paysage 300 dpi (print)
+}
+# géométrie de la maquette, dans les deux orientations : le titre occupe la même
+# proportion de la surface utile, seule la disposition des blocs change.
+LAYOUT = {"portrait": dict(ml=96, mt=96, big=172, small_ratio=0.70,
+                           block_y=0.54, title_center=True),
+          "paysage": dict(ml=132, mt=104, big=196, small_ratio=0.60,
+                          block_y=0.50, title_center=True)}
 SERIF = "polices/cormorant-garamond-var.ttf"
 SANS = "polices/jost-var.ttf"
 FOND = "fonds/f13-bleu-nuit-vagues.jpg"
@@ -142,9 +153,12 @@ def wrap(fnt, text, target_w, tracking=0):
 
 def main(out, fond=FOND, size="digital"):
     w, h = SIZES[size]
-    k = w / 1080.0                     # tout est dimensionné depuis le 1080×1350
+    portrait = h > w
+    L = LAYOUT["portrait" if portrait else "paysage"]
+    k = h / 1350.0 if portrait else h / 1080.0   # échelle : la hauteur porte le corps
     W, H = w, h
-    M = round(96 * k)
+    M = round(L["ml"] * (w / (1080.0 if portrait else 1920.0)))
+    MT = round(L["mt"] * k)
     bg = cover(Image.open(fond).convert("RGB"), W, H)
     bg = bg.filter(ImageFilter.GaussianBlur(1.6))
     bg = bg.filter(ImageFilter.UnsharpMask(radius=3, percent=60, threshold=2))
@@ -166,52 +180,67 @@ def main(out, fond=FOND, size="digital"):
 
     # ---------- filet de cadre intérieur (structure, pas un ornement)
     c = round(70 * k)
-    d.line([(M, M), (M + c, M)], fill=OR + (225,), width=max(2, round(3 * k)))
-    d.line([(M, M), (M, M + c)], fill=OR + (225,), width=max(2, round(3 * k)))
-    d.line([(W - M - c, M), (W - M, M)], fill=OR + (225,), width=max(2, round(3 * k)))
-    d.line([(W - M, M), (W - M, M + c)], fill=OR + (225,), width=max(2, round(3 * k)))
+    d.line([(M, MT), (M + c, MT)], fill=OR + (225,), width=max(2, round(3 * k)))
+    d.line([(M, MT), (M, MT + c)], fill=OR + (225,), width=max(2, round(3 * k)))
+    d.line([(W - M - c, MT), (W - M, MT)], fill=OR + (225,), width=max(2, round(3 * k)))
+    d.line([(W - M, MT), (W - M, MT + c)], fill=OR + (225,), width=max(2, round(3 * k)))
 
     # ---------- accroche
     fk = font(SANS, round(23 * k), "Medium")
     mk = text_mask("ICC PAHOU", fk, 9)
     col = Image.new("RGBA", mk.size, (238, 244, 255, 240))
     col.putalpha(mk)
-    paste(base, col, M + round(30 * k), M + round(44 * k))
+    paste(base, col, M + round(30 * k), MT + round(36 * k))
 
-    # ---------- titre : deux tailles, une seule colonne centrée
-    big_w = W - 2 * M - round(40 * k)
-    f_big = font(SERIF, round(172 * k), "Bold")
-    f_sml = font(SERIF, round(124 * k), "Medium")
-    # mesures
-    lines = ["Les Bonnes", "nouvelles", "du royaume"]
-    while f_big.getlength(lines[1]) > big_w and f_big.size > 60:
-        f_big = font(SERIF, f_big.size - 4, "Bold")
-    f_sml = font(SERIF, round(f_big.size * 0.70), "Medium")
-    print("corps titre :", f_big.size, "/", f_sml.size)
+    # ---------- titre
+    if portrait:
+        # portrait : trois lignes centrées, « royaume » d'un corps plus petit
+        big_w = W - 2 * M - round(40 * k)
+        f_big = font(SERIF, round(L["big"] * k), "Bold")
+        while f_big.getlength("nouvelles") > big_w and f_big.size > 60:
+            f_big = font(SERIF, f_big.size - 4, "Bold")
+        f_sml = font(SERIF, round(f_big.size * L["small_ratio"]), "Medium")
+        print("corps titre :", f_big.size, "/", f_sml.size)
 
-    # hauteur de bloc
-    a_big = f_big.getmetrics()
-    a_sml = f_sml.getmetrics()
-    h1 = a_big[0] + a_big[1]
-    h2 = a_sml[0] + a_sml[1]
-    block = h1 * 2 + h2 * 1.16 + round(26 * k)
-    y = int((H - block) / 2) + round(74 * k)
+        a_big, a_sml = f_big.getmetrics(), f_sml.getmetrics()
+        block = (a_big[0] + a_big[1]) * 2 + (a_sml[0] + a_sml[1]) * 1.16 + round(26 * k)
+        y = int((H - block) / 2) + round(74 * k)
+        cx = W / 2
+        for txt, fnt in (("Les Bonnes", f_big), ("nouvelles", f_big), ("du royaume", f_sml)):
+            m = text_mask(txt, fnt, 0)
+            lay = fill_gradient(m, (255, 255, 255), (223, 234, 253))
+            paste(base, drop(lay, 30, 88, (0, 10)), cx, y + 8, "center")
+            paste(base, lay, cx, y, "center")
+            y += int(m.getbbox()[3] - m.getbbox()[1]) + round(14 * k)
+        line_w, line_y = 150 * k, y + round(6 * k)
+    else:
+        # paysage : deux lignes centrées, la seconde d'un corps plus petit
+        big_w = W - 2 * M - round(60 * k)
+        f_big = font(SERIF, round(L["big"] * k), "Bold")
+        while f_big.getlength("Les Bonnes nouvelles") > big_w and f_big.size > 60:
+            f_big = font(SERIF, f_big.size - 4, "Bold")
+        f_sml = font(SERIF, round(f_big.size * L["small_ratio"]), "Medium")
+        print("corps titre :", f_big.size, "/", f_sml.size)
 
-    for txt, fnt, gap in ((lines[0], f_big, 0), (lines[1], f_big, 1), (lines[2], f_sml, 1.16)):
-        m = text_mask(txt, fnt, 0)
-        lay = fill_gradient(m, (255, 255, 255), (223, 234, 253))
-        paste(base, drop(lay, 30, 88, (0, 10)), W / 2, y + 8, "center")
-        paste(base, lay, W / 2, y, "center")
-        y += int(m.getbbox()[3] - m.getbbox()[1]) + round(14 * k)
+        a_big, a_sml = f_big.getmetrics(), f_sml.getmetrics()
+        block = (a_big[0] + a_big[1]) + (a_sml[0] + a_sml[1]) * 1.2 + round(26 * k)
+        y = int((H - block) / 2) + round(58 * k)
+        cx = W / 2
+        for txt, fnt in (("Les Bonnes nouvelles", f_big), ("du royaume", f_sml)):
+            m = text_mask(txt, fnt, 0)
+            lay = fill_gradient(m, (255, 255, 255), (223, 234, 253))
+            paste(base, drop(lay, 34 * k / 1.25, 88, (0, 10)), cx, y + 8, "center")
+            paste(base, lay, cx, y, "center")
+            y += int(m.getbbox()[3] - m.getbbox()[1]) + round(12 * k)
+        line_w, line_y = 190 * k, y + round(10 * k)
 
     # filet or sous le titre
-    yline = y + round(6 * k)
-    d.line([(W / 2 - 150 * k, yline), (W / 2 + 150 * k, yline)], fill=OR + (235,), width=max(2, round(3 * k)))
+    d.line([(cx - line_w, line_y), (cx + line_w, line_y)], fill=OR + (235,), width=max(2, round(3 * k)))
     r = round(5 * k)
-    d.ellipse([W / 2 - r, yline - r, W / 2 + r, yline + r], fill=OR + (235,))
+    d.ellipse([cx - r, line_y - r, cx + r, line_y + r], fill=OR + (235,))
 
     # ---------- pied : filet seul, aucune date, aucun texte inventé
-    d.line([(W / 2 - 70 * k, H - M - round(24 * k)), (W / 2 + 70 * k, H - M - round(24 * k))],
+    d.line([(cx - 70 * k, H - MT - round(24 * k)), (cx + 70 * k, H - MT - round(24 * k))],
            fill=OR + (200,), width=max(2, round(2 * k)))
 
     base.convert("RGB").save(out, quality=95, subsampling=1, optimize=True)
