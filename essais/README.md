@@ -8,6 +8,7 @@ traitements, et à garder la trace de ce qui a été montré avant validation.
 ```text
 <AAAA-MM-JJ>/miniature-fond<NN>.jpg     un fichier par fond essayé
 <AAAA-MM-JJ>/planche-*.jpg              les quatre côte à côte
+<AAAA-MM-JJ>/miniature-atmosphere-*.jpg essai avec le sujet (orateur) intégré
 ```
 
 ## Règles
@@ -24,3 +25,5 @@ traitements, et à garder la trace de ce qui a été montré avant validation.
 | Série | Fonds | Typographie | Statut |
 |---|---|---|---|
 | `2026-11-07` | 19, 18, 14, 17 | Playfair Display Black Italic + Montserrat SemiBold | en attente du choix d'ICC Pahou |
+| `2026-11-07` | 17 (reprise à l'identique) | vignette d'origine | reprise « change que le fond » |
+| `2026-11-07` | 18 + orateur (AP) | Playfair Display Black Italic + Montserrat SemiBold | sujet intégré à droite, titre resserré |

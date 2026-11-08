@@ -159,7 +159,8 @@ def paste_center(base, layer, cx, cy):
     base.alpha_composite(layer, (round(cx - layer.width / 2), round(cy - layer.height / 2)))
 
 
-def render(job, root, outdir):
+def build_background(job, root):
+    """Fond seul d'un job : matière + voile + voiles, sans aucun texte."""
     bg = cover(Image.open(root + "/" + job["fond"]).convert("RGB"), W, H)
     bg = hue_shift(bg, job.get("hue", 0.0), job.get("desat", 1.0))
     bg = bg.filter(ImageFilter.UnsharpMask(radius=2.2, percent=95, threshold=2))
@@ -197,6 +198,11 @@ def render(job, root, outdir):
     vlayer = Image.eval(Image.new("RGB", (W, H), (96, 84, 196)), lambda v: int(v * 0.62))
     vlit = ImageChops.screen(base.convert("RGB"), vlayer)
     base = Image.composite(vlit.convert("RGBA"), base, beam)
+    return base
+
+
+def render(job, root, outdir):
+    base = build_background(job, root)
 
     d = ImageDraw.Draw(base, "RGBA")
     d.polygon([(96, 74), (128, 74), (112, 104)], fill=MENTHE + (215,))
