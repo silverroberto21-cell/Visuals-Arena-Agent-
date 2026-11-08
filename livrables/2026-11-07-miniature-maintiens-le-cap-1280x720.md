@@ -1,6 +1,7 @@
 # Note de livraison — miniature « Maintiens le CAP, sa Gloire se manifestera »
 
 - **Fichier** : [`2026-11-07-miniature-maintiens-le-cap-1280x720.jpg`](2026-11-07-miniature-maintiens-le-cap-1280x720.jpg)
+  — ⚠️ **v1 avec portrait, remplacée** par la [v2 sans photo](2026-11-07-miniature-maintiens-le-cap-1280x720-v2.md)
 - **Format** : miniature 1280 × 720 (YouTube) · livrée le 2026-11-07
 - **Demande** : « Fais un visuel pour le thème d'aujourd'hui — Thème : Maintiens le CAP, sa Gloire
   se manifestera — Prédicateur : AP Enock MISSIMAHOU — Fond : f07 »
