@@ -10,6 +10,8 @@ usage commercial autorisé, y compris en miniature YouTube.
 | `playfair-display-italic-var.ttf` | Playfair Display **Black Italic** (variable) | **titres** — la face de la vignette de référence | OFL 1.1 → `OFL-playfair-display.txt` |
 | `montserrat-var.ttf` | Montserrat **SemiBold** (variable) | **signalétique** : ligne de rattachement, date, mentions, accents | OFL 1.1 → `OFL-montserrat.txt` |
 | `anton-regular.ttf` | Anton Regular | **titres** des thèmes d'exhortation / d'énergie : capitales condensées très grasses, lisibles en vignette | OFL 1.1 → `OFL-anton.txt` |
+| `cormorant-garamond-var.ttf` | Cormorant Garamond (variable : Light → Bold) | **titres** des thèmes d'annonce / d'évangile : Garamond de labeur, lisible posé sur un fond saturé | OFL 1.1 → `OFL-cormorant-garamond.txt` |
+| `jost-var.ttf` | Jost (variable : Thin → Black) | **signalétique** sobre et géométrique, en alternative à Montserrat | OFL 1.1 → `OFL-jost.txt` |
 
 ## Pourquoi ces deux-là
 

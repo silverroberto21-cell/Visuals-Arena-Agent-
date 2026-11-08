@@ -124,6 +124,9 @@ en un modèle enregistré avec sa fiche.
 
 ## Version
 
+`2.3.0` — deux thèmes typographiques de plus : **Anton** (exhortation, « Maintiens le CAP ») et
+**Cormorant Garamond + Jost** (annonce / évangile, « Les Bonnes nouvelles du royaume »), avec leurs
+fiches dans `themes/`. Les miniatures du thème « Maintiens le CAP » sont livrées avec et sans photo.
 `2.2.0` — ressources réelles intégrées (24 fonds, 5 modèles fichés), doctrine « **aucune couleur de
 modèle n'est reprise** », et **photo d'orateur fournie avec chaque demande** (archive facultative).
 `2.1.0` — ajout des règles **fonds portrait** (pivot / recadrage / prolongement) et **fusion de

@@ -327,6 +327,11 @@ repeignant le vêtement. Une tenue qui « jure » se règle par la composition e
 - **Anton** (`polices/anton-regular.ttf`, OFL) est la face des **thèmes d'exhortation** : capitales
   condensées très grasses, un titre de 3 mots tient en largeur et reste lisible en vignette.
   Elle ne remplace Playfair que sur les thèmes où l'énergie prime sur le recueillement.
+- **Cormorant Garamond** (`polices/cormorant-garamond-var.ttf`, OFL) + **Jost**
+  (`polices/jost-var.ttf`, OFL) forment le duo des **thèmes d'annonce / d'évangile** : un Garamond
+  solennel pour le titre, une géométrique sobre pour la marque et les mentions.
+- Chaque thème garde **son** duo : la présence de plusieurs familles dans `/polices` ne crée pas de
+  mélange à l'intérieur d'un même visuel.
 
 Paires validées et réglages : `specs/typographie.md`.
 
@@ -426,7 +431,7 @@ Souhaites-tu une variante (disposition, nuances, texte) ?
 | `templates/fiche-modele.md` | Fiche de description d'un modèle (dont fusionné) |
 | `templates/question-groupee.md` | Question groupée (infos bloquantes uniquement) |
 | `examples/session-exemple.md` | Session type de bout en bout |
-| `polices/` | polices embarquées (Playfair Display, Montserrat, Anton) + licence OFL de chacune |
+| `polices/` | polices embarquées (Playfair Display, Montserrat, Anton, Cormorant Garamond, Jost) + licence OFL de chacune |
 | `livrables/` | visuels sortis : `<AAAA-MM-JJ>-<format>-<theme>.jpg` + note homonyme `.md`, jamais écrasés |
 | `scripts/` | outillage de rendu (hors charte), versionné pour rejouer un visuel |
 | `agent.yaml` | Configuration machine |
