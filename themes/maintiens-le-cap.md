@@ -20,7 +20,8 @@
   les pixels violet/magenta saturés** sont ramenés au bleu du fond — peaux, chemise, visage
   intacts.
 - **Formats déjà servis** : miniature 1280×720 (2026-11-07, FOND 7) — v1 avec portrait,
-  **v2 sans photo** (composition typographique + rose des vents, date fournie).
+  **v2 sans photo** (composition typographique + rose des vents, date fournie) ; **récapitulatif
+  1280×720** des trois points (la Confiance, l'Alignement, la Persévérance), mêmes éléments.
 
 ## Réglages de référence (miniature 1280×720)
 
