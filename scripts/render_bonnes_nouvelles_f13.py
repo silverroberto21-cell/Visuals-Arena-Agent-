@@ -30,7 +30,7 @@ SIZES = {
 # proportion de la surface utile, seule la disposition des blocs change.
 LAYOUT = {"portrait": dict(ml=96, mt=96, big=172, small_ratio=0.70,
                            block_y=0.54, title_center=True),
-          "paysage": dict(ml=132, mt=104, big=196, small_ratio=0.60,
+          "paysage": dict(ml=132, mt=104, big=212, small_ratio=0.58,
                           block_y=0.50, title_center=True)}
 SERIF = "polices/cormorant-garamond-var.ttf"
 SANS = "polices/jost-var.ttf"
@@ -176,6 +176,11 @@ def main(out, fond=FOND, size="digital"):
     base.alpha_composite(radial(W, H, W * 0.5, H * 0.46, W * 0.72, (150, 200, 255), 26, 160))
     base.alpha_composite(radial(W, H, M + 40, 250, 230, OR, 26, 120))
 
+    # grain fin : le fond f13 est agrandi, un grain léger retrouve une matière de photo
+    noise = Image.effect_noise((W, H), 26).convert("L")
+    grain = Image.merge("RGBA", (noise, noise, noise, Image.new("L", (W, H), 12)))
+    base = Image.alpha_composite(base, grain)
+
     d = ImageDraw.Draw(base, "RGBA")
 
     # ---------- filet de cadre intérieur (structure, pas un ornement)
@@ -232,7 +237,7 @@ def main(out, fond=FOND, size="digital"):
             paste(base, drop(lay, 34 * k / 1.25, 88, (0, 10)), cx, y + 8, "center")
             paste(base, lay, cx, y, "center")
             y += int(m.getbbox()[3] - m.getbbox()[1]) + round(12 * k)
-        line_w, line_y = 190 * k, y + round(10 * k)
+        line_w, line_y = 190 * k, y + round(28 * k)   # le filet respire sous les jambages
 
     # filet or sous le titre
     d.line([(cx - line_w, line_y), (cx + line_w, line_y)], fill=OR + (235,), width=max(2, round(3 * k)))

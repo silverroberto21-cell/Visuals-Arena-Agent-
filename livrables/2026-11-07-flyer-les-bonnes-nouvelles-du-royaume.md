@@ -25,9 +25,13 @@
 - Même fond, même palette, même duo de polices, mêmes marges proportionnelles : **seule la
   disposition change**. Le fond n'est pas pivoté, il est **recadré** dans le 16:9 (fond abstrait,
   aucun sens naturel perdu — `specs/formats.md` §3bis).
-- Titre sur **deux lignes** (188 px / 113 px en 1920 × 1080), centré, filet or et équerres à la
-  même place relative que la version portrait.
+- Titre sur **deux lignes** (188 px / 109 px en 1920 × 1080), centré, filet or et équerres à la
+  même place relative que la version portrait ; le filet or est descendu pour ne pas toucher les
+  jambages de « royaume ».
+- **Grain fin** ajouté (bruit 26, opacité 12/255) : le fond f13 est un 734 × 402 agrandi à
+  1920 × 1080 ; le grain redonne une matière de photo sans salir l'image.
 - Aucune date, aucun texte ajouté : le pied reste un filet.
+- **Ordre de livraison** : 1920 × 1080 d'abord (demandé), A5 paysage ensuite.
 
 ## Écarts assumés
 
