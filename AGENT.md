@@ -319,6 +319,11 @@ repeignant le vêtement. Une tenue qui « jure » se règle par la composition e
 - Un duo par thème, identique sur tous les formats de ce thème ; nouveau thème = nouvelle
   réflexion, sauf fiche de thème ou police imposée.
 - Justification : **une ligne**, dans la note.
+- **Polices embarquées** (`/polices`) : Playfair Display *Black Italic* pour les titres —
+  c'est la face de la vignette de référence ICC Pahou : Didone italique, contraste marqué,
+  empattements fins — et Montserrat *SemiBold* pour la signalétique espacée. Les deux sont sous
+  licence OFL, accents français complets. À défaut, tout serif italique gras convient ;
+  on n'imite pas une police en la déformant (pas de faux italique sur une romaine).
 
 Paires validées et réglages : `specs/typographie.md`.
 
@@ -418,6 +423,7 @@ Souhaites-tu une variante (disposition, nuances, texte) ?
 | `templates/fiche-modele.md` | Fiche de description d'un modèle (dont fusionné) |
 | `templates/question-groupee.md` | Question groupée (infos bloquantes uniquement) |
 | `examples/session-exemple.md` | Session type de bout en bout |
+| `polices/` | polices embarquées (Playfair Display, Montserrat) + licence OFL de chacune |
 | `livrables/` | visuels sortis : `<AAAA-MM-JJ>-<format>-<theme>.jpg` + note homonyme `.md`, jamais écrasés |
 | `scripts/` | outillage de rendu (hors charte), versionné pour rejouer un visuel |
 | `agent.yaml` | Configuration machine |

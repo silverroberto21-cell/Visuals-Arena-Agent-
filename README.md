@@ -59,6 +59,7 @@ La variante se **propose** ; elle est produite au tour suivant, sur accord.
 | [`/fonds`](fonds/README.md) | 24 fonds **bleus** indexés et mesurés — voir [`INDEX.md`](fonds/INDEX.md) | `bleu-nuit-bokeh.jpg` |
 | [`/orateurs`](orateurs/README.md) | **archive facultative** — la photo arrive avec chaque demande | `nom-prenom.jpg` si archivage |
 | [`/themes`](themes/README.md) | fiches de thème (ambiance, polices, accents) — **elles priment** | `atmosphere-de-priere.md` |
+| [`/polices`](polices/README.md) | polices embarquées sous licence OFL — la face de la vignette de référence | `playfair-display-italic-var.ttf` |
 | [`/livrables`](livrables/README.md) | visuels livrés, jamais écrasés | `2026-11-07-miniature-atmosphere-de-priere-1280x720.jpg` |
 
 ## Démarrage rapide
@@ -109,6 +110,7 @@ templates/
 examples/
   session-exemple.md            Session complète : miniature, variante, déclinaison, fond non bleu, refus, fusion
 modeles/  fonds/  orateurs/  themes/    Ressources du dépôt (voir README de chaque dossier)
+polices/                                 Polices embarquées + licences OFL
 livrables/                               Sorties livrées, une par fichier daté
 scripts/                                 Scripts de rendu (hors charte, outillage)
 ```

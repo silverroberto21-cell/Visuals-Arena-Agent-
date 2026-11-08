@@ -14,6 +14,11 @@ from PIL import Image, ImageDraw, ImageFilter, ImageChops, ImageFont
 W, H = 1280, 720
 FD = "/usr/share/fonts/truetype/dejavu/"
 
+TITRE_TTF = "polices/playfair-display-italic-var.ttf"
+TITRE_VAR = "Black Italic"
+SANS_TTF = "polices/montserrat-var.ttf"
+SANS_VAR = "SemiBold"
+
 VIOLET = (58, 59, 143)      # 30 % — prélevé sur la vignette de référence
 MENTHE = (104, 216, 192)    # 10 % — accent
 ACIER = (127, 182, 232)
@@ -36,6 +41,27 @@ JOBS = [
 
 def font(n, s):
     return ImageFont.truetype(FD + n, s)
+
+
+def var_font(path, size, variation=None):
+    f = ImageFont.truetype(path, size)
+    if variation:
+        try:
+            f.set_variation_by_name(variation)
+        except Exception as e:
+            print("variation indisponible:", variation, e)
+    return f
+
+
+def fit(path, variation, text, target_w, start=140, lo=60):
+    """Corps le plus grand possible qui tient dans target_w."""
+    size = start
+    while size > lo:
+        f = var_font(path, size, variation)
+        if f.getlength(text) <= target_w:
+            return f, size
+        size -= 2
+    return var_font(path, lo, variation), lo
 
 
 def cover(im, w, h):
@@ -176,18 +202,19 @@ def render(job, root, outdir):
     d.polygon([(96, 74), (128, 74), (112, 104)], fill=MENTHE + (215,))
     d.line([(150, 88), (1184, 88)], fill=MENTHE + (70,), width=2)
 
-    f = font("DejaVuSerif-Bold.ttf", 116)
-    l1 = shear(fill_gradient(text_mask("ATMOSPHÈRE", f, 2), (255, 255, 255), (200, 212, 240)), 11)
-    l2 = shear(fill_gradient(text_mask("DE PRIÈRE", f, 2), (255, 255, 255), (200, 212, 240)), 11)
-    s1 = drop(l1, 22, 95, (6, 9))
-    s2 = drop(l2, 22, 95, (6, 9))
-    paste_center(base, s1, W / 2 - 4, 286)
-    paste_center(base, s2, W / 2 - 4, 438)
-    paste_center(base, l1, W / 2, 280)
-    paste_center(base, l2, W / 2, 432)
+    f, size = fit(TITRE_TTF, TITRE_VAR, "ATMOSPHÈRE", 1060, start=170)
+    print("corps du titre :", size)
+    l1 = fill_gradient(text_mask("ATMOSPHÈRE", f, 1), (255, 255, 255), (226, 233, 250))
+    l2 = fill_gradient(text_mask("DE PRIÈRE", f, 1), (255, 255, 255), (226, 233, 250))
+    s1 = drop(l1, 16, 120, (5, 7))
+    s2 = drop(l2, 16, 120, (5, 7))
+    paste_center(base, s1, W / 2 - 3, 292)
+    paste_center(base, s2, W / 2 - 3, 450)
+    paste_center(base, l1, W / 2, 288)
+    paste_center(base, l2, W / 2, 446)
 
-    fs = font("DejaVuSans-Bold.ttf", 31)
-    mt = text_mask("À ICC PAHOU", fs, 7)
+    fs = var_font(SANS_TTF, 27, SANS_VAR)
+    mt = text_mask("À ICC PAHOU", fs, 9)
     col = Image.new("RGBA", mt.size, MENTHE + (255,))
     col.putalpha(mt)
     y = 604
