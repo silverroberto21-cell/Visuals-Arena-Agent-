@@ -43,6 +43,7 @@ MARQUE = "ICC PAHOU"
 ACCROCHE = "ALERTE CODE"                       # recopié à la lettre
 CODE = "R.O.U.G.E"                             # recopié à la lettre, points compris
 PHRASE = "les 5 clés pour vivre une chrétienne victorieuse"
+ORATEUR = "AP Enock"                           # nom demandé : sans le patronyme
 # Césures préférées : elles tombent sur une frontière de sens (« … pour vivre » / « une … »).
 # Elles ne sont retenues que si elles tiennent dans la colonne ; sinon `retours()` décide.
 CESURES = (("les 5 clés pour vivre", "une chrétienne victorieuse"),
@@ -151,7 +152,7 @@ def bloc_titre(base, x, y, largeur, orateur=None, corps_accroche=0, corps_phrase
         R.O.U.G.E
         ──────
         les 5 clés pour vivre une chrétienne victorieuse
-        (PRÉDICATEUR / AP Enock MISSIMAHOU)
+        (PRÉDICATEUR / AP Enock)
 
     Tout est mesuré avant d'être posé : aucun chevauchement, aucun débordement."""
     d = ImageDraw.Draw(base, "RGBA")
@@ -208,15 +209,33 @@ def vignettage(base):
 
 
 # --------------------------------------------------------------------------- variantes
+PHOTO = "orateurs/ap-enock-3458-detourage.png"   # _DSC3458 — pupitre, Bible et écran hors cadre
+HAUTEUR_SUJET = 662
+
+
+def poser_sujet(base, sub):
+    """Le sujet est posé **entier**, ancré au bord bas : la photo `_DSC3458` s'arrête sur le
+    costume, juste au-dessus de la barre du pupitre (détourage, `cutout_ap_3458.py`). Aucun
+    fondu sur son bord, aucune coupe dans le corps."""
+    x = W - 40 - sub.width
+    y = H - sub.height
+    sh = Image.new("RGBA", (sub.width + 200, sub.height + 120), (0, 0, 0, 0))
+    sil = sub.split()[3].point(lambda v: int(v * 0.34))
+    sh.paste(Image.new("RGBA", sub.size, (2, 6, 24, 255)), (100, 30), sil)
+    base.alpha_composite(sh.filter(ImageFilter.GaussianBlur(38)), (x - 100, y - 30))
+    base.alpha_composite(sub, (x, y))
+    return x
+
+
 def rendu_ap(out, fond26=False):
     base = AP._reconstruire_26() if fond26 else AP.fond_bleu6()
-    sub = AP.prepare_subject("orateurs/ap-enock-missimahou-podium-detourage.png", 690)
-    x_panel = AP.place_subject(base, sub)
-    colonne = x_panel - AP.MARGE - 26
-    bloc_titre(base, AP.MARGE, 48, colonne, orateur="AP Enock MISSIMAHOU",
+    sub = AP.prepare_subject(PHOTO, HAUTEUR_SUJET)
+    x_sujet = poser_sujet(base, sub)
+    colonne = x_sujet - AP.MARGE - 30
+    bloc_titre(base, AP.MARGE, 48, colonne, orateur=ORATEUR,
                corps_accroche=64, corps_phrase=31)
     vignettage(base)
-    return base, sub, x_panel
+    return base, sub, x_sujet
 
 
 def rendu_theme(out):

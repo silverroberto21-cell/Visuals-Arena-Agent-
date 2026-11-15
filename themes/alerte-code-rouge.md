@@ -29,8 +29,9 @@
   - **miniature YouTube 1280 × 720** du thème seul, sans les points
     (`2026-11-07-miniature-alerte-code-rouge-theme-1280x720.jpg`) : accroche, mot-code, phrase du
     thème ; une clé filaire et cinq pastilles rouges disent le sujet sans un mot de plus ;
-  - **miniatures avec l'orateur AP Enock MISSIMAHOU** (détouré, à droite) : FOND 6
-    (`…-avec-ap-1280x720.jpg`) et FOND 26 ramené au bleu (`…-avec-ap-v2-fond26-1280x720.jpg`).
+  - **miniatures avec l'orateur AP Enock** (détouré, à droite) : FOND 6 (`…-avec-ap-1280x720.jpg`)
+    et FOND 26 ramené au bleu (`…-avec-ap-v2-fond26-1280x720.jpg`). Photo `_DSC3458` : plan large
+    derrière un pupitre → **pupitre, Bible et écran coupés hors cadre**, silhouette entière.
   Les quatre sorties sont rendues par **un seul script** — `scripts/render_alerte_code_rouge.py` —
   pour que le bloc typographique ne diverge jamais d'un format à l'autre.
 
@@ -40,6 +41,7 @@
 |---|---|
 | 2026-11-07 | thème créé sous le titre « Les 5 clés pour vivre une vie chrétienne victorieuse : ROUGE » (acrostiche `R O U G E` sans points) — fichiers conservés, non réédités |
 | 2026-11-07 | **rectification** : intitulé « ALERTE CODE R.O.U.G.E : les 5 clés pour vivre une chrétienne victorieuse ». Les quatre sorties sont rééditées sous de **nouveaux noms** ; les fichiers du titre précédent restent en place, jamais écrasés |
+| 2026-11-07 | **photo et nom** : la photo `_DSC3458` remplace `_DSC3532` sur les deux miniatures avec l'orateur ; le nom s'écrit **« AP Enock »** (patronyme retiré sur demande). Détourage `orateurs/ap-enock-3458-detourage.png`, le pupitre ne sort pas |
 
 ## Réglages de référence (1280 × 720)
 
@@ -60,8 +62,8 @@
 
 ## Déclinaisons avec l'orateur
 
-La clé filaire cède sa place à **AP Enock MISSIMAHOU** détouré, à droite (549 × 690, ancré au bord
-bas : la photo source est coupée en bas). Colonne de texte inchangée, prédicateur ajouté en pied de
+La clé filaire cède sa place à **AP Enock** détouré, à droite (597 × 662, ancré au bord bas : le
+détourage s'arrête au-dessus de la barre du pupitre). Colonne de texte inchangée, prédicateur ajouté en pied de
 colonne. Deux fonds :
 
 - **FOND 6** (v1) — la miniature du thème, avec AP ;

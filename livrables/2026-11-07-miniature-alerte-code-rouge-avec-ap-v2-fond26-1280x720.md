@@ -4,7 +4,7 @@
 - **Format** : miniature YouTube **1280 × 720** · livrée le 2026-11-07
 - **Demande** : rectification du thème appliquée à la 2ᵉ miniature, celle qui utilise le **fond
   bleu / rouge fourni** (`FOND 26.jpeg`)
-- Script : `scripts/render_alerte_code_rouge.py ap-fond26 <sortie.jpg>`
+- Scripts : `scripts/render_alerte_code_rouge.py ap-fond26 <sortie.jpg>` · détourage : `scripts/cutout_ap_3458.py`
 
 ## Ce qui a été utilisé
 
@@ -12,10 +12,10 @@
 |---|---|
 | Modèle | **M01 · bleu nuit, titre coupé** — même grille que la v1 |
 | Fond | **FOND 26** fourni → `fonds/f27-bleu-magenta-rouge.jpg` (626 × 357), **ramené au bleu** |
-| Palette | bleus + acier + cramoisi + ROUGE en accent — mesuré : **79,8 % de bleu**, 13,2 % de rouge, 4,0 % de teintes violettes résiduelles |
+| Palette | bleus + acier + cramoisi + ROUGE en accent — mesuré : **78,0 % de bleu**, 14,6 % de rouge, 4,0 % de teintes violettes résiduelles |
 | Typographie | **Anton** + **Jost** — duo du thème, identique aux autres sorties |
-| Textes | « ALERTE CODE » · « R.O.U.G.E » · « les 5 clés pour vivre / une chrétienne victorieuse » · « PRÉDICATEUR / AP Enock MISSIMAHOU » |
-| Sujet | même détourage validé : 549 × 690, à droite, ancré au bord bas |
+| Textes | « ALERTE CODE » · « R.O.U.G.E » · « les 5 clés pour vivre / une chrétienne victorieuse » · « PRÉDICATEUR / AP Enock » |
+| Sujet | **la nouvelle photo** (`_DSC3458`) détourée, 597 × 662, à droite, ancrée au bord bas — **pupitre, Bible et écran hors cadre** |
 
 ## Le fond fourni, et ce qu'il a fallu lui faire
 
@@ -43,9 +43,9 @@ Si le rouge doit être **plus franc** ou plus discret, c'est un réglage de deux
 | | v1 (FOND 6) | v2 (FOND 26) |
 |---|---|---|
 | Fond | texture acier bleu, lumière rasante en haut à droite | diagonale bleu nuit → cramoisi, trame de points, stries |
-| Dominante mesurée | 84,6 % bleu | 79,8 % bleu |
+| Dominante mesurée | 83,3 % bleu | 78,0 % bleu |
 | Accent rouge | mot-code + souffle diffus en bas à gauche | mot-code + diagonale rouge à droite, derrière le sujet |
-| Composition, polices, textes, sujet | — | **identiques** |
+| Composition, polices, textes, sujet | — | **identiques** (même détourage `ap-enock-3458-detourage.png`) |
 
 ## Outil IA
 
