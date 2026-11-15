@@ -21,8 +21,9 @@
 - **À éviter** : peindre le fond en rouge (le bleu doit rester majoritaire), empiler les effets,
   séparer la lettre de son verbe, oublier une référence biblique.
 - **Formats déjà servis** : visuel 1280×720 (2026-11-07) + **miniature YouTube 1280×720**
-  (`scripts/render_rouge_5cles_miniature.py`) — deux niveaux de texte seulement : accroche +
-  mot-acrostiche à gauche, les cinq verbes et leurs références à droite.
+  (`scripts/render_rouge_5cles_theme.py`) — **le thème seul, sans les points** : accroche,
+  mot-acrostiche, phrase du thème ; une clé filaire et cinq pastilles rouges disent le sujet
+  sans un mot de plus. Les cinq verbes et leurs références restent sur le visuel 1280×720.
 
 ## Réglages de référence (1280×720)
 
