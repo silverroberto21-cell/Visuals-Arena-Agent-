@@ -20,7 +20,9 @@
   Le rouge reste **unique** : aucun rouge de modèle, aucune couleur inventée.
 - **À éviter** : peindre le fond en rouge (le bleu doit rester majoritaire), empiler les effets,
   séparer la lettre de son verbe, oublier une référence biblique.
-- **Formats déjà servis** : 1280×720 (2026-11-07).
+- **Formats déjà servis** : visuel 1280×720 (2026-11-07) + **miniature YouTube 1280×720**
+  (`scripts/render_rouge_5cles_miniature.py`) — deux niveaux de texte seulement : accroche +
+  mot-acrostiche à gauche, les cinq verbes et leurs références à droite.
 
 ## Réglages de référence (1280×720)
 
