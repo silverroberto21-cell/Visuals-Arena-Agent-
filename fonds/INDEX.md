@@ -38,6 +38,7 @@ Les noms de fichiers **conservent le numéro d'origine** (`FOND 3` → `f03-…`
 | **FOND 24** | `f24-rayures-bleu-nuit.jpg` | conforme |
 | **FOND 25** | `f25-rayures-indigo.jpg` | conforme |
 | **IMAGE DE FOND** | `f26-typographie-incrustee.jpg` | à recaler |
+| **FOND 26** *(fourni le 2026-11-07 pour la miniature ROUGE)* | `f27-bleu-magenta-rouge.jpg` | à ramener au bleu |
 
 ## 2. Vue d'ensemble
 
@@ -67,6 +68,7 @@ Les noms de fichiers **conservent le numéro d'origine** (`FOND 3` → `f03-…`
 | `f24` | `f24-rayures-bleu-nuit.jpg` | 550×309 px | abstrait | **oui** | conforme | ×2.33 visible | ×6.21 | ×8.03 / ×11.35 |
 | `f25` | `f25-rayures-indigo.jpg` | 735×420 px | abstrait | **oui** | conforme | ×1.74 visible | ×4.57 | ×5.9 / ×8.35 |
 | `f26` | `f26-typographie-incrustee.jpg` | 1365×768 px | abstrait typographique | **non** | à recaler | native | ×2.5 | ×3.23 / ×4.57 |
+| `f27` | `f27-bleu-magenta-rouge.jpg` | 626×357 px | abstrait | **oui** | à ramener au bleu | ×2.04 visible | ×5.38 | ×6.95 / ×10.05 |
 
 ## 3. Teintes mesurées et ambiance
 
@@ -96,6 +98,7 @@ Les noms de fichiers **conservent le numéro d'origine** (`FOND 3` → `f03-…`
 | `f24` | `#0F2348` 28 % · `#184384` 25 % · `#427ED1` 22 % · `#173161` 19 % | rayures verticales bleu nuit, bande de lumière à gauche | — |
 | `f25` | `#0F4585` 27 % · `#072A5C` 23 % · `#15619F` 23 % · `#1D82B4` 14 % | rayures verticales indigo/bleu acier, lumière douce | — |
 | `f26` | `#103D61` 30 % · `#0F284E` 21 % · `#254A66` 16 % · `#2D5B6D` 16 % | compositions de lettres géantes incrustées sur dégradé bleu | typographie incrustée + cyan (~26 %) : masquer ou aplatir les lettres avant usage, jamais de pivot |
+| `f27` | `#700000` 7 % · `#400020` 7 % · `#301030` 4 % · `#003090` 3 % | diagonale bleu → magenta → rouge, trame de points et stries de lumière | **34 % bleu / 39 % rouge / 27 % magenta** : ramener le magenta au bleu avant usage (l'axe diagonal et la diagonale rouge sont conservés) |
 
 ## 4. Comment désigner un fond (et comment l'agent le retrouve)
 
@@ -103,6 +106,7 @@ Les noms de fichiers **conservent le numéro d'origine** (`FOND 3` → `f03-…`
 |---|---|
 | « FOND 3 », « fond 3 », « f03 » | ouvre `f03-bleu-cyan-diagonal.jpg` |
 | « IMAGE DE FOND » | ouvre `f26-typographie-incrustee.jpg` |
+| « FOND 26 », « le fond bleu rouge » | ouvre `f27-bleu-magenta-rouge.jpg` — **le fichier 626×357 fourni le 2026-11-07** ; `f26` reste l'« IMAGE DE FOND » du lot 2 |
 | « le fond cyan en diagonale » | même fichier, par sa description |
 | « le fond que tu as déjà utilisé » | reprend le fond du **dernier visuel livré du même thème** (journal interne), et le confirme en une ligne |
 | « FOND 4 » ou « FOND 12 » (doublons) | utilise `f01-…` / `f10-…` et le signale |

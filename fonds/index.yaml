@@ -13,8 +13,8 @@ designation:
   doublon: utiliser_le_fichier_conserve_et_le_signaler
   ambiguite: une_seule_question_groupee
 
-total_unique: 24
-total_recu: 26
+total_unique: 25
+total_recu: 27
 
 fonds:
   - numero: f01
@@ -391,6 +391,23 @@ fonds:
       - { hex: "#2D5B6D", part: 16 }
     agrandissement: { miniature: 0.94, story: 2.5, a5: 3.23, a4: 4.57 }
     note: "typographie incrustée + cyan (~26 %) : masquer ou aplatir les lettres avant usage, jamais de pivot"
+
+  - numero: f27
+    fichier: f27-bleu-magenta-rouge.jpg
+    alias: ["FOND 26.jpeg", "FOND 26", "Fond26", "le fond bleu rouge"]
+    dimensions: "626×357"
+    poids_ko: 61
+    type: abstrait
+    pivot_90: true
+    palette: à_ramener_au_bleu
+    ambiance: "diagonale bleu → magenta → rouge, trame de points et stries de lumière"
+    nuances:
+      - { hex: "#700000", part: 7 }
+      - { hex: "#400020", part: 7 }
+      - { hex: "#400030", part: 7 }
+      - { hex: "#301030", part: 4 }
+    agrandissement: { miniature: 2.04, story: 5.38, a5: 6.95, a4: 10.05 }
+    a_savoir: "34 % bleu / 39 % rouge / 27 % magenta : ramener le magenta au bleu avant usage ; l'axe diagonal et la diagonale rouge sont conservés. Ne pas confondre avec f26 (IMAGE DE FOND, typographie incrustée)."
 
 doublons_ecartes:
   - { source: "FOND 4.jpg", doublon_de: f01-bleu-nuit-halo-cyan.jpg }

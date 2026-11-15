@@ -1,7 +1,7 @@
 # /fonds — images de fond
 
 Les fonds sont la **référence couleur** de tous les visuels : le bleu et ses dégradés y dominent.
-Ce dossier contient **24 fonds uniques** fournis par la structure (2 lots), indexés et mesurés.
+Ce dossier contient **25 fonds uniques** fournis par la structure (3 lots), indexés et mesurés.
 
 📌 **Commencer par [`INDEX.md`](INDEX.md)** : pour chaque fond, dimensions, teintes mesurées,
 type (abstrait / sens naturel), pivot autorisé ou non, conformité palette, agrandissement nécessaire.
@@ -28,7 +28,7 @@ dans [`INDEX.md`](INDEX.md) § 1 et dans [`index.yaml`](index.yaml).
 | Abstraits conformes | 17 | bokeh (nuit / électrique / clair), halo cyan, vagues, texture acier, faisceaux, carreaux, diagonales, bleu clair strié, indigo, **halftone coins** (f21), **dégradé cyan** (f22), **rayures bleu nuit** (f24), **rayures indigo** (f25) |
 | Cyan / turquoise appuyés | 2 | `f08`, `f16` |
 | À recaler | 3 | `f05` (taches rose), `f23` (vert dans la lumière), `f26` (typographie incrustée) |
-| À ramener au bleu | 1 | `f11` (bande végétale) |
+| À ramener au bleu | 2 | `f11` (bande végétale), **`f27`** (diagonale rouge, fourni le 2026-11-07) |
 | Sens naturel (aucun pivot) | 2 | `f11` (horizon), `f17` (scène de louange) |
 | Hors charte | 1 | `_hors-charte/f18` (violet/magenta/orange) |
 

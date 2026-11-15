@@ -24,6 +24,10 @@
   (`scripts/render_rouge_5cles_theme.py`) — **le thème seul, sans les points** : accroche,
   mot-acrostiche, phrase du thème ; une clé filaire et cinq pastilles rouges disent le sujet
   sans un mot de plus. Les cinq verbes et leurs références restent sur le visuel 1280×720.
+- **Variantes avec l'orateur** (2026-11-07, `scripts/render_rouge_5cles_ap.py`) : la clé filaire cède
+  sa place à **AP Enock MISSIMAHOU** détouré, à droite ; colonne de texte inchangée, prédicateur
+  ajouté en bas à gauche. Deux fonds : **FOND 6** (v1) et **FOND 26** ramené au bleu (v2, diagonale
+  bleu nuit → cramoisi). Le mot ROUGE reste le seul grand accent.
 
 ## Réglages de référence (1280×720)
 
