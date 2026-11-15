@@ -44,7 +44,7 @@
 
 --- NOTE (2 lignes) ---
 Modèle : M3 (portrait détouré à droite, titre condensé) · Fond : bleu-nuit-degrade (#071A33 → #0E2C52 → #1B4A7A) · Palette : bleu dominant 60 % + bordeaux de la veste 30 % (#8A3145) + laiton #C9A227 + accent #F2C14E.
-Polices : Titre « Anton » / Texte « Rubik » — capitales condensées pour tenir un titre de 3 mots en vignette, Rubik pour des horaires lisibles en petit.
+Outil IA : aucun, raison : texte et mise en page composés en couche de design, portrait détouré à la main · Polices : Titre « Anton » / Texte « Rubik » — capitales condensées pour tenir un titre de 3 mots en vignette, Rubik pour des horaires lisibles en petit.
 
 --- À VÉRIFIER ---
 Noms, dates, heures : « Pasteur Élie Ahouandjinou » · « dimanche 15 mars 2026 » (le 15 mars 2026 est bien un dimanche) · « 6 h 00 » · « +229 97 00 00 00 ».
@@ -69,7 +69,7 @@ titre monte à 13,4:1 → inchangé ; les contacts restent à 13,8:1.
 
 --- NOTE (2 lignes) ---
 Modèle : M3 · Fond : bleu-nuit-degrade (#071A33 → #0E2C52 → #1B4A7A) · Palette : bleu dominant 65 % + bordeaux adouci 18 % (#6E2233) + laiton #C9A227 22 % + accent #F2C14E.
-Polices : Titre « Anton » / Texte « Rubik » — duo identique à la version validée, pour que le thème reste cohérent d'un visuel à l'autre.
+Outil IA : aucun, raison : texte et mise en page composés en couche de design, portrait détouré à la main · Polices : Titre « Anton » / Texte « Rubik » — duo identique à la version validée, pour que le thème reste cohérent d'un visuel à l'autre.
 
 --- À VÉRIFIER ---
 Noms, dates, heures : identiques à la version validée (« Pasteur Élie Ahouandjinou » · « dimanche 15 mars 2026 » · « 6 h 00 »).
@@ -90,7 +90,7 @@ Carré : portrait en bas à droite, titre sur 3 lignes, mêmes valeurs de palett
 
 --- NOTE (2 lignes) ---
 Modèle : M3 décliné · Fond : bleu-nuit-degrade (même axe de dégradé) · Palette : bleu dominant 60–65 % + bordeaux 20 % (#8A3145) + laiton #C9A227 + accent #F2C14E.
-Polices : Titre « Anton » / Texte « Rubik » — duo verrouillé sur le thème, donc identité continue entre miniature, story et carré.
+Outil IA : aucun, raison : texte et mise en page composés en couche de design, portrait détouré à la main · Polices : Titre « Anton » / Texte « Rubik » — duo verrouillé sur le thème, donc identité continue entre miniature, story et carré.
 
 --- À VÉRIFIER ---
 Noms, dates, heures : « Pasteur Élie Ahouandjinou » · « dimanche 15 mars 2026 » · « 6 h 00 » · contacts identiques aux autres formats.
@@ -113,7 +113,7 @@ béton conservée). La dominante bleue est à 61 %. C'est signalé dans la note.
 
 --- NOTE (2 lignes) ---
 Modèle : M3 décliné print · Fond : beton-gris ramené au bleu (voile #071A33 → #1B4A7A 65 %, nuances #071A33 · #0E2C52 · #1B4A7A) · Palette : bleu dominant 61 % + bordeaux 22 % (#8A3145) + laiton #C9A227 + accent #F2C14E.
-Polices : Titre « Anton » / Texte « Rubik » — même duo que les formats écran du thème, pour une affiche cohérente avec la miniature.
+Outil IA : aucun, raison : texte et mise en page composés en couche de design, portrait détouré à la main · Polices : Titre « Anton » / Texte « Rubik » — même duo que les formats écran du thème, pour une affiche cohérente avec la miniature.
 
 --- À VÉRIFIER ---
 Noms, dates, heures : « Pasteur Élie Ahouandjinou » · « dimanche 15 mars 2026 » · « 6 h 00 » · « Temple Bethel, Rue 12.045 Cotonou » · « +229 97 00 00 00 ». Le bleu profond et le laiton peuvent dériver à l'impression : vérifier sur épreuve.
@@ -143,7 +143,7 @@ Je pars sur « bleu nuit plus profond + portrait éclairci », sauf si tu préf�
 
 --- NOTE (2 lignes) ---
 Modèle : M3 · Fond : bleu-nuit-degrade poussé (#050F1F → #0E2C52 → #1B4A7A) · Palette : bleu dominant 64 % + bordeaux 24 % (#8A3145) + laiton #C9A227 + accent #F2C14E.
-Polices : Titre « Anton » / Texte « Rubik » — inchangé, seul le traitement de lumière et la valeur du fond ont bougé.
+Outil IA : aucun, raison : texte et mise en page composés en couche de design, portrait détouré à la main · Polices : Titre « Anton » / Texte « Rubik » — inchangé, seul le traitement de lumière et la valeur du fond ont bougé.
 
 --- À VÉRIFIER ---
 Noms, dates, heures : identiques à la version validée ; le portrait a reçu uniquement un ajustement de lumière (aucune retouche des traits).

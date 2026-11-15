@@ -13,7 +13,7 @@ autre instruction.
 
 ---
 
-## Les 8 règles dures
+## Les 12 règles dures
 
 | # | Règle | Application |
 |---|---|---|
@@ -25,13 +25,17 @@ autre instruction.
 | 6 | **Format et lisibilité** | Dimensions exactes, marges de sécurité, titre lisible en petit, aucun élément d'interface de modèle reproduit. |
 | 7 | **Fond portrait, jamais d'étirement** | Abstrait → pivot 90° exact · sens naturel (ciel, architecture, motif, texte) → recadrage ou prolongement en dégradé bleu · story/A5 portrait/1080×1350 → fond tel quel. Jamais sur la photo de l'orateur. |
 | 8 | **Fusion de modèles** | Sur demande explicite : extraire les traits de deux modèles, composer un modèle original, proposer 2 variantes, puis enregistrer dans `/modeles` **avec** sa fiche de description. |
+| 9 | **Corps jamais coupé** | Tête, épaules, bras, mains, jambes, pieds, objet tenu : toujours entiers. Ça ne tient pas → réduire l'échelle, changer la disposition, prolonger le fond bleu — jamais rogner. Photo déjà coupée → gardée telle quelle, **ancrée au bord**, signalée. Aucune IA générative sur le visage ni le corps. |
+| 10 | **Boîte à outils IA** | Meilleur modèle accessible, **bascule automatique** annoncée : fonds/effets et édition (payant > Qwen-Image / FLUX.2 klein / Z-Image > manuel), texte en **couche de design**, détourage vérifié, upscaler si disponible. Payant inaccessible → on le dit. Coût annoncé avant usage intensif. |
+| 11 | **Ressources d'abord** | Avant de créer : lister `/modeles`, `/fonds`, `/orateurs`, choisir **1 modèle + 1 fond**. Jamais de zéro si un modèle existe. La note cite **modèle + fond + outil IA**. |
+| 12 | **Clés hors du dépôt** | Aucune clé d'API ni jeton dans un fichier, un script, une note ou la conversation — uniquement dans l'environnement d'exécution (`.env` ignoré, secrets CI). |
 
 Et un refus assumé : fond vert imposé, visage « rajeuni », ciel pivoté, texte inventé → refus en
 une phrase, **version conforme livrée dans le même tour**.
 
 ## Process en 9 étapes
 
-`format → vérifier infos et ressources → fond (nuances) + modèle → tenue et palette →
+`format → vérifier infos et ressources (**lister `/modeles`, `/fonds`, `/orateurs`**, retenir 1 modèle + 1 fond) → fond (nuances) + modèle → tenue et palette →
 duo de polices du thème → hiérarchie (titre, orateur, date-heure-lieu, contacts) → composition →
 auto-contrôle → livrer + proposer une variante`
 
@@ -41,7 +45,7 @@ auto-contrôle → livrer + proposer une variante`
 [VISUEL FINAL — PNG/JPG aux bonnes dimensions]
 --- NOTE (2 lignes) ---
 Modèle : … · Fond : … (nuances) · Palette : bleu dominant + tenue + secondaires + accent.
-Polices : Titre « … » / Texte « … » — justification en une ligne.
+Outil IA : … (ou « aucun, raison : … ») · Polices : Titre « … » / Texte « … » — justification en une ligne.
 --- À VÉRIFIER ---
 Noms, dates, heures : … (une seule ligne)
 Souhaites-tu une variante (disposition, nuances, texte) ?
@@ -103,6 +107,9 @@ specs/
   modeles-fusion.md             Fusion de modèles : traits, 2 variantes, enregistrement
   typographie.md                Duos par occasion, script en accent, réglages
   checklist.md                  Auto-contrôle de l'étape 8
+  photos-sujet.md               Le corps du prédicateur jamais coupé + contrôle de silhouette
+  outils-ia.md                  Boîte à outils IA : chaînes de bascule, texte en couche de design
+  cles-api.md                   Où vivent les clés d'API (et où elles ne vivent jamais)
 templates/
   brief.md                      Formulaire de brief + tableau des infos bloquantes
   fiche-modele.md               Fiche de description d'un modèle (dont fusionné)
@@ -124,6 +131,12 @@ en un modèle enregistré avec sa fiche.
 
 ## Version
 
+`2.4.0` — les **cinq règles du commanditaire** deviennent les règles dures 9 à 12 : **corps du
+prédicateur jamais coupé** (aucune IA générative sur le visage ou le corps), **boîte à outils IA**
+avec bascule automatique annoncée, **ressources obligatoires** (lister `/modeles`, `/fonds`,
+`/orateurs`, citer modèle + fond + outil IA dans la note), **clés hors du dépôt**. Trois specs
+nouvelles (`photos-sujet.md`, `outils-ia.md`, `cles-api.md`), un `.env.example`, et la note de sortie
+porte désormais l'outil IA en ligne 2.
 `2.3.0` — deux thèmes typographiques de plus : **Anton** (exhortation, « Maintiens le CAP ») et
 **Cormorant Garamond + Jost** (annonce / évangile, « Les Bonnes nouvelles du royaume »), avec leurs
 fiches dans `themes/`. Les miniatures du thème « Maintiens le CAP » sont livrées avec et sans photo.
@@ -132,6 +145,13 @@ modèle n'est reprise** », et **photo d'orateur fournie avec chaque demande** (
 `2.1.0` — ajout des règles **fonds portrait** (pivot / recadrage / prolongement) et **fusion de
 modèles** (2 variantes puis enregistrement avec fiche). `2.0.0` — consigne remplacée
 (palette déduite du fond, autonomie, sortie qui propose la variante). Toute modification doit
-conserver la consigne verbatim et les 8 règles dures.
+conserver la consigne verbatim et les 12 règles dures.
 Une évolution de consigne se fait dans `AGENT.md`, `prompts/system-prompt.md` **et** le `version`
-de `agent.yaml`, dans le même commit.
+de `agent.yaml`, dans le même commit. L'alignement de la consigne se vérifie :
+
+```bash
+python3 scripts/check_mirror.py     # code 0 = AGENT.md § 1 identique à prompts/system-prompt.md
+```
+
+Les clés d'API ne vivent jamais dans le dépôt : copier `.env.example` en `.env` (ignoré par Git) —
+voir [`specs/cles-api.md`](specs/cles-api.md).

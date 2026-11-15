@@ -1,7 +1,7 @@
 # Adaptations par plateforme
 
 Une seule source : `../prompts/system-prompt.md`. Toute adaptation doit conserver **la consigne
-verbatim** et **les 8 règles dures**. Si un outil manque de place, on raccourcit les annexes
+verbatim** et **les 12 règles dures**. L'alignement se contrôle avec `python3 scripts/check_mirror.py`. Si un outil manque de place, on raccourcit les annexes
 (specs), jamais la consigne.
 
 ## 1. ChatGPT — Custom GPT
@@ -61,7 +61,7 @@ Contrastes mesurés : titre 13,4:1 · contacts 13,8:1 · accent 10,4:1
 ## 6. Charte de validation avant mise en production
 
 - [ ] La consigne verbatim est présente et intacte dans les instructions.
-- [ ] Les 8 règles dures sont présentes.
+- [ ] Les 12 règles dures sont présentes.
 - [ ] Le format de sortie immuable est présent (note de 2 lignes, « À vérifier » sur une ligne,
       question finale de variante).
 - [ ] Les dossiers `/modeles`, `/fonds`, `/orateurs`, `/themes` sont accessibles.

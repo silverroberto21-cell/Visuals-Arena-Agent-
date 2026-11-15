@@ -32,6 +32,12 @@ On ne livre pas avec une case non cochée, et on ne raconte pas la check-list da
 - [ ] Proportions intactes : pas d'étirement, pas de tête agrandie, pas de corps allongé.
 - [ ] Tenue non repeinte, non recolorée, non redessinée.
 - [ ] Détourage propre : cheveux, épaules, mains non rognés ; pas de frange blanche ou bleue.
+- [ ] **Silhouette entière** : tête, épaules, bras, mains, doigts, jambes, pieds, **objet tenu**
+      (micro, Bible) sont dans le cadre. Détail : `photos-sujet.md`.
+- [ ] Photo **déjà coupée à l'origine** : gardée telle quelle, **ancrée sur le bord du cadre**, et
+      signalée en « À vérifier ».
+- [ ] **Aucun outil d'IA générative** n'est passé sur le visage, la peau, les cheveux, les mains ni
+      la tenue (détourage/lumière/contraste seulement).
 - [ ] Aucun filtre global au-delà d'un léger ajustement de lumière (≤ 15 % de désaturation max,
       signalé).
 - [ ] Le visage n'est ni coupé, ni en zone de coupe, ni sous un texte, ni sous l'interface.
@@ -87,13 +93,28 @@ On ne livre pas avec une case non cochée, et on ne raconte pas la check-list da
 
 ## Bloc H — Charte de sortie
 
-- [ ] Note **exactement 2 lignes** : (1) modèle + fond + palette ; (2) polices + justification.
-- [ ] « À vérifier » sur **une seule ligne** : noms, dates, heures.
+- [ ] Note **exactement 2 lignes** : (1) **modèle + fond** + palette ; (2) **outil IA** + polices +
+      justification. Les **trois** ressources sont nommées — sinon la note est incomplète.
+- [ ] Outil IA écrit soit par son nom, soit « aucun, raison : … » (raison réelle, pas de formule vide).
+- [ ] « À vérifier » sur **une seule ligne** : noms, dates, heures (+ mention « photo d'origine déjà
+      coupée » le cas échéant).
 - [ ] Clôture par la question de variante, mot pour mot.
 - [ ] Aucune excuse, aucun historique, aucune note technique dans la sortie.
 
+## Bloc I — Ressources et outils (règles 10 et 11)
+
+- [ ] `/modeles`, `/fonds`, `/orateurs` ont été **listés** avant de créer.
+- [ ] **1 modèle** de référence choisi (et nommé) · **1 fond** choisi (et nommé) dans `fonds/INDEX.md`.
+- [ ] On n'est pas parti de zéro alors qu'un modèle existait.
+- [ ] L'outil IA utilisé correspond à la tâche (`specs/outils-ia.md`, chaîne de bascule).
+- [ ] Aucun accès manquant (clé, crédits, quota) n'est passé sous silence : il est dit en une ligne.
+- [ ] Coût d'un usage intensif annoncé **avant** le lancement.
+- [ ] Tout texte porteur d'information est en **couche de design**, pas généré par un modèle.
+- [ ] Aucune clé d'API dans le dépôt, un script, une note ou la conversation (`cles-api.md`).
+
 ## Journal interne (non livré)
 
-Garder : fond utilisé + hex extraits, modèle de référence, palette construite (60/30/10),
-duo de polices, ratios de contraste mesurés, paramètres de la variante proposée. Cela permet de
+Garder : fond utilisé + hex extraits, modèle de référence, **outil IA et version**, palette
+construite (60/30/10), duo de polices, ratios de contraste mesurés, paramètres de la variante
+proposée, commande de rendu rejouable. Cela permet de
 décliner le thème sur les autres formats sans réinventer, et de répondre trois semaines plus tard.

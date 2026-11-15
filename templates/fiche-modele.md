@@ -36,11 +36,14 @@ propose. Le grain de A sert à unifier la lueur de B.
 - **Palette** : bleu dominant 60 % (nuances du fond) + couleur de la tenue de l'orateur 30 % +
   une secondaire + accent 10 %.
 - **Effets** : lueur radiale douce derrière le portrait, grain 8 %, vignettage léger.
+- **Silhouette** : portrait **entier** dans le cadre (tête, épaules, mains si visibles, objet tenu) ;
+  une photo déjà coupée à l'origine est ancrée au bord du cadre, jamais rognée davantage.
 - **Formats compatibles** : 1280×720 · 1080×1350 · 1080×1080 (story à tester : portrait recadré).
 
 ## Mode d'emploi
 
-- Le portrait se place à droite, hauteur 75–80 %, pied coupé proprement.
+- Le portrait se place à droite, hauteur 75–80 % : on **réduit l'échelle** pour que la silhouette
+  tienne entière, on ne coupe ni main, ni objet tenu, ni pied (AGENT.md § 5ter).
 - Le titre tient en 3 lignes maximum, lettrine autorisée sur la première.
 - Zones libres : coin inférieur droit (badge de durée) et bas de cadre (barre de progression).
 
@@ -61,6 +64,8 @@ propose. Le grain de A sert à unifier la lueur de B.
 
 - **Un modèle = une fiche**, dans le même dossier, au même nom (`<nom>.jpg` ↔ `<nom>.md`).
 - La fiche décrit des **traits génériques**, pas un événement : aucun nom, date ou contact.
+- Une fiche peut mentionner l'**outil IA** qui a servi à produire le modèle (nom et version), pour
+  que le rendu soit rejouable — jamais une clé, jamais un identifiant de compte.
 - « Ce qui est nouveau » est obligatoire pour une fusion : c'est la preuve d'originalité.
 - « À éviter » est la partie la plus utile six mois plus tard : elle évite de reproduire les
   erreurs déjà tranchées.
