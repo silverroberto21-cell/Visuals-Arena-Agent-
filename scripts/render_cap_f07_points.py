@@ -92,9 +92,14 @@ def main(out, fond=T.FOND):
     T.paste_left(base, cap, RX0, 116)
     d.line([(RX0 + cap.getbbox()[2] + 22, 130), (RX1, 130)], fill=OR + (110,), width=2)
 
-    rows = [(168, "01", "LA CONFIANCE"), (330, "02", "L’ALIGNEMENT"),
-            (492, "03", "LA PERSÉVÉRANCE")]
-    for i, (y, num, label) in enumerate(rows):
+    # un point = un libellé principal + son complément éventuel. Les mots sont ceux du thème,
+    # à la lettre : « la confiance en DIEU », « l'alignement sur la volonté de DIEU »,
+    # « la persévérance ». Le complément passe à la ligne (même colonne) parce que les deux
+    # nouveaux libellés ne tiennent plus sur une seule ligne lisible à cette largeur.
+    rows = [(168, "01", "LA CONFIANCE", "EN DIEU"),
+            (330, "02", "L’ALIGNEMENT", "SUR LA VOLONTÉ DE DIEU"),
+            (492, "03", "LA PERSÉVÉRANCE", None)]
+    for i, (y, num, label, suite) in enumerate(rows):
         # filet de rangée
         d.line([(RX0, y - 12), (RX1, y - 12)], fill=ACIER + (55,), width=1)
         # chiffre
@@ -105,17 +110,34 @@ def main(out, fond=T.FOND):
         T.paste_left(base, nb, RX0, y)
         nh = nb.getbbox()[3] - nb.getbbox()[1]
 
-        # libellé, calé sur la ligne de base du chiffre
-        fl, size = T.fit_width(T.SANS, label, RX1 - (RX0 + 130), start=38, lo=18)
+        # libellé principal, calé sur la ligne de base du chiffre
+        dispo = RX1 - (RX0 + 130)
+        fl, size = T.fit_width(T.SANS, label, dispo, start=38, lo=18)
         try:
             fl.set_variation_by_name("Bold")
         except Exception:
             pass
         ml = T.text_mask(label, fl, 3)
         lab = T.fill_gradient(ml, (255, 255, 255), (212, 229, 250))
-        ylab = y + nh - (ml.getbbox()[3] - ml.getbbox()[1]) - 6
+        hlab = ml.getbbox()[3] - ml.getbbox()[1]
+        ylab = y + nh - hlab - 6
+        if suite:
+            ylab -= 16                      # le bloc remonte pour loger le complément
         T.paste_left(base, T.drop(lab, 10, 100, (3, 5)), RX0 + 132, ylab + 3)
         T.paste_left(base, lab, RX0 + 129, ylab)
+
+        # complément (« en DIEU », « sur la volonté de DIEU ») : plus petit, en acier, sous
+        # le libellé — même origine de lecture, rien d'ajouté, rien de retiré.
+        if suite:
+            fs2, s2 = T.fit_width(T.SANS, suite, dispo, start=23, lo=14)
+            try:
+                fs2.set_variation_by_name("SemiBold")
+            except Exception:
+                pass
+            m2 = T.text_mask(suite, fs2, 5)
+            c2 = Image.new("RGBA", m2.size, ACIER + (232,))
+            c2.putalpha(m2)
+            T.paste_left(base, c2, RX0 + 130, ylab + hlab + 8)
 
     # ---------- pied
     d.line([(64, 596), (1216, 596)], fill=ACIER + (50,), width=1)
