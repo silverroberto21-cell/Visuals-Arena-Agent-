@@ -1,5 +1,10 @@
 # Note de livraison — « Les 5 clés pour vivre une vie chrétienne victorieuse : ROUGE »
 
+> **Titre remplacé le 2026-11-07.** Le thème s'intitule désormais « ALERTE CODE R.O.U.G.E :
+> les 5 clés pour vivre une chrétienne victorieuse ». Cette livraison reste en place, non
+> modifiée, comme mémoire du titre précédent ; les sorties à jour sont datées du même jour
+> sous le nom `…-alerte-code-rouge-…` (fiche : [`themes/les-5-cles-rouge.md`](../themes/les-5-cles-rouge.md)).
+
 - **Fichier** : [`2026-11-07-visuel-les-5-cles-rouge-1280x720.jpg`](2026-11-07-visuel-les-5-cles-rouge-1280x720.jpg)
 - **Format** : 1280 × 720 (miniature / visuel de message) · livré le 2026-11-07
 - **Demande** : « Les 5 clés pour vivre une vie chrétienne victorieuse : ROUGE — 1. R – RECHERCHER :

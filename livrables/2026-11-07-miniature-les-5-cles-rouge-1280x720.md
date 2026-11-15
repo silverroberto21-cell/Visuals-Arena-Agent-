@@ -1,5 +1,10 @@
 # Note de livraison — miniature YouTube « Les 5 clés… : ROUGE »
 
+> **Titre remplacé le 2026-11-07.** Le thème s'intitule désormais « ALERTE CODE R.O.U.G.E :
+> les 5 clés pour vivre une chrétienne victorieuse ». Cette livraison reste en place, non
+> modifiée, comme mémoire du titre précédent ; les sorties à jour sont datées du même jour
+> sous le nom `…-alerte-code-rouge-…` (fiche : [`themes/les-5-cles-rouge.md`](../themes/les-5-cles-rouge.md)).
+
 - **Fichier** : [`2026-11-07-miniature-les-5-cles-rouge-1280x720.jpg`](2026-11-07-miniature-les-5-cles-rouge-1280x720.jpg)
 - **Format** : miniature YouTube **1280 × 720** · livrée le 2026-11-07
 - **Demande** : « on va faire la miniature YouTube du thème *Les 5 clés pour vivre une vie
