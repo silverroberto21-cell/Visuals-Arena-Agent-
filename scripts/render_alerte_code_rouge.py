@@ -209,15 +209,15 @@ def vignettage(base):
 
 
 # --------------------------------------------------------------------------- variantes
-PHOTO = "orateurs/ap-enock-3458-detourage.png"   # _DSC3458 — pupitre, Bible et écran hors cadre
-HAUTEUR_SUJET = 662
+PHOTO = "orateurs/ap-enock-3458-detourage.png"   # _DSC3458 — silhouette entière, pupitre conservé
+HAUTEUR_SUJET = 700
 
 
 def poser_sujet(base, sub):
-    """Le sujet est posé **entier**, ancré au bord bas : la photo `_DSC3458` s'arrête sur le
-    costume, juste au-dessus de la barre du pupitre (détourage, `cutout_ap_3458.py`). Aucun
-    fondu sur son bord, aucune coupe dans le corps."""
-    x = W - 40 - sub.width
+    """Le sujet est posé **entier**, ancré au bord bas : la photo `_DSC3458` va jusqu'au bas du
+    costume et le détourage conserve la barre du pupitre, la Bible ouverte et le panneau de verre
+    (détourage, `cutout_ap_3458.py`). Aucun fondu sur son bord, aucune coupe dans le corps."""
+    x = W - 26 - sub.width
     y = H - sub.height
     sh = Image.new("RGBA", (sub.width + 200, sub.height + 120), (0, 0, 0, 0))
     sil = sub.split()[3].point(lambda v: int(v * 0.34))

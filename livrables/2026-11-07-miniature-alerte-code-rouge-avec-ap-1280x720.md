@@ -7,7 +7,7 @@
   `_DSC3458.jpg.jpeg`
 - Scripts : `scripts/render_alerte_code_rouge.py ap <sortie.jpg>` · détourage : `scripts/cutout_ap_3458.py`
 - Sujet : [`orateurs/ap-enock-3458-detourage.png`](../orateurs/ap-enock-3458-detourage.png)
-  (détourage du 2026-11-07, `orateurs/DETOURAGES.md`)
+  (détourage v2 du 2026-11-07, `orateurs/DETOURAGES.md`)
 
 ## Ce qui a été utilisé
 
@@ -15,32 +15,32 @@
 |---|---|
 | Modèle | **M01 · bleu nuit, titre coupé** — repris de la miniature du thème : même grille de lecture |
 | Fond | **FOND 6** → `fonds/f06-bleu-acier-texture.jpg`, identique à la miniature du thème (×0,86, scrim, halo cyan, souffle rouge bas gauche) |
-| Palette | bleus f06 + acier `#B0D6F6` + **ROUGE** `#DE2638` — mesuré : **83,3 % de bleu**, 11,0 % de rouge |
+| Palette | bleus f06 + acier `#B0D6F6` + **ROUGE** `#DE2638` — mesuré : **87,5 % de bleu**, 2,4 % de rouge vif, 1,5 % d'or et de peau |
 | Typographie | **Anton** (accroche, mot-code) + **Jost** (phrase, prédicateur) — duo du thème |
 | Textes | « ALERTE CODE » · « R.O.U.G.E » · « les 5 clés pour vivre / une chrétienne victorieuse » · « PRÉDICATEUR / AP Enock » · `ICC PAHOU` |
-| Sujet | **597 × 662**, à `x = 643`, tête entière, les deux mains, cinq doigts et micro intacts, **ancré au bord bas** |
+| Sujet | **929 × 700**, à `x = 325`, tête entière, les deux mains, cinq doigts et micro intacts, **corps jusqu'en bas**, ancré au bord bas |
 
-## Le sujet : la nouvelle photo, le pupitre dehors
+## Le sujet : la nouvelle photo, le pupitre conservé
 
 La photo fournie (`_DSC3458`, 5906 × 3937) est un plan large : le prédicateur est **debout derrière
-un pupitre**, l'écran qui rediffuse son image dans le dos à sa gauche, la bannière bleue derrière
-lui. Deux exigences ont guidé le détourage — la silhouette entière (AGENT.md § 5ter) et la consigne
-« **le pupitre ne doit pas sortir** ».
+un pupitre**, l'écran qui rediffuse son image à sa gauche, la bannière bleue derrière lui. Deux
+exigences ont guidé le détourage : **aucun membre rogné** et **le pupitre reste dans l'image**.
 
 | Point | Traitement |
 |---|---|
-| Pupitre | **coupe franche** ~40 px au-dessus de la barre laquée : barre, Bible ouverte et pied du pupitre sont hors du PNG. Le costume s'arrête sur le bord bas, comme une sortie de cadre |
-| Écran | exclu : biseau sombre séparé du crâne par une coupe parallèle à son axe, puis éclats de l'écran retirés par couleur |
-| Bannière | exclue : enveloppe mesurée + retrait du bleu vif et de son lettrage **dans des cadres vides de corps** |
-| Micro | **entier** (capsule, cylindre, bague bleue), posé à la géométrie : il traverse la silhouette |
-| Tunique | discriminée de la bannière par sa **valeur** (V ≤ 120 contre 141-221) : même teinte, exposition différente |
-| Bords | frange colorisée depuis l'intérieur du sujet, alpha inchangé ; deux taches du lettrage magenta effacées par propagation de la couleur de la tunique |
+| Corps | **aucune coupe** : la tunique descend jusqu'au bord bas de la photo, et le détourage aussi. C'est la correction de la version précédente, qui arrêtait le costume ~40 px au-dessus de la barre |
+| Pupitre | **conservé** : barre laquée (relevée colonne par colonne), panneau de verre suspendu et ses attaches, **Bible ouverte**. Ce sont des matières couleur de fond : elles sont reposées à leur géométrie mesurée |
+| Écran | exclu : retiré par couleur dans son cadre mesuré, bâton lumineux compris |
+| Bannière | exclue : aplat bleu et lettrage (magenta, jaune) retirés hors du corps mesuré |
+| Pied de micro | exclu : il traversait le plan à gauche, il est retiré à sa géométrie |
+| Cheveux, verres, lunettes | entiers : le fond est mesuré puis rempli depuis les bords, le sujet est le complément — plus d'encoches dans le crâne |
 
 Contrôles au zoom sur le rendu : crâne, oreilles, lunettes (verres rebouchés), barbe, les deux
-épaules, les deux bras, **les deux mains et leurs cinq doigts**, le micro de la capsule au cylindre,
-la montre — **aucune coupure**, aucun fragment de décor collé à la silhouette.
+épaules, les deux bras, **les deux mains et leurs cinq doigts**, le micro de la capsule au cylindre
+avec son attache bleue, la montre — **aucune coupure**, aucun fragment de décor collé à la
+silhouette, aucune lettre de la bannière sur le bord de la manche.
 
-Script de détourage rejouable : `scripts/cutout_ap_3458.py` (~3 s). Registre :
+Script de détourage rejouable : `scripts/cutout_ap_3458.py` (~4 s). Registre :
 [`orateurs/DETOURAGES.md`](../orateurs/DETOURAGES.md).
 
 ## Mise en page

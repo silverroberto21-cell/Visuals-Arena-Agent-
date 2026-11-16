@@ -12,10 +12,10 @@
 |---|---|
 | Modèle | **M01 · bleu nuit, titre coupé** — même grille que la v1 |
 | Fond | **FOND 26** fourni → `fonds/f27-bleu-magenta-rouge.jpg` (626 × 357), **ramené au bleu** |
-| Palette | bleus + acier + cramoisi + ROUGE en accent — mesuré : **78,0 % de bleu**, 14,6 % de rouge, 4,0 % de teintes violettes résiduelles |
+| Palette | bleus + acier + cramoisi + ROUGE en accent — mesuré : **74,1 % de bleu**, 9,6 % de magenta et 3,4 % de rouge vif, 4,0 % de teintes violettes résiduelles |
 | Typographie | **Anton** + **Jost** — duo du thème, identique aux autres sorties |
 | Textes | « ALERTE CODE » · « R.O.U.G.E » · « les 5 clés pour vivre / une chrétienne victorieuse » · « PRÉDICATEUR / AP Enock » |
-| Sujet | **la nouvelle photo** (`_DSC3458`) détourée, 597 × 662, à droite, ancrée au bord bas — **pupitre, Bible et écran hors cadre** |
+| Sujet | **la nouvelle photo** (`_DSC3458`) détourée, 929 × 700, à droite, ancrée au bord bas — **pupitre et Bible conservés, écran exclu** |
 
 ## Le fond fourni, et ce qu'il a fallu lui faire
 
@@ -43,7 +43,7 @@ Si le rouge doit être **plus franc** ou plus discret, c'est un réglage de deux
 | | v1 (FOND 6) | v2 (FOND 26) |
 |---|---|---|
 | Fond | texture acier bleu, lumière rasante en haut à droite | diagonale bleu nuit → cramoisi, trame de points, stries |
-| Dominante mesurée | 83,3 % bleu | 78,0 % bleu |
+| Dominante mesurée | 87,5 % bleu | 74,1 % bleu |
 | Accent rouge | mot-code + souffle diffus en bas à gauche | mot-code + diagonale rouge à droite, derrière le sujet |
 | Composition, polices, textes, sujet | — | **identiques** (même détourage `ap-enock-3458-detourage.png`) |
 
